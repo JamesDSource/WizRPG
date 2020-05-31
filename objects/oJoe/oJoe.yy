@@ -27,7 +27,9 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oJoe","path":"objects/oJoe/oJoe.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"name","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"Joe","resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "Entities",
     "path": "folders/Entities.yy",

@@ -1,13 +1,15 @@
+var delta = get_delta();
+
 #region movement
-	var delta = get_delta();
+	if(!static_object) {
+		hsp = approach(hsp, lengthdir_x(target_speed, dir) * delta, acceleration * delta);
+		vsp = approach(vsp, lengthdir_y(target_speed, dir) * delta, acceleration * delta);
 
-	hsp = approach(hsp, lengthdir_x(target_speed, dir) * delta, acceleration * delta);
-	vsp = approach(vsp, lengthdir_y(target_speed, dir) * delta, acceleration * delta);
+		// TODO insert collision code here
 
-	// TODO insert collision code here
-
-	x += hsp;
-	y += vsp;
+		x += hsp;
+		y += vsp;
+	}
 #endregion
 
 #region Interactables
