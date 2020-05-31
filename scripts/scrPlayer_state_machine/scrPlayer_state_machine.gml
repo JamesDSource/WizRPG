@@ -13,5 +13,5 @@ function player_state_free(){
 	event_inherited();
 	
 	// interacting
-	if(keyboard_check_pressed(vk_space)) interact();
+	if(keyboard_check_pressed(ord("E"))) interact();
 }
