@@ -50,7 +50,7 @@ var delta = get_delta();
 
 #region Interactables
 	ds_list_clear(interact_list);
-	collision_circle_list(x, y, interact_radius, oEntity, false, true, interact_list, true);
+	collision_rectangle_list(bbox_left - interact_margin, bbox_top - interact_margin, bbox_right + interact_margin, bbox_bottom + interact_margin, oEntity, false, true, interact_list, true);
 
 	// adds any entity's index that does not have an interact function
 	// to a seperate array to be deleted
@@ -69,4 +69,19 @@ var delta = get_delta();
 	// setting interact_entity to the closest available interactable
 	if(ds_list_size(interact_list) > 0) interact_entity = interact_list[| 0];
 	else interact_entity = noone;
+#endregion
+
+#region statis effects
+	// random tick
+	if(random_tick_timer <= 0) {
+		// fire
+		if(statis.fire > 0) {
+			var fire_damage	= -1;
+			offset_hp(fire_damage);
+			statis.fire--;
+		}
+		
+		random_tick_timer = random_tick_time;
+	}
+	else random_tick_timer -= get_delta();
 #endregion

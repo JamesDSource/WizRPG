@@ -6,6 +6,7 @@
     {"id":{"name":"oEntity_sort","path":"objects/oEntity_sort/oEntity_sort.yy",},"order":3,},
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"order":1,},
     {"id":{"name":"scrMath_functions","path":"scripts/scrMath_functions/scrMath_functions.yy",},"order":0,},
+    {"id":{"name":"oElements","path":"objects/oElements/oElements.yy",},"order":0,},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},"order":1,},
     {"id":{"name":"rTest","path":"rooms/rTest/rTest.yy",},"order":1,},
   ],
@@ -38,6 +39,7 @@
     {"folderPath":"folders/Entities/Player.yy","order":0,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Entities.yy","order":4,"resourceVersion":"1.0","name":"Entities","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts.yy","order":6,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Elements.yy","order":7,"resourceVersion":"1.0","name":"Elements","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

@@ -1,7 +1,10 @@
 if(instance_exists(interact_entity) && interact_entity.sprite_index != noone) {
 	with(interact_entity) {
-		draw_set_halign(fa_center);
-		draw_set_valign(fa_bottom);
-		draw_text_color(x, y - sprite_yoffset, name, c_red, c_red, c_white, c_white, 0.8);
+		draw_set_color(c_white);
+		var x_org = x - sprite_xoffset;
+		var y_org = y - sprite_yoffset;
+		draw_rectangle(x_org, y_org, x_org + sprite_width, y_org + sprite_height, true);
 	}
 }
+
+draw_text(20, 20, hp);

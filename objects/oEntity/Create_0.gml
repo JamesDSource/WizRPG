@@ -7,7 +7,7 @@ vsp = 0;
 // interactables
 interact_method = noone;
 interact_list = ds_list_create();
-interact_radius = 20;
+interact_margin = 15;
 interact_entity = noone;
 
 function interact() {
@@ -23,6 +23,9 @@ enum ELEMENTTYPE {
 }
 
 // for dealing damage with statis effects
+random_tick_time = room_speed * 2;
+random_tick_timer = random_tick_time;
+
 function offset_hp(offset) {
 	hp += offset;
 	hp = clamp(hp, 0, hp_max);
@@ -31,12 +34,17 @@ function offset_hp(offset) {
 function inflict(element) {
 	switch(element) {
 		case ELEMENTTYPE.FIRE:
-			if(material_flammable) statis.on_fire = room_speed * 2;
+			statis.fire = material_flammability;
 			break;
 		
 	}
 }
 
 statis = {
-	on_fire: 0
+	fire: 0
 }
+
+// particles
+particles = part_system_create();
+particle_emitter = part_emitter_create(particles);
+part_system_automatic_draw(particles, false);
