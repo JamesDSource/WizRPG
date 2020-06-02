@@ -12,6 +12,18 @@ function player_state_free(){
 	
 	event_inherited();
 	
+	if(hsp != 0 || vsp != 0) {
+		if(hsp != 0) {
+			sprite_index = sprite_sides.side;
+			image_xscale = sign(hsp);	
+		}
+		else if(vsp != 0) {
+			if(sign(vsp) == 1) sprite_index = sprite_sides.front;
+			else sprite_index = sprite_sides.back;
+			image_xscale = 1;
+		}	
+	}
+	
 	// interacting
 	if(keyboard_check_pressed(ord("E"))) interact();
 }

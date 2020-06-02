@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPlayer",
-    "path": "sprites/sPlayer/sPlayer.yy",
+    "name": "sPlayer_front",
+    "path": "sprites/sPlayer_front/sPlayer_front.yy",
   },
   "solid": false,
   "visible": true,
@@ -30,7 +30,7 @@
   ],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"material_flammability","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"20","resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"material_flammability","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"6","resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Player",

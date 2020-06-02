@@ -1,0 +1,2 @@
+#macro VIEWWIDTH 1920/4
+#macro VIEWHEIGHT 1080/4
