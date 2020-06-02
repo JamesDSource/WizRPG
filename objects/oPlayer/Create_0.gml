@@ -10,3 +10,6 @@ sprite_sides = {
 	back: sPlayer_back,	
 	side: sPlayer_side	
 };
+
+box_progress = 0;
+last_selected = noone;

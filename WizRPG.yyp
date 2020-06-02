@@ -8,6 +8,7 @@
     {"id":{"name":"rInit","path":"rooms/rInit/rInit.yy",},"order":0,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"oEntity_sort","path":"objects/oEntity_sort/oEntity_sort.yy",},"order":3,},
+    {"id":{"name":"acOvershoot","path":"animcurves/acOvershoot/acOvershoot.yy",},"order":0,},
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"order":1,},
     {"id":{"name":"scrMath_functions","path":"scripts/scrMath_functions/scrMath_functions.yy",},"order":0,},
     {"id":{"name":"sPlayer_side","path":"sprites/sPlayer_side/sPlayer_side.yy",},"order":4,},
@@ -51,6 +52,7 @@
     {"folderPath":"folders/Rooms.yy","order":7,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Rooms/Init.yy","order":2,"resourceVersion":"1.0","name":"Init","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Controllers.yy","order":8,"resourceVersion":"1.0","name":"Controllers","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Curves.yy","order":10,"resourceVersion":"1.0","name":"Curves","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
