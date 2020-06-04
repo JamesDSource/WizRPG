@@ -1,10 +1,4 @@
 if(sprite_index != noone) {
-	// draw self
-	draw_set_alpha(0.5);
-	draw_set_color(c_black);
-	draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
-	draw_set_alpha(1);
-	
 	draw_sprite_ext(sprite_index, image_index, round(x), round(y - z), image_xscale, image_yscale, image_angle, image_blend, image_alpha);	
 	
 	// fire
