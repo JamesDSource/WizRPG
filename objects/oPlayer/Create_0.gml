@@ -11,5 +11,8 @@ sprite_sides = {
 	side: sPlayer_side	
 };
 
+hFacing = noone;
+vFacing = noone;
+
 box_progress = 0;
 last_selected = noone;

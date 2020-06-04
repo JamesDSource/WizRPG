@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPlayer_front",
-    "path": "sprites/sPlayer_front/sPlayer_front.yy",
+    "name": "sBox",
+    "path": "sprites/sBox/sBox.yy",
   },
   "solid": false,
   "visible": true,
@@ -23,19 +23,18 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oJoe","path":"objects/oJoe/oJoe.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"name","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"Joe","resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"static_object","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"apply_gravity","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Debugging",
     "path": "folders/Entities/Debugging.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oJoe",
+  "name": "oBox",
   "tags": [],
   "resourceType": "GMObject",
 }

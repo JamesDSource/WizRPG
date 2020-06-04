@@ -3,6 +3,7 @@ visible = false;
 // moving
 hsp = 0;
 vsp = 0;
+esp = 0;
 
 // interactables
 interact_method = noone;

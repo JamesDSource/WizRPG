@@ -12,16 +12,23 @@ function player_state_free(){
 	
 	event_inherited();
 	
-	if(hsp != 0 || vsp != 0) {
-		if(hsp != 0) {
+	// direction facing and xscale
+	if(hFacing != hDir && vFacing != vDir) {
+		if(hDir != 0) {
+			hFacing = hDir;
+			vFacing = noone;
 			sprite_index = sprite_sides.side;
-			image_xscale = sign(hsp);	
+			image_xscale = hFacing;
 		}
-		else if(vsp != 0) {
-			if(sign(vsp) == 1) sprite_index = sprite_sides.front;
-			else sprite_index = sprite_sides.back;
+		else if(vDir != 0) {
+			vFacing = vDir;
+			hFacing = noone;
 			image_xscale = 1;
-		}	
+			switch(vFacing) {
+				case 1: sprite_index = sprite_sides.front; break;
+				case -1: sprite_index = sprite_sides.back; break;
+			}
+		}
 	}
 	
 	// interacting
