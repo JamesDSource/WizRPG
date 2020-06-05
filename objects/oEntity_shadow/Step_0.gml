@@ -1,6 +1,6 @@
 if(creator != noone) {
 	x = creator.x;	
-	y = creator.y;
+	y = creator.y-1;
 	
 	if(creator.z > 0) {
 		var collision_list = ds_list_create();

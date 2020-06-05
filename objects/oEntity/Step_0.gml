@@ -27,6 +27,7 @@ var delta = get_delta();
 				}
 			}
 			ds_list_clear(collision_list);
+			x += hsp;
 			
 			// verticle collision code
 			instance_place_list_3d(x, y + vsp, z, oEntity, collision_list, true);
@@ -42,6 +43,7 @@ var delta = get_delta();
 				}
 			}
 			ds_list_clear(collision_list);
+			y += vsp;
 			
 			// elevation collision code
 			instance_place_list_3d(x, y, z + esp, oEntity, collision_list, true);
@@ -57,13 +59,9 @@ var delta = get_delta();
 				}
 			}
 			ds_list_destroy(collision_list);
+			z += esp;
+			z = max(z, 0);
 		}
-		
-		// adding to the movement
-		x += hsp;
-		y += vsp;
-		z += esp;
-		z = max(z, 0);
 	}
 #endregion
 #region Interactables

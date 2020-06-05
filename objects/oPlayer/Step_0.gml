@@ -6,4 +6,4 @@ if(last_selected != interact_entity) {
 	last_selected = interact_entity;	
 }
 
-if(keyboard_check_pressed(vk_space)) esp = 3;
+if(keyboard_check_pressed(vk_space)) esp = 4;
