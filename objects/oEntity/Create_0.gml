@@ -12,7 +12,7 @@ interact_margin = 15;
 interact_entity = noone;
 
 function interact() {
-	if(interact_entity != noone) {
+	if(interact_entity != noone && is_method(interact_entity.interact_method)) {
 		interact_entity.interact_method(id);
 	}
 }
