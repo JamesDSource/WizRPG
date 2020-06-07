@@ -66,7 +66,7 @@ var delta = get_delta();
 #endregion
 #region Interactables
 	ds_list_clear(interact_list);
-	collision_rectangle_list(bbox_left - interact_margin, bbox_top - interact_margin, bbox_right + interact_margin, bbox_bottom + interact_margin, oEntity, false, true, interact_list, true);
+	collision_rectangle_list_3d(bbox_left - interact_rad, bbox_top - interact_rad, z - interact_rad, bbox_right + interact_rad, bbox_bottom + interact_rad, z + h + interact_rad, oEntity, interact_list, true);
 
 	// adds any entity's index that does not have an interact function
 	// to a seperate array to be deleted
@@ -102,7 +102,7 @@ var delta = get_delta();
 	
 	// spreading fire
 	var spread_to_list = ds_list_create();
-	collision_rectangle_list(bbox_left - spread_rad, bbox_top - spread_rad, bbox_right + spread_rad, bbox_bottom + spread_rad, oEntity, false, true, spread_to_list, false);
+	collision_rectangle_list_3d(bbox_left - spread_rad, bbox_top - spread_rad, z - spread_rad, bbox_right + spread_rad, bbox_bottom + spread_rad, z + h + spread_rad, oEntity, spread_to_list, false);
 	for(var i = 0; i < ds_list_size(spread_to_list); i++) { 
 		var entity = spread_to_list[| i];
 		// spread fire

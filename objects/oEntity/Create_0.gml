@@ -8,7 +8,7 @@ esp = 0;
 // interactables
 interact_method = noone;
 interact_list = ds_list_create();
-interact_margin = 15;
+interact_rad = 10;
 interact_entity = noone;
 
 function interact() {
@@ -45,7 +45,7 @@ statis = {
 	fire: 0
 }
 
-spread_rad = 8;
+spread_rad = 15;
 fire_time = room_speed/2;
 fire_timer = fire_time;
 
@@ -55,6 +55,7 @@ particle_emitter = part_emitter_create(particles);
 part_system_automatic_draw(particles, false);
 
 // shadow
+shadow = noone;
 if(has_shadow) {
 	shadow = instance_create_layer(x, y, layer, oEntity_shadow);
 	shadow.creator = id;

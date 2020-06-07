@@ -1,4 +1,4 @@
-if(creator != noone) {
+if(instance_exists(creator)) {
 	with(creator) {
 		var x1 = bbox_left;	
 		var y1 = bbox_top;	

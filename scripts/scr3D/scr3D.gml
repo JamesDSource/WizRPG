@@ -16,6 +16,24 @@ function instance_place_list_3d(x_pos, y_pos, z_pos, obj, list, ordered) {
 	return ds_list_size(list);
 }
 
+function collision_rectangle_list_3d(x1, y1, z1, x2, y2, z2, obj, list, ordered) {
+	collision_rectangle_list(x1, y1, x2, y2, obj, false, true, list, ordered);
+	
+	var keep_list = array_create(0);
+	for(var i = 0; i < ds_list_size(list); i++) {
+		var inst = list[| i];
+		if(rectangle_in_rectangle(0, z1, 1, z2, 0, inst.z, 1, inst.z + inst.h)) {
+			var index = array_length(keep_list);
+			keep_list[index] = inst;
+		}
+	}
+	
+	ds_list_clear(list);
+	for(var i = 0; i < array_length(keep_list); i++) ds_list_add(list, keep_list[i]);
+	
+	return ds_list_size(list);
+}
+
 function place_meeting_3d(x_pos, y_pos, z_pos, obj) {
 	var result = false;
 	var inst = instance_place(x_pos, y_pos, obj);
