@@ -35,7 +35,7 @@ function offset_hp(offset) {
 function inflict(element) {
 	switch(element) {
 		case ELEMENTTYPE.FIRE:
-			statis.fire = material_flammability;
+			if(statis.fire <= 0) statis.fire = material_flammability;
 			break;
 		
 	}
@@ -44,6 +44,10 @@ function inflict(element) {
 statis = {
 	fire: 0
 }
+
+spread_rad = 8;
+fire_time = room_speed/2;
+fire_timer = fire_time;
 
 // particles
 particles = part_system_create();

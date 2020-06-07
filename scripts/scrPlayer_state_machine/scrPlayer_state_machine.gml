@@ -17,19 +17,22 @@ function player_state_free(){
 		if(hDir != 0) {
 			hFacing = hDir;
 			vFacing = noone;
-			sprite_index = sprite_sides.side;
-			image_xscale = hFacing;
+			switch(hFacing) {
+				case 1: side = sprite_side_index.right; break;	
+				case -1: side = sprite_side_index.left; break;	
+			}
 		}
 		else if(vDir != 0) {
 			vFacing = vDir;
 			hFacing = noone;
-			image_xscale = 1;
 			switch(vFacing) {
-				case 1: sprite_index = sprite_sides.front; break;
-				case -1: sprite_index = sprite_sides.back; break;
+				case 1: side = sprite_side_index.front; break;
+				case -1: side = sprite_side_index.back; break;
 			}
 		}
 	}
+	sprite_index = sprite_sides[floor(side)][0];
+	image_xscale = sprite_sides[floor(side)][1];
 	
 	// interacting
 	if(keyboard_check_pressed(ord("E"))) interact();

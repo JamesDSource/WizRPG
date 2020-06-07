@@ -99,4 +99,21 @@ var delta = get_delta();
 		random_tick_timer = random_tick_time;
 	}
 	else random_tick_timer -= get_delta();
+	
+	// spreading fire
+	var spread_to_list = ds_list_create();
+	collision_rectangle_list(bbox_left - spread_rad, bbox_top - spread_rad, bbox_right + spread_rad, bbox_bottom + spread_rad, oEntity, false, true, spread_to_list, false);
+	for(var i = 0; i < ds_list_size(spread_to_list); i++) { 
+		var entity = spread_to_list[| i];
+		// spread fire
+		if(statis.fire > 0) entity.fire_timer -= get_delta();
+	}
+	ds_list_destroy(spread_to_list);
+	
+	// catching on fire
+	if(fire_timer <= 0) {
+		inflict(ELEMENTTYPE.FIRE);
+		fire_timer = fire_time;	
+	}
+	else fire_timer = clamp(fire_timer + get_delta()/4, 0, fire_time);
 #endregion
