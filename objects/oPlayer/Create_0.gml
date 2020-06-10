@@ -41,14 +41,20 @@ enum ITEMTYPE {
 	MISC
 }
 
-inventory_w = 10;
-inventory_h = 5;
-inventory = new storage(inventory_w, inventory_h, [ITEMTYPE.STAFF, ITEMTYPE.MISC]);
-
+// the surface
 inventory_surface = -1;
 inventory_surface_w = VIEWWIDTH/1.5;
 inventory_surface_h = VIEWHEIGHT/1.5;
+
+// main inventory storage
 inventory_draw_x = VIEWWIDTH/2 - inventory_surface_w/2;
 inventory_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
+inventory = new storage(10, 5, [ITEMTYPE.STAFF, ITEMTYPE.MISC]);
+
+// toolbar
+toolbar_upper_margin = 10;
+toolbar_draw_x = inventory_draw_x;
+toolbar_draw_y = inventory_draw_y + storage_get_height(inventory) + toolbar_upper_margin;
+toolbar = new storage(5, 1, [ITEMTYPE.STAFF])
 
 global.square_selected = [-1, -1, -1]; // [grid index, x, y]

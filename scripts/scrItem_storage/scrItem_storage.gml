@@ -8,7 +8,9 @@ function storage(w, h, item_types) constructor{
 
 function draw_storage(storage, draw_x, draw_y) {
 	var storage_grid = storage.grid;
-	draw_x_init = draw_x;
+	draw_x += STORAGESQUAREMARGIN;
+	draw_y += STORAGESQUAREMARGIN;
+	var draw_x_init = draw_x;
 	
 	for(var r = 0; r < ds_grid_height(storage_grid); r++) {
 		for(var c = 0; c < ds_grid_width(storage_grid); c++) {
@@ -27,8 +29,8 @@ function draw_storage(storage, draw_x, draw_y) {
 function storage_find_pos(storage, storage_x, storage_y, pos_x, pos_y) {
 	var rect_x1 = storage_x;
 	var rect_y1 = storage_y;
-	var rect_x2 = rect_x1 + ds_grid_width(storage.grid)*(STORAGESQUARESIZE + STORAGESQUAREMARGIN);
-	var rect_y2 = rect_y1 + ds_grid_height(storage.grid)*(STORAGESQUARESIZE + STORAGESQUAREMARGIN);
+	var rect_x2 = rect_x1 + storage_get_width(storage);
+	var rect_y2 = rect_y1 + storage_get_height(storage);
 	
 	if(point_in_rectangle(pos_x, pos_y, rect_x1, rect_y1, rect_x2, rect_y2)) {
 		var offset_x = pos_x - rect_x1;
@@ -40,4 +42,14 @@ function storage_find_pos(storage, storage_x, storage_y, pos_x, pos_y) {
 		return [inven_x, inven_y];
 	}
 	else return -1;
+}
+
+function storage_get_width(storage) {
+	var w = ds_grid_width(storage.grid);
+	return w*(STORAGESQUARESIZE + STORAGESQUAREMARGIN) + STORAGESQUAREMARGIN;
+}
+
+function storage_get_height(storage) {
+	var h = ds_grid_height(storage.grid);
+	return h*(STORAGESQUARESIZE + STORAGESQUAREMARGIN) + STORAGESQUAREMARGIN;
 }
