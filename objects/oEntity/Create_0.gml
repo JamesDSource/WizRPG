@@ -53,10 +53,3 @@ fire_timer = fire_time;
 particles = part_system_create();
 particle_emitter = part_emitter_create(particles);
 part_system_automatic_draw(particles, false);
-
-// shadow
-shadow = noone;
-if(has_shadow) {
-	shadow = instance_create_layer(x, y, layer, oEntity_shadow);
-	shadow.creator = id;
-}

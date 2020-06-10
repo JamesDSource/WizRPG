@@ -1,7 +1,8 @@
 event_inherited();
 
 states = {
-	free: player_state_free	
+	free: player_state_free	,
+	inventory: player_state_inventory
 };
 state = states.free;
 
@@ -19,6 +20,12 @@ sprite_sides = [
 	[sPlayer_side, -1],
 	[sPlayer_front, 1]
 ];
+//sprite_sides = [
+//	[sMushroom_spider_walk_side, 1],
+//	[sMushroom_spider_walk_back, 1],
+//	[sMushroom_spider_walk_side, -1],
+//	[sMushroom_spider_walk_front, 1]
+//];
 
 side = sprite_side_index.front;
 
@@ -27,3 +34,23 @@ vFacing = noone;
 
 box_progress = 0;
 last_selected = noone;
+
+// inventory system
+enum ITEMTYPE {
+	STAFF,
+	MISC
+}
+
+inventory_w = 10;
+inventory_h = 5;
+global.inventory = ds_grid_create(inventory_w, inventory_h);
+
+inventory_surface = -1;
+inventory_surface_w = VIEWWIDTH/1.5;
+inventory_surface_h = VIEWHEIGHT/1.5;
+inventory_square_size = 16;
+inventory_square_margin = 4;
+inventory_draw_x = VIEWWIDTH/2 - inventory_surface_w/2;
+inventory_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
+
+inventory_square_selected = [-1, -1, -1]; // [grid index, x, y]
