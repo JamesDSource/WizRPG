@@ -43,14 +43,12 @@ enum ITEMTYPE {
 
 inventory_w = 10;
 inventory_h = 5;
-global.inventory = ds_grid_create(inventory_w, inventory_h);
+inventory = new storage(inventory_w, inventory_h, [ITEMTYPE.STAFF, ITEMTYPE.MISC]);
 
 inventory_surface = -1;
 inventory_surface_w = VIEWWIDTH/1.5;
 inventory_surface_h = VIEWHEIGHT/1.5;
-inventory_square_size = 16;
-inventory_square_margin = 4;
 inventory_draw_x = VIEWWIDTH/2 - inventory_surface_w/2;
 inventory_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
 
-inventory_square_selected = [-1, -1, -1]; // [grid index, x, y]
+global.square_selected = [-1, -1, -1]; // [grid index, x, y]

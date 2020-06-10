@@ -46,21 +46,10 @@ function player_state_inventory() {
 	var gui_mouse_x = device_mouse_x_to_gui(0);
 	var gui_mouse_y = device_mouse_y_to_gui(0);
 
-	var items_x1 = inventory_draw_x;
-	var items_y1 = inventory_draw_y;
-	var items_x2 = items_x1 + inventory_w*(inventory_square_margin + inventory_square_size);
-	var items_y2 = items_y1 + inventory_h*(inventory_square_margin + inventory_square_size);
-	if(point_in_rectangle(gui_mouse_x, gui_mouse_y, items_x1, items_y1, items_x2, items_y2)) {
-		inventory_square_selected[0] = global.inventory;
-		var offset_x = gui_mouse_x - items_x1;
-		var offset_y = gui_mouse_y - items_y1;
-		var inven_x = offset_x div (inventory_square_size + inventory_square_margin);
-		var inven_y = offset_y div (inventory_square_size + inventory_square_margin);
-		
-		inventory_square_selected[1] = inven_x;
-		inventory_square_selected[2] = inven_y;
-	}
-	else inventory_square_selected = [-1, -1, -1];
+	var inventory_result = storage_find_pos(inventory, inventory_draw_x, inventory_draw_y, gui_mouse_x, gui_mouse_y);
+	
+	if(inventory_result != -1) global.square_selected = [inventory, inventory_result[0], inventory_result[1]];
+	else global.square_selected = [-1, -1, -1];
 	
 	// closeing inventory
 	if(keyboard_check_pressed(vk_tab)) state = states.free;

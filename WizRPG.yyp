@@ -16,6 +16,7 @@
     {"id":{"name":"oEntity_sort","path":"objects/oEntity_sort/oEntity_sort.yy",},"order":3,},
     {"id":{"name":"acOvershoot","path":"animcurves/acOvershoot/acOvershoot.yy",},"order":0,},
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"order":1,},
+    {"id":{"name":"scrItem_storage","path":"scripts/scrItem_storage/scrItem_storage.yy",},"order":3,},
     {"id":{"name":"scrMath_functions","path":"scripts/scrMath_functions/scrMath_functions.yy",},"order":0,},
     {"id":{"name":"sPlayer_side","path":"sprites/sPlayer_side/sPlayer_side.yy",},"order":4,},
     {"id":{"name":"oElements","path":"objects/oElements/oElements.yy",},"order":0,},
