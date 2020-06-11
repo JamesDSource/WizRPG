@@ -1,9 +1,15 @@
 #macro STORAGESQUARESIZE 16
 #macro STORAGESQUAREMARGIN 4
 
-function storage(w, h, item_types) constructor{
+function storage(w, h, item_types) constructor {
 	items_allowed = item_types;
 	grid = ds_grid_create(w, h);
+	
+	for(var r = 0; r < ds_grid_width(grid); r++) {
+		for(var c = 0; c < ds_grid_height(grid); c++) {
+			grid[# r, c] = -1;
+		}
+	}
 }
 
 function draw_storage(storage, draw_x, draw_y) {
@@ -12,12 +18,19 @@ function draw_storage(storage, draw_x, draw_y) {
 	draw_y += STORAGESQUAREMARGIN;
 	var draw_x_init = draw_x;
 	
-	for(var r = 0; r < ds_grid_height(storage_grid); r++) {
-		for(var c = 0; c < ds_grid_width(storage_grid); c++) {
-			if(array_equals(global.square_selected, [storage, c, r])) draw_set_color(c_yellow);
+	for(var c = 0; c < ds_grid_height(storage_grid); c++) {
+		for(var r = 0; r < ds_grid_width(storage_grid); r++) {
+			if(array_equals(global.square_selected, [storage, r, c])) draw_set_color(c_yellow);
 			else draw_set_color(c_white);
 			
 			draw_rectangle(draw_x, draw_y, draw_x + STORAGESQUARESIZE, draw_y + STORAGESQUARESIZE, false);
+			
+			// check if an item is filling this space
+			var current_item = storage_grid[# r, c];
+			if(is_struct(current_item)) {
+				draw_sprite(current_item.icon, 0, draw_x, draw_y);	
+			}
+			
 			draw_x += STORAGESQUARESIZE + STORAGESQUAREMARGIN;
 		}
 		draw_y += STORAGESQUARESIZE + STORAGESQUAREMARGIN;
@@ -52,4 +65,18 @@ function storage_get_width(storage) {
 function storage_get_height(storage) {
 	var h = ds_grid_height(storage.grid);
 	return h*(STORAGESQUARESIZE + STORAGESQUAREMARGIN) + STORAGESQUAREMARGIN;
+}
+	
+function storage_add_item(storage, item) {
+	var data = storage.grid;
+	for(var r = 0; r < ds_grid_width(data); r++) {
+		for(var c = 0; c < ds_grid_height(data); c++) {
+			if(data[# r, c] == -1) {
+				data[# r, c] = item;
+				return [r, c];
+			}
+		}
+	}
+	
+	return -1;
 }

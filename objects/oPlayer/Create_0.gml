@@ -36,11 +36,6 @@ box_progress = 0;
 last_selected = noone;
 
 // inventory system
-enum ITEMTYPE {
-	STAFF,
-	SPELLS,
-	MISC
-}
 
 // the surface
 inventory_surface = -1;
@@ -66,3 +61,6 @@ toolbar_draw_x = inventory_surface_draw_x;
 toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
 
 global.square_selected = [-1, -1, -1]; // [grid index, x, y]
+global.mouse_item = -1;
+
+storage_add_item(inventory, global.test_item);
