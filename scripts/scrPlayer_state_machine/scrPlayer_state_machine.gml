@@ -68,26 +68,8 @@ function player_state_inventory() {
 			if(is_struct(selected_item)) global.square_moving = global.square_selected;
 		}
 		else { // if we are moving an item
-			var grid_moving = global.square_moving[0].grid;
-			var r_moving = global.square_moving[1];
-			var c_moving = global.square_moving[2];
-			
-			// if we're not hovering over an empty space
-			if(is_struct(selected_item)) {
-				// if we're not moving over the same space
-				if(!array_equals(global.square_selected, global.square_moving)) {
-					// overwise swap the two indexs
-					selected_grid[# r, c] = grid_moving[# r_moving, c_moving];
-					grid_moving[# r_moving, c_moving] = selected_item;
-				}
-			}
-			else {
-				// fill the empty square with square moving
-				selected_grid[# r, c] = grid_moving[# r_moving, c_moving]
-				grid_moving[# r_moving, c_moving] = -1;
-			}
-			// get rid of square moving
-			global.square_moving = [-1, -1, -1];	
+			if(move_and_swap_items(global.square_moving[0], global.square_moving[1], global.square_moving[2], 
+			global.square_selected[0], global.square_selected[1], global.square_selected[2])) global.square_moving = [-1, -1, -1];	
 		}
 	}
 	

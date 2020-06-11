@@ -63,6 +63,22 @@ function storage_find_pos(storage, storage_x, storage_y, pos_x, pos_y) {
 	else return -1;
 }
 
+function move_and_swap_items(storage1, x1, y1, storage2, x2, y2) {
+	var item1 = storage1.grid[# x1, y1];
+	var item2 = storage2.grid[# x2, y2];
+	
+	if(is_struct(item1)) {
+		// if we're not moving over the same space
+		if(!array_equals([storage1, x1, y1], [storage2, x2, y2])) {
+			// overwise swap the two indexs
+			storage2.grid[# x2, y2] = item1;
+			storage1.grid[# x1, y1] = item2;
+		}
+		return true;
+	}
+	else return false;
+}
+
 function storage_get_width(storage) {
 	var w = ds_grid_width(storage.grid);
 	return w*(STORAGESQUARESIZE + STORAGESQUAREMARGIN) + STORAGESQUAREMARGIN;
