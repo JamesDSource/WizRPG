@@ -38,6 +38,7 @@ last_selected = noone;
 // inventory system
 enum ITEMTYPE {
 	STAFF,
+	SPELLS,
 	MISC
 }
 
@@ -45,16 +46,23 @@ enum ITEMTYPE {
 inventory_surface = -1;
 inventory_surface_w = VIEWWIDTH/1.5;
 inventory_surface_h = VIEWHEIGHT/1.5;
+inventory_surface_draw_x = VIEWWIDTH/2 - inventory_surface_w/2;
+inventory_surface_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
 
 // main inventory storage
-inventory_draw_x = VIEWWIDTH/2 - inventory_surface_w/2;
-inventory_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
-inventory = new storage(10, 5, [ITEMTYPE.STAFF, ITEMTYPE.MISC]);
+inventory = new storage(10, 5, [ITEMTYPE.STAFF, ITEMTYPE.SPELLS, ITEMTYPE.MISC]);
+inventory_draw_x = inventory_surface_draw_x;
+inventory_draw_y = inventory_surface_draw_y;
+
+// spells
+spells = new storage(8, 1, [ITEMTYPE.SPELLS])
+spells_draw_x = inventory_surface_draw_x;
+spells_draw_y = inventory_surface_draw_y + inventory_surface_h - storage_get_height(spells);;
+
 
 // toolbar
-toolbar_upper_margin = 10;
-toolbar_draw_x = inventory_draw_x;
-toolbar_draw_y = inventory_draw_y + storage_get_height(inventory) + toolbar_upper_margin;
-toolbar = new storage(5, 1, [ITEMTYPE.STAFF])
+toolbar = new storage(5, 1, [ITEMTYPE.STAFF]);
+toolbar_draw_x = inventory_surface_draw_x;
+toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
 
 global.square_selected = [-1, -1, -1]; // [grid index, x, y]

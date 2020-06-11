@@ -48,8 +48,10 @@ function player_state_inventory() {
 
 	var inventory_result = storage_find_pos(inventory, inventory_draw_x, inventory_draw_y, gui_mouse_x, gui_mouse_y);
 	var toolbar_result = storage_find_pos(toolbar, toolbar_draw_x, toolbar_draw_y, gui_mouse_x, gui_mouse_y);
+	var spells_result = storage_find_pos(spells, spells_draw_x, spells_draw_y, gui_mouse_x, gui_mouse_y);
 	
 	if(inventory_result != -1) global.square_selected = [inventory, inventory_result[0], inventory_result[1]];
+	else if(spells_result != -1) global.square_selected = [spells, spells_result[0], spells_result[1]];
 	else if(toolbar_result != -1) global.square_selected = [toolbar, toolbar_result[0], toolbar_result[1]];
 	else global.square_selected = [-1, -1, -1];
 	
