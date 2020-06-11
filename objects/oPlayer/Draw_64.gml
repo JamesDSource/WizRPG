@@ -24,3 +24,14 @@ if(surface_exists(inventory_surface)) {
 	}
 }
 else inventory_surface = surface_create(inventory_surface_w, inventory_surface_h);
+
+// drawing a dragged icon on the mouse
+if(!array_equals(global.square_moving, [-1, -1, -1])) {
+	var moving_grid = global.square_moving[0].grid;
+	var moving_item = moving_grid[# global.square_moving[1], global.square_moving[2]];
+	
+	var icon = moving_item.icon;
+	var dragged_icon_x = device_mouse_x_to_gui(0) - sprite_get_width(icon)/2;
+	var dragged_icon_y = device_mouse_y_to_gui(0) - sprite_get_height(icon)/2;
+	draw_sprite(icon, 0, dragged_icon_x, dragged_icon_y);
+}

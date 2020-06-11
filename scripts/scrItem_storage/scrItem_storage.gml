@@ -28,7 +28,10 @@ function draw_storage(storage, draw_x, draw_y) {
 			// check if an item is filling this space
 			var current_item = storage_grid[# r, c];
 			if(is_struct(current_item)) {
+				// draw item icon on square unless being dragged by mouse
+				if(array_equals(global.square_moving, [storage, r, c])) draw_set_alpha(0.5); 
 				draw_sprite(current_item.icon, 0, draw_x, draw_y);	
+				draw_set_alpha(1);
 			}
 			
 			draw_x += STORAGESQUARESIZE + STORAGESQUAREMARGIN;
@@ -51,6 +54,9 @@ function storage_find_pos(storage, storage_x, storage_y, pos_x, pos_y) {
 		
 		var inven_x = offset_x div (STORAGESQUARESIZE + STORAGESQUAREMARGIN);
 		var inven_y = offset_y div (STORAGESQUARESIZE + STORAGESQUAREMARGIN);
+		
+		inven_x = clamp(inven_x, 0, ds_grid_width(storage.grid)-1);
+		inven_y = clamp(inven_y, 0, ds_grid_height(storage.grid)-1);
 		
 		return [inven_x, inven_y];
 	}

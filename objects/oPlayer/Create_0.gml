@@ -60,7 +60,7 @@ toolbar = new storage(5, 1, [ITEMTYPE.STAFF]);
 toolbar_draw_x = inventory_surface_draw_x;
 toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
 
-global.square_selected = [-1, -1, -1]; // [grid index, x, y]
-global.mouse_item = -1;
+global.square_selected = [-1, -1, -1];	// [grid index, x, y]
+global.square_moving = [-1, -1, -1];	// [grid index, x, y]
 
 storage_add_item(inventory, global.test_item);
