@@ -75,8 +75,8 @@ function storage_get_height(storage) {
 	
 function storage_add_item(storage, item) {
 	var data = storage.grid;
-	for(var r = 0; r < ds_grid_width(data); r++) {
-		for(var c = 0; c < ds_grid_height(data); c++) {
+	for(var c = 0; c < ds_grid_height(data); c++) {
+		for(var r = 0; r < ds_grid_width(data); r++) {
 			if(data[# r, c] == -1) {
 				data[# r, c] = item;
 				return [r, c];

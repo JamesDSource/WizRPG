@@ -63,4 +63,4 @@ toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
 global.square_selected = [-1, -1, -1];	// [grid index, x, y]
 global.square_moving = [-1, -1, -1];	// [grid index, x, y]
 
-storage_add_item(inventory, global.test_item);
+repeat(2) storage_add_item(inventory, global.test_item);

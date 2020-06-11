@@ -4,7 +4,7 @@ enum ITEMTYPE {
 	MISC
 }
 
-function item(i_name, i_type, i_sprite, i_icon, i_action) constructor{
+function item(i_name, i_type, i_sprite, i_icon, i_action) constructor {
 	name = i_name;		// string of item name
 	type = i_type;		// item type
 	sprite = i_sprite;	// sprite that's shown when held
