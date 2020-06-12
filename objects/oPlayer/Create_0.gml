@@ -45,7 +45,7 @@ inventory_surface_draw_x = VIEWWIDTH/2 - inventory_surface_w/2;
 inventory_surface_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
 
 // main inventory storage
-inventory = new storage(10, 5, "All");
+inventory = new storage(11, 4, "All");
 inventory_draw_x = inventory_surface_draw_x;
 inventory_draw_y = inventory_surface_draw_y;
 
@@ -56,7 +56,7 @@ spells_draw_y = inventory_surface_draw_y + inventory_surface_h - storage_get_hei
 
 
 // toolbar
-toolbar = new storage(5, 1, [ITEMTYPE.STAFF]);
+toolbar = new storage(5, 1, "All");
 toolbar_draw_x = inventory_surface_draw_x;
 toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
 toolbar_equipt = [toolbar, 0, 0];
