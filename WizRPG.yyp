@@ -26,6 +26,7 @@
     {"id":{"name":"sPlayer_front","path":"sprites/sPlayer_front/sPlayer_front.yy",},"order":1,},
     {"id":{"name":"oInit","path":"objects/oInit/oInit.yy",},"order":1,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
+    {"id":{"name":"sItem_container","path":"sprites/sItem_container/sItem_container.yy",},"order":0,},
     {"id":{"name":"scr3D","path":"scripts/scr3D/scr3D.yy",},"order":2,},
     {"id":{"name":"rTest","path":"rooms/rTest/rTest.yy",},"order":1,},
   ],
@@ -69,6 +70,7 @@
     {"folderPath":"folders/Entities/Mushroom Spider/Walking.yy","order":3,"resourceVersion":"1.0","name":"Walking","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Entities/Mushroom Spider/Idle.yy","order":4,"resourceVersion":"1.0","name":"Idle","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Fonts.yy","order":11,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/UI.yy","order":12,"resourceVersion":"1.0","name":"UI","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

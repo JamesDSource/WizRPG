@@ -20,10 +20,10 @@ function draw_storage(storage, draw_x, draw_y) {
 	
 	for(var c = 0; c < ds_grid_height(storage_grid); c++) {
 		for(var r = 0; r < ds_grid_width(storage_grid); r++) {
-			if(array_equals(global.square_selected, [storage, r, c])) draw_set_color(c_yellow);
-			else draw_set_color(c_white);
+			var container_image_index = 0;
+			if(array_equals(global.square_selected, [storage, r, c])) container_image_index = 1;
 			
-			draw_rectangle(draw_x, draw_y, draw_x + STORAGESQUARESIZE, draw_y + STORAGESQUARESIZE, false);
+			draw_sprite(sItem_container, container_image_index, draw_x, draw_y);
 			
 			// check if an item is filling this space
 			var current_item = storage_grid[# r, c];
@@ -68,6 +68,29 @@ function move_and_swap_items(storage1, x1, y1, storage2, x2, y2) {
 	var item2 = storage2.grid[# x2, y2];
 	
 	if(is_struct(item1)) {
+		var can_swap1 = false;
+		var can_swap2 = false;
+		var req1 = storage1.items_allowed;
+		var req2 = storage2.items_allowed;
+		// checks if item 1 can fit into space2
+		if(is_array(req2)) {
+			for(var i = 0; i < array_length(req2); i++) {
+				var requirement = req2[i];
+				if(requirement == item1.type) can_swap1 = true;
+			}
+		}
+		else can_swap1 = true;
+		// checks if item 2 can fit into space1
+		if(is_struct(item2) && is_array(req1)) {
+			for(var i = 0; i < array_length(req1); i++) {
+				var requirement = req1[i];
+				if(requirement == item2.type) can_swap2 = true;
+			}
+		}
+		else can_swap2 = true
+		
+		if(!can_swap1 || !can_swap2) return false;
+		
 		// if we're not moving over the same space
 		if(!array_equals([storage1, x1, y1], [storage2, x2, y2])) {
 			// overwise swap the two indexs
@@ -90,12 +113,27 @@ function storage_get_height(storage) {
 }
 	
 function storage_add_item(storage, item) {
-	var data = storage.grid;
-	for(var c = 0; c < ds_grid_height(data); c++) {
-		for(var r = 0; r < ds_grid_width(data); r++) {
-			if(data[# r, c] == -1) {
-				data[# r, c] = item;
-				return [r, c];
+	var requirements = storage.items_allowed;
+	var can_add = false;
+	
+	// checks to see if the item is allowed in the storage space
+	if(is_array(requirements)) { 
+		for(var i = 0; i < array_length(requirements); i++) {
+			var requirement = requirements[i];
+			if(requirement == item.type) can_add = true;	
+		}
+	}
+	else can_add = true;
+	
+	if(can_add) {
+		// trys to find an empty space in the grid to add the item
+		var data = storage.grid;
+		for(var c = 0; c < ds_grid_height(data); c++) {
+			for(var r = 0; r < ds_grid_width(data); r++) {
+				if(data[# r, c] == -1) {
+					data[# r, c] = item;
+					return [r, c];
+				}
 			}
 		}
 	}

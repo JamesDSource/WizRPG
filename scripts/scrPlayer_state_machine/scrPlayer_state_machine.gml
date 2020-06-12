@@ -37,11 +37,27 @@ function player_state_free(){
 	// interacting
 	if(keyboard_check_pressed(ord("E"))) interact();
 	
+	// scrolling through toolbar
+	global.square_selected = toolbar_equipt;
+	if(mouse_wheel_up()) {
+		toolbar_equipt[1]--;
+		toolbar_equipt[1] = max(toolbar_equipt[1], 0);
+	}
+	else if(mouse_wheel_down()) {
+		toolbar_equipt[1]++;
+		toolbar_equipt[1] = min(toolbar_equipt[1], ds_grid_width(toolbar.grid)-1);
+	}
+	
 	// opening inventory
-	if(keyboard_check_pressed(vk_tab)) state = states.inventory;
+	if(keyboard_check_pressed(vk_tab)) {
+		state = states.inventory;
+		target_speed = 0;
+	}
 }
 
 function player_state_inventory() {
+	event_inherited();
+	
 	// selecting a square
 	var gui_mouse_x = device_mouse_x_to_gui(0);
 	var gui_mouse_y = device_mouse_y_to_gui(0);
@@ -74,5 +90,8 @@ function player_state_inventory() {
 	}
 	
 	// closeing inventory
-	if(keyboard_check_pressed(vk_tab)) state = states.free;
+	if(keyboard_check_pressed(vk_tab)) {
+		state = states.free;
+		global.square_moving = [-1, -1, -1];	
+	}
 }

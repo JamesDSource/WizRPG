@@ -1,6 +1,7 @@
 enum ITEMTYPE {
 	STAFF,
-	SPELLS,
+	SPELL,
+	CHARM,
 	MISC
 }
 

@@ -45,12 +45,12 @@ inventory_surface_draw_x = VIEWWIDTH/2 - inventory_surface_w/2;
 inventory_surface_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
 
 // main inventory storage
-inventory = new storage(10, 5, [ITEMTYPE.STAFF, ITEMTYPE.SPELLS, ITEMTYPE.MISC]);
+inventory = new storage(10, 5, "All");
 inventory_draw_x = inventory_surface_draw_x;
 inventory_draw_y = inventory_surface_draw_y;
 
 // spells
-spells = new storage(8, 1, [ITEMTYPE.SPELLS])
+spells = new storage(8, 1, [ITEMTYPE.SPELL])
 spells_draw_x = inventory_surface_draw_x;
 spells_draw_y = inventory_surface_draw_y + inventory_surface_h - storage_get_height(spells);;
 
@@ -59,6 +59,7 @@ spells_draw_y = inventory_surface_draw_y + inventory_surface_h - storage_get_hei
 toolbar = new storage(5, 1, [ITEMTYPE.STAFF]);
 toolbar_draw_x = inventory_surface_draw_x;
 toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
+toolbar_equipt = [toolbar, 0, 0];
 
 global.square_selected = [-1, -1, -1];	// [grid index, x, y]
 global.square_moving = [-1, -1, -1];	// [grid index, x, y]
