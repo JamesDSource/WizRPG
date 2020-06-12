@@ -1,4 +1,5 @@
-draw_text(20, 20, string(x) + "/" + string(y) + "/" + string(z));
+draw_set_align(fa_left, fa_top);
+draw_text(10, 10, string(x) + "/" + string(y) + "/" + string(z));
 
 switch(state) {
 	case states.free:
@@ -21,10 +22,10 @@ switch(state) {
 				draw_storage(toolbar, 0, toolbar_y);
 		
 				draw_set_color(c_white);
-				draw_set_align(fa_left, fa_top);
+				draw_set_align(fa_left, fa_middle);
 				draw_set_font(fRune);
-				draw_text(storage_get_width(toolbar), toolbar_y, "Toolbar");
-				draw_text(storage_get_width(spells), spells_y, "Spells");
+				draw_text(storage_get_width(toolbar), toolbar_y + storage_get_height(toolbar)/2, "Toolbar");
+				draw_text(storage_get_width(spells), spells_y + storage_get_height(spells)/2, "Spells");
 		
 		
 				surface_reset_target();
