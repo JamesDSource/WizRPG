@@ -45,16 +45,27 @@ function player_state_free(){
 	if(keyboard_check_pressed(ord("E"))) interact();
 	
 	// scrolling through toolbar
-	global.square_selected = toolbar_equipt;
-	if(mouse_wheel_up() || mouse_wheel_down() || update_toolbar) { 
-		toolbar_alpha = 1;
+	if(mouse_wheel_up() || mouse_wheel_down() || update_toolbar) {
+		if(keyboard_check(vk_shift)) {
+			toolbar_alpha = 0;
+			spells_alpha = 1;
+			if(mouse_wheel_up()) spells_equipt[1]--;
+			else if(mouse_wheel_down()) spells_equipt[1]++;
+		
+			spells_equipt[1] = clamp(spells_equipt[1], 0, ds_grid_width(spells_equipt[0].grid)-1);
+			global.square_selected = spells_equipt;
+		}
+		else {
+			toolbar_alpha = 1;
+			spells_alpha = 0;
+			if(mouse_wheel_up()) toolbar_equipt[1]--;
+			else if(mouse_wheel_down()) toolbar_equipt[1]++;
+		
+			toolbar_equipt[1] = clamp(toolbar_equipt[1], 0, ds_grid_width(toolbar_equipt[0].grid)-1);
+			global.square_selected = toolbar_equipt;
+		}
 		update_toolbar = false;
-		
-		if(mouse_wheel_up()) toolbar_equipt[1]--;
-		else if(mouse_wheel_down()) toolbar_equipt[1]++;
-		
-		toolbar_equipt[1] = clamp(toolbar_equipt[1], 0, ds_grid_width(toolbar.grid)-1);
-		
+
 		// setting the equipt item
 		var new_item = toolbar_equipt[0].grid[# toolbar_equipt[1], toolbar_equipt[2]];
 		equipt_item.index = new_item;
@@ -87,10 +98,12 @@ function player_state_inventory() {
 	var inventory_result = storage_find_pos(inventory, inventory_draw_x, inventory_draw_y, gui_mouse_x, gui_mouse_y);
 	var toolbar_result = storage_find_pos(toolbar, toolbar_draw_x, toolbar_draw_y, gui_mouse_x, gui_mouse_y);
 	var spells_result = storage_find_pos(spells, spells_draw_x, spells_draw_y, gui_mouse_x, gui_mouse_y);
+	var charms_result = storage_find_pos(charms, charms_draw_x, charms_draw_y, gui_mouse_x, gui_mouse_y);
 	
 	if(inventory_result != -1) global.square_selected = [inventory, inventory_result[0], inventory_result[1]];
 	else if(spells_result != -1) global.square_selected = [spells, spells_result[0], spells_result[1]];
 	else if(toolbar_result != -1) global.square_selected = [toolbar, toolbar_result[0], toolbar_result[1]];
+	else if(charms_result != -1) global.square_selected = [charms, charms_result[0], charms_result[1]];
 	else global.square_selected = [-1, -1, -1];
 	
 	// dragging items

@@ -2,14 +2,26 @@ if(surface_exists(global.gui_surface)) {
 	switch(state) {
 		case states.free:
 			surface_set_target(global.gui_surface);
-			var toolbar_draw_x = VIEWWIDTH/2 - storage_get_width(toolbar)/2;
-			var toolbar_draw_y = VIEWHEIGHT - storage_get_height(toolbar);
+			if(toolbar_alpha > 0) {
+				var toolbar_draw_x = VIEWWIDTH/2 - storage_get_width(toolbar)/2;
+				var toolbar_draw_y = VIEWHEIGHT - storage_get_height(toolbar);
 	
-			var channel = animcurve_get_channel(acUI, "fade");
-			var curve = animcurve_channel_evaluate(channel, toolbar_alpha);
-			draw_set_alpha(curve);
-			draw_storage(toolbar, toolbar_draw_x, toolbar_draw_y);
-			draw_set_alpha(1);
+				var channel = animcurve_get_channel(acUI, "fade");
+				var curve = animcurve_channel_evaluate(channel, toolbar_alpha);
+				draw_set_alpha(curve);
+				draw_storage(toolbar, toolbar_draw_x, toolbar_draw_y);
+				draw_set_alpha(1);
+			}
+			else if(spells_alpha > 0) {
+				var spells_draw_x = VIEWWIDTH/2 - storage_get_width(spells)/2;
+				var spells_draw_y = VIEWHEIGHT - storage_get_height(spells);
+	
+				var channel = animcurve_get_channel(acUI, "fade");
+				var curve = animcurve_channel_evaluate(channel, spells_alpha);
+				draw_set_alpha(curve);
+				draw_storage(spells, spells_draw_x, spells_draw_y);
+				draw_set_alpha(1);
+			}
 			
 			surface_reset_target();
 			break;
@@ -26,12 +38,15 @@ if(surface_exists(global.gui_surface)) {
 					draw_storage(spells, 0, spells_y);
 					var toolbar_y = spells_y - storage_get_height(spells);
 					draw_storage(toolbar, 0, toolbar_y);
+					var charms_y = toolbar_y - storage_get_height(toolbar);
+					draw_storage(charms, 0, charms_y);
 		
 					draw_set_color(c_white);
 					draw_set_align(fa_left, fa_middle);
 					draw_set_font(fRune);
 					draw_text(storage_get_width(toolbar), toolbar_y + storage_get_height(toolbar)/2, "Toolbar");
 					draw_text(storage_get_width(spells), spells_y + storage_get_height(spells)/2, "Spells");
+					draw_text(storage_get_width(charms), charms_y + storage_get_height(charms)/2, "Charms");
 		
 		
 					surface_reset_target();
