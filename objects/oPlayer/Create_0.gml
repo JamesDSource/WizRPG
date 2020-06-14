@@ -60,6 +60,8 @@ toolbar = new storage(5, 1, [ITEMTYPE.STAFF]);
 toolbar_draw_x = inventory_surface_draw_x;
 toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
 toolbar_equipt = [toolbar, 0, 0];
+toolbar_alpha = 0;
+update_toolbar = false;
 
 equipt_item = {
 	index: -1,

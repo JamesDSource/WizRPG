@@ -21,6 +21,7 @@
     {"id":{"name":"sStick_wand","path":"sprites/sStick_wand/sStick_wand.yy",},"order":0,},
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"order":1,},
     {"id":{"name":"fRune_mono","path":"fonts/fRune_mono/fRune_mono.yy",},"order":0,},
+    {"id":{"name":"acUI","path":"animcurves/acUI/acUI.yy",},"order":1,},
     {"id":{"name":"scrItem_storage","path":"scripts/scrItem_storage/scrItem_storage.yy",},"order":3,},
     {"id":{"name":"sStick_wand_icon","path":"sprites/sStick_wand_icon/sStick_wand_icon.yy",},"order":1,},
     {"id":{"name":"shPostprocessing","path":"shaders/shPostprocessing/shPostprocessing.yy",},"order":2,},

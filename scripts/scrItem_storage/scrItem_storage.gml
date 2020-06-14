@@ -31,7 +31,6 @@ function draw_storage(storage, draw_x, draw_y) {
 				var prev_alpha = draw_get_alpha();
 				// draw item icon on square unless being dragged by mouse
 				if(array_equals(global.square_moving, [storage, r, c])) draw_set_alpha(prev_alpha/2); 
-				else draw_set_alpha(1);
 				draw_sprite(current_item.icon, 0, draw_x + 1, draw_y + 1);
 				draw_set_alpha(prev_alpha);
 			}

@@ -6,4 +6,4 @@ if(last_selected != interact_entity) {
 	last_selected = interact_entity;	
 }
 
-if(keyboard_check_pressed(vk_space)) inflict(ELEMENTTYPE.FIRE);
+toolbar_alpha = approach(toolbar_alpha, 0, 0.005);

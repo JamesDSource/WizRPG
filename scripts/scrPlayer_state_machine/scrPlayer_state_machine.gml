@@ -46,7 +46,10 @@ function player_state_free(){
 	
 	// scrolling through toolbar
 	global.square_selected = toolbar_equipt;
-	if(mouse_wheel_up || mouse_wheel_down()) { 
+	if(mouse_wheel_up() || mouse_wheel_down() || update_toolbar) { 
+		toolbar_alpha = 1;
+		update_toolbar = false;
+		
 		if(mouse_wheel_up()) toolbar_equipt[1]--;
 		else if(mouse_wheel_down()) toolbar_equipt[1]++;
 		
@@ -111,6 +114,7 @@ function player_state_inventory() {
 	// closeing inventory
 	if(keyboard_check_pressed(vk_tab)) {
 		state = states.free;
+		update_toolbar = true;
 		global.square_moving = [-1, -1, -1];	
 	}
 }
