@@ -14,5 +14,32 @@ function item(i_name, i_type, i_sprite, i_icon, i_action) constructor {
 }
 
 #region items
-	global.test_item = new item("Test Item", ITEMTYPE.MISC, -1, sTest_item_icon, -1);
+	function staff_wand_default_behavior(data, x_pos, y_pos) {
+		data.angle = point_direction(x_pos, y_pos, mouse_x, mouse_y);
+	}
+
+	global.items = {
+		// staffs
+		stick_wand: new item(
+			"Forest Staff",
+			ITEMTYPE.STAFF,
+			sStick_wand,
+			sStick_wand_icon,
+			function act_stick_wand(data, x_pos, y_pos, height) {
+				staff_wand_default_behavior(data, x_pos, y_pos);
+			}
+		),
+		
+		forest_staff: new item(
+			"Forest Staff",
+			ITEMTYPE.STAFF,
+			sForest_staff,
+			sForest_staff_icon,
+			function act_forest_staff(data, x_pos, y_pos, height) {
+				staff_wand_default_behavior(data, x_pos, y_pos);
+			}
+		)
+		
+		
+	};
 #endregion

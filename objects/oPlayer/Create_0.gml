@@ -61,7 +61,17 @@ toolbar_draw_x = inventory_surface_draw_x;
 toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
 toolbar_equipt = [toolbar, 0, 0];
 
+equipt_item = {
+	index: -1,
+	sprite: noone,
+	angle: 0,
+	alpha: 1
+};
+item_height_base = 14;
+item_height = item_height_base;
+
 global.square_selected = [-1, -1, -1];	// [grid index, x, y]
 global.square_moving = [-1, -1, -1];	// [grid index, x, y]
 
-repeat(2) storage_add_item(inventory, global.test_item);
+storage_add_item(inventory, global.items.forest_staff);
+storage_add_item(inventory, global.items.stick_wand);

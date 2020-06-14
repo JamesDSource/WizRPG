@@ -7,8 +7,14 @@ function player_state_free(){
 	if(vDir != 0 || hDir != 0) {
 		target_speed = 3;	
 		dir = point_direction(0, 0, hDir, vDir);
+		
+		// making held items bob up and down
+		item_height = item_height_base + wave(-2, 2, 1, 0);
 	}
-	else target_speed = 0;
+	else {
+		target_speed = 0;
+		item_height = item_height_base;	
+	}
 	
 	event_inherited();
 	
@@ -31,6 +37,7 @@ function player_state_free(){
 			}
 		}
 	}
+	
 	sprite_index = sprite_sides[floor(side)][0];
 	image_xscale = sprite_sides[floor(side)][1];
 	
@@ -39,13 +46,23 @@ function player_state_free(){
 	
 	// scrolling through toolbar
 	global.square_selected = toolbar_equipt;
-	if(mouse_wheel_up()) {
-		toolbar_equipt[1]--;
-		toolbar_equipt[1] = max(toolbar_equipt[1], 0);
+	if(mouse_wheel_up || mouse_wheel_down()) { 
+		if(mouse_wheel_up()) toolbar_equipt[1]--;
+		else if(mouse_wheel_down()) toolbar_equipt[1]++;
+		
+		toolbar_equipt[1] = clamp(toolbar_equipt[1], 0, ds_grid_width(toolbar.grid)-1);
+		
+		// setting the equipt item
+		var new_item = toolbar_equipt[0].grid[# toolbar_equipt[1], toolbar_equipt[2]];
+		equipt_item.index = new_item;
+		equipt_item.angle = 0;
+		equipt_item.alpha = 1;
+		if(is_struct(new_item)) equipt_item.sprite = new_item.sprite;
 	}
-	else if(mouse_wheel_down()) {
-		toolbar_equipt[1]++;
-		toolbar_equipt[1] = min(toolbar_equipt[1], ds_grid_width(toolbar.grid)-1);
+	
+	// item functions
+	if(is_struct(equipt_item.index)) {
+		equipt_item.index.action(equipt_item, x, y - item_height, item_height);
 	}
 	
 	// opening inventory
