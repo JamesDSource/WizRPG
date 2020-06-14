@@ -1,4 +1,4 @@
-#macro STORAGESQUARESIZE 16
+#macro STORAGESQUARESIZE 17
 #macro STORAGESQUAREMARGIN 4
 
 function storage(w, h, item_types) constructor {
@@ -28,10 +28,12 @@ function draw_storage(storage, draw_x, draw_y) {
 			// check if an item is filling this space
 			var current_item = storage_grid[# r, c];
 			if(is_struct(current_item)) {
+				var prev_alpha = draw_get_alpha();
 				// draw item icon on square unless being dragged by mouse
-				if(array_equals(global.square_moving, [storage, r, c])) draw_set_alpha(0.5); 
-				draw_sprite(current_item.icon, 0, draw_x, draw_y);	
-				draw_set_alpha(1);
+				if(array_equals(global.square_moving, [storage, r, c])) draw_set_alpha(prev_alpha/2); 
+				else draw_set_alpha(1);
+				draw_sprite(current_item.icon, 0, draw_x + 1, draw_y + 1);
+				draw_set_alpha(prev_alpha);
 			}
 			
 			draw_x += STORAGESQUARESIZE + STORAGESQUAREMARGIN;
@@ -131,7 +133,8 @@ function storage_add_item(storage, item) {
 		for(var c = 0; c < ds_grid_height(data); c++) {
 			for(var r = 0; r < ds_grid_width(data); r++) {
 				if(data[# r, c] == -1) {
-					data[# r, c] = item;
+					var new_item = item_copy(item);
+					data[# r, c] = new_item;
 					return [r, c];
 				}
 			}

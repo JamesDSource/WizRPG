@@ -56,7 +56,7 @@ spells_draw_y = inventory_surface_draw_y + inventory_surface_h - storage_get_hei
 
 
 // toolbar
-toolbar = new storage(5, 1, "All");
+toolbar = new storage(5, 1, [ITEMTYPE.STAFF]);
 toolbar_draw_x = inventory_surface_draw_x;
 toolbar_draw_y = spells_draw_y - storage_get_height(toolbar);
 toolbar_equipt = [toolbar, 0, 0];
@@ -64,11 +64,13 @@ toolbar_equipt = [toolbar, 0, 0];
 equipt_item = {
 	index: -1,
 	sprite: noone,
+	x_pos: x,
+	y_pos: y,
+	z_pos: z,
 	angle: 0,
 	alpha: 1
 };
 item_height_base = 14;
-item_height = item_height_base;
 
 global.square_selected = [-1, -1, -1];	// [grid index, x, y]
 global.square_moving = [-1, -1, -1];	// [grid index, x, y]

@@ -13,9 +13,21 @@ function item(i_name, i_type, i_sprite, i_icon, i_action) constructor {
 	action = i_action;	// function that plays when item is held (or when in a charm slot)
 }
 
+function item_copy(item) {
+	var copy = {
+		name: item.name,	
+		type: item.type,	
+		sprite: item.sprite,	
+		icon: item.icon,	
+		action: item.action	
+	};
+	
+	return copy;
+}
+
 #region items
-	function staff_wand_default_behavior(data, x_pos, y_pos) {
-		data.angle = point_direction(x_pos, y_pos, mouse_x, mouse_y);
+	function staff_wand_default_behavior(data) {
+		data.angle = point_direction(data.x_pos, data.y_pos - data.z_pos, mouse_x, mouse_y);
 	}
 
 	global.items = {
@@ -25,8 +37,8 @@ function item(i_name, i_type, i_sprite, i_icon, i_action) constructor {
 			ITEMTYPE.STAFF,
 			sStick_wand,
 			sStick_wand_icon,
-			function act_stick_wand(data, x_pos, y_pos, height) {
-				staff_wand_default_behavior(data, x_pos, y_pos);
+			function act_stick_wand(data) {
+				staff_wand_default_behavior(data);
 			}
 		),
 		
@@ -35,8 +47,8 @@ function item(i_name, i_type, i_sprite, i_icon, i_action) constructor {
 			ITEMTYPE.STAFF,
 			sForest_staff,
 			sForest_staff_icon,
-			function act_forest_staff(data, x_pos, y_pos, height) {
-				staff_wand_default_behavior(data, x_pos, y_pos);
+			function act_forest_staff(data) {
+				staff_wand_default_behavior(data);
 			}
 		)
 		

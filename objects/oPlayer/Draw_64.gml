@@ -4,7 +4,9 @@ if(surface_exists(global.gui_surface)) {
 			surface_set_target(global.gui_surface);
 			var toolbar_draw_x = VIEWWIDTH/2 - storage_get_width(toolbar)/2;
 			var toolbar_draw_y = VIEWHEIGHT - storage_get_height(toolbar);
+			draw_set_alpha(0.8);
 			draw_storage(toolbar, toolbar_draw_x, toolbar_draw_y);
+			draw_set_alpha(1);
 			surface_reset_target();
 			break;
 	

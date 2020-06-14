@@ -9,11 +9,11 @@ function player_state_free(){
 		dir = point_direction(0, 0, hDir, vDir);
 		
 		// making held items bob up and down
-		item_height = item_height_base + wave(-2, 2, 1, 0);
+		equipt_item.z_pos = z + item_height_base + wave(-2, 2, 1, 0);
 	}
 	else {
 		target_speed = 0;
-		item_height = item_height_base;	
+		equipt_item.z_pos = z + item_height_base;	
 	}
 	
 	event_inherited();
@@ -62,7 +62,9 @@ function player_state_free(){
 	
 	// item functions
 	if(is_struct(equipt_item.index)) {
-		equipt_item.index.action(equipt_item, x, y - item_height, item_height);
+		equipt_item.x_pos = x;
+		equipt_item.y_pos = y;
+		equipt_item.index.action(equipt_item);
 	}
 	
 	// opening inventory
