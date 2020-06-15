@@ -50,6 +50,26 @@ function item_copy(item) {
 			function act_forest_staff(data) {
 				staff_wand_default_behavior(data);
 			}
+		),
+		
+		mushroom_wand: new item(
+			"Mushroom Wand",
+			ITEMTYPE.STAFF,
+			sMushroom_wand,
+			sMushroom_wand_icon,
+			function act_mushroom_wand(data) {
+				staff_wand_default_behavior(data);	
+			}
+		), 
+		
+		lightning_staff: new item(
+			"Lightning Staff",
+			ITEMTYPE.STAFF,
+			sLightning_staff,
+			sLightning_staff_icon,
+			function act_lightning_staff(data) {
+				staff_wand_default_behavior(data);	
+			}
 		)
 		
 		

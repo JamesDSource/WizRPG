@@ -88,3 +88,5 @@ global.square_moving = [-1, -1, -1];	// [grid index, x, y]
 
 storage_add_item(inventory, global.items.forest_staff);
 storage_add_item(inventory, global.items.stick_wand);
+storage_add_item(inventory, global.items.lightning_staff);
+storage_add_item(inventory, global.items.mushroom_wand);

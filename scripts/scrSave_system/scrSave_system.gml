@@ -46,7 +46,7 @@ function init_save_file(numb) {
 		ds_map_add_list(player_storage, "spells", player_storage_spells);
 		//		charms
 		var player_storage_charms = ds_list_create();
-		ds_map_add_list(player_storage, "toolbar", player_storage_charms);
+		ds_map_add_list(player_storage, "charms", player_storage_charms);
 	
 		ds_map_add_map(player, "storage", player_storage);
 	
@@ -56,6 +56,31 @@ function init_save_file(numb) {
 	
 	save_json_to_file(SAVEFILENAME + string(numb) + SAVEFILETYPE, new_save);
 	ds_map_destroy(new_save);
+}
+
+// encoding item data into a list from storage
+function storage_encode(storage, list) {
+	ds_list_clear(list);
+	var grid = storage.grid;
+	for(var r = 0; r < ds_grid_width(grid); r++) {
+		for(var c = 0; c < ds_grid_height(grid); c++) {
+			var current_item = grid[# r, c];
+			if(is_struct(current_item)) {
+				var item_map = ds_map_create();
+			
+				ds_map_add(item_map, "name", current_item.name);
+				ds_map_add(item_map, "type", current_item.type);
+				ds_map_add(item_map, "sprite", current_item.sprite);
+				ds_map_add(item_map, "icon", current_item.icon);
+				ds_map_add(item_map, "action", current_item.action);
+			
+				ds_list_add(list, item_map);
+				ds_list_mark_as_map(list, ds_list_find_index(list, item_map));
+			}
+		}
+	}
+	
+	return ds_list_size(list);
 }
 
 // saving
@@ -85,6 +110,25 @@ function save(numb) {
 					ds_list_add(room_data, entity_save_data);
 					ds_list_mark_as_map(room_data, ds_list_find_index(room_data, entity_save_data));
 				}
+			}
+		#endregion
+		
+		#region player
+			if(instance_exists(oPlayer)) {
+				var player_data = save_data[? "player"];
+				with(oPlayer) {
+					var storage_inventory = inventory;
+					var storage_toolbar = toolbar;
+					var storage_spells = spells;
+					var storage_charms = charms;
+				}
+			
+				// storage
+				storage_encode(storage_inventory, player_data[? "storage"][? "inventory"]);
+				storage_encode(storage_toolbar, player_data[? "storage"][? "toolbar"]);
+				storage_encode(storage_spells, player_data[? "storage"][? "spells"]);
+				storage_encode(storage_charms, player_data[? "storage"][? "charms"]);
+			
 			}
 		#endregion
 		save_json_to_file(file, save_data);

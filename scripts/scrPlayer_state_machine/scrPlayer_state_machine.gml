@@ -76,8 +76,8 @@ function player_state_free() {
 	
 	// item functions
 	var ang = point_direction(x, y-equipt_item.z_pos, mouse_x, mouse_y);
-	equipt_item.x_offset = approach(equipt_item.x_offset, lengthdir_x(10, ang), 0.25);
-	equipt_item.y_offset = approach(equipt_item.y_offset, lengthdir_y(10, ang), 0.25);
+	equipt_item.x_offset = approach(equipt_item.x_offset, lengthdir_x(10, ang), abs(lengthdir_x(0.5, ang)));
+	equipt_item.y_offset = approach(equipt_item.y_offset, lengthdir_y(10, ang), abs(lengthdir_y(0.5, ang)));
 	equipt_item.x_pos = x + equipt_item.x_offset;
 	equipt_item.y_pos = y + equipt_item.y_offset;
 	if(is_struct(equipt_item.index)) {
