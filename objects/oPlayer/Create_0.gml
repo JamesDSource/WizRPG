@@ -76,6 +76,8 @@ equipt_item = {
 	x_pos: x,
 	y_pos: y,
 	z_pos: z,
+	x_offset: 0,
+	y_offset: 0,
 	angle: 0,
 	alpha: 1
 };

@@ -8,3 +8,8 @@ if(last_selected != interact_entity) {
 
 toolbar_alpha = approach(toolbar_alpha, 0, 0.005);
 spells_alpha = approach(spells_alpha, 0, 0.005);
+
+
+if(keyboard_check_pressed(vk_space)) {
+	save(0);	
+}

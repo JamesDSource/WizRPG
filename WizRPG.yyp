@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"sPlayer_back","path":"sprites/sPlayer_back/sPlayer_back.yy",},"order":3,},
     {"id":{"name":"sFlame_particle","path":"sprites/sFlame_particle/sFlame_particle.yy",},"order":1,},
+    {"id":{"name":"scrSave_system","path":"scripts/scrSave_system/scrSave_system.yy",},"order":0,},
     {"id":{"name":"sTest_item_icon","path":"sprites/sTest_item_icon/sTest_item_icon.yy",},"order":3,},
     {"id":{"name":"scrPlayer_state_machine","path":"scripts/scrPlayer_state_machine/scrPlayer_state_machine.yy",},"order":2,},
     {"id":{"name":"scrText","path":"scripts/scrText/scrText.yy",},"order":4,},
@@ -81,6 +82,7 @@
     {"folderPath":"folders/Items.yy","order":13,"resourceVersion":"1.0","name":"Items","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Forest Staff.yy","order":2,"resourceVersion":"1.0","name":"Forest Staff","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Stick Wand.yy","order":3,"resourceVersion":"1.0","name":"Stick Wand","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Saving and Loading.yy","order":14,"resourceVersion":"1.0","name":"Saving and Loading","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
