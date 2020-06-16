@@ -36,12 +36,16 @@ box_progress = 0;
 last_selected = noone;
 
 // inventory system
+function open_inventory() {
+	state = states.inventory;
+	target_speed = 0;
+}
 
 // the surface
 inventory_surface = -1;
 inventory_surface_w = VIEWWIDTH/1.5;
 inventory_surface_h = VIEWHEIGHT/1.5;
-inventory_surface_draw_x = VIEWWIDTH/2 - inventory_surface_w/2;
+inventory_surface_draw_x = 10;
 inventory_surface_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
 
 // main inventory storage
