@@ -3,7 +3,7 @@
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -17,7 +17,11 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oMenus","path":"objects/oMenus/oMenus.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"parent":{"name":"oMenus","path":"objects/oMenus/oMenus.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"parent":{"name":"oMenus","path":"objects/oMenus/oMenus.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

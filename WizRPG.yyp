@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"scrMenus","path":"scripts/scrMenus/scrMenus.yy",},"order":4,},
     {"id":{"name":"sPlayer_back","path":"sprites/sPlayer_back/sPlayer_back.yy",},"order":3,},
     {"id":{"name":"sFlame_particle","path":"sprites/sFlame_particle/sFlame_particle.yy",},"order":1,},
     {"id":{"name":"scrSave_system","path":"scripts/scrSave_system/scrSave_system.yy",},"order":0,},

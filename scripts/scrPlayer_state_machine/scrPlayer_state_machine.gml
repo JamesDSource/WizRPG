@@ -53,7 +53,6 @@ function player_state_free() {
 			else if(mouse_wheel_down()) spells_equipt[1]++;
 		
 			spells_equipt[1] = clamp(spells_equipt[1], 0, ds_grid_width(spells_equipt[0].grid)-1);
-			global.square_selected = spells_equipt;
 		}
 		else {
 			toolbar_alpha = 1;
@@ -62,7 +61,6 @@ function player_state_free() {
 			else if(mouse_wheel_down()) toolbar_equipt[1]++;
 		
 			toolbar_equipt[1] = clamp(toolbar_equipt[1], 0, ds_grid_width(toolbar_equipt[0].grid)-1);
-			global.square_selected = toolbar_equipt;
 		}
 		update_toolbar = false;
 
@@ -118,10 +116,8 @@ function player_state_inventory() {
 			if(is_struct(selected_item)) global.square_moving = global.square_selected;
 		}
 		else { // if we are moving an item
-			show_debug_message("part 1");
 			if(move_and_swap_items(global.square_moving[0], global.square_moving[1], global.square_moving[2], 
 			global.square_selected[0], global.square_selected[1], global.square_selected[2])) {
-				show_debug_message("part 2");
 				global.square_moving = [-1, -1, -1];	
 			}
 		}
@@ -131,6 +127,6 @@ function player_state_inventory() {
 	if(keyboard_check_pressed(vk_tab)) {
 		state = states.free;
 		update_toolbar = true;
-		global.square_moving = [-1, -1, -1];	
+		panel_set_activation("inventory", false);	
 	}
 }

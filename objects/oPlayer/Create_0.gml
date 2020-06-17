@@ -20,12 +20,6 @@ sprite_sides = [
 	[sPlayer_side, -1],
 	[sPlayer_front, 1]
 ];
-//sprite_sides = [
-//	[sMushroom_spider_walk_side, 1],
-//	[sMushroom_spider_walk_back, 1],
-//	[sMushroom_spider_walk_side, -1],
-//	[sMushroom_spider_walk_front, 1]
-//];
 
 side = sprite_side_index.front;
 
@@ -38,15 +32,17 @@ last_selected = noone;
 // inventory system
 function open_inventory() {
 	state = states.inventory;
+	panel_set_activation("inventory", true);
 	target_speed = 0;
 }
 
-// the surface
-inventory_surface = -1;
+// the panel
 inventory_surface_w = VIEWWIDTH/1.5;
 inventory_surface_h = VIEWHEIGHT/1.5;
 inventory_surface_draw_x = 10;
 inventory_surface_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
+
+panel_add("inventory", inventory_surface_w, inventory_surface_h, inventory_surface_draw_x, inventory_surface_draw_y);
 
 // main inventory storage
 inventory = new storage(11, 4, "All");

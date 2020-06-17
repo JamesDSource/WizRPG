@@ -27,36 +27,6 @@ if(surface_exists(global.gui_surface)) {
 			break;
 	
 		case states.inventory:
-			if(surface_exists(inventory_surface)) {
-					surface_set_target(inventory_surface);
-					draw_set_color(c_black);
-					draw_rectangle(0, 0, inventory_surface_w, inventory_surface_h, false);
-		
-					// drawing storage
-					draw_storage(inventory, 0, 0);
-					var spells_y = inventory_surface_h - storage_get_height(spells);
-					draw_storage(spells, 0, spells_y);
-					var toolbar_y = spells_y - storage_get_height(spells);
-					draw_storage(toolbar, 0, toolbar_y);
-					var charms_y = toolbar_y - storage_get_height(toolbar);
-					draw_storage(charms, 0, charms_y);
-		
-					draw_set_color(c_white);
-					draw_set_align(fa_left, fa_middle);
-					draw_set_font(fRune);
-					draw_text(storage_get_width(toolbar), toolbar_y + storage_get_height(toolbar)/2, "Toolbar");
-					draw_text(storage_get_width(spells), spells_y + storage_get_height(spells)/2, "Spells");
-					draw_text(storage_get_width(charms), charms_y + storage_get_height(charms)/2, "Charms");
-		
-		
-					surface_reset_target();
-					surface_set_target(global.gui_surface);
-					draw_surface(inventory_surface, inventory_surface_draw_x, inventory_surface_draw_y);
-					surface_reset_target();
-					
-			}
-			else inventory_surface = surface_create(inventory_surface_w, inventory_surface_h);
-
 			// drawing a dragged icon on the mouse
 			if(!array_equals(global.square_moving, [-1, -1, -1])) {
 				var moving_grid = global.square_moving[0].grid;
