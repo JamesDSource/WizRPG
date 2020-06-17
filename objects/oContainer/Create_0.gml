@@ -19,5 +19,5 @@ items_draw_x = VIEWWIDTH - items_w - 10;
 items_draw_y = VIEWHEIGHT/2 - items_h/2;
 
 panel_add(string(id), items_w, items_h, items_draw_x, items_draw_y);
-panel_add_element(string(id), "items", MENUELEMENT.STORAGE, items, 0, text_get_height(name_text));
+panel_add_element(string(id), "items", MENUELEMENT.STORAGE, items, items_w/2 - storage_get_width(items)/2, text_get_height(name_text));
 panel_add_element(string(id), "name", MENUELEMENT.TEXT, name_text, 0, 0);
