@@ -13,6 +13,8 @@ function item(i_name, i_type, i_sprite, i_icon, i_action) constructor {
 	action = i_action;	// function that plays when item is held (or when in a charm slot)
 }
 
+global.item_memory = array_create(0);
+
 function item_copy(item) {
 	var copy = {
 		name: item.name,	
@@ -22,6 +24,7 @@ function item_copy(item) {
 		action: item.action	
 	};
 	
+	global.item_memory[array_length(global.item_memory)] = copy;
 	return copy;
 }
 

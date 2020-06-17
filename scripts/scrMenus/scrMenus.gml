@@ -59,7 +59,7 @@ function panel_set_activation(name, activation) {
 }
 
 function panel_add_element(name, element_name, element_type, element, x_pos, y_pos) {
-	if(instance_exists(oMenus)) {
+	if(instance_exists(oMenus)) {	
 		var map = oMenus.panels;
 		var elements_map = map[? name].elements;
 		var elements_list = map[? name].elements_names;

@@ -1,4 +1,4 @@
-#macro STORAGESQUARESIZE 17
+#macro STORAGESQUARESIZE 18
 #macro STORAGESQUAREMARGIN 4
 
 function storage(w, h, item_types) constructor {
@@ -30,7 +30,7 @@ function draw_storage(storage, draw_x, draw_y) {
 			if(is_struct(current_item)) {
 				var prev_alpha = draw_get_alpha();
 				// draw item icon on square unless being dragged by mouse
-				if(array_equals(global.square_moving, [storage, r, c])) draw_set_alpha(prev_alpha/2); 
+				if(array_equals(global.square_moving, [storage, r, c])) draw_set_alpha(prev_alpha/2);
 				draw_sprite(current_item.icon, 0, draw_x + 1, draw_y + 1);
 				draw_set_alpha(prev_alpha);
 			}

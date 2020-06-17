@@ -11,6 +11,9 @@ if(instance_exists(interact_entity) && interact_entity.sprite_index != noone && 
 		var recty1 = y_org - sprite_height/2*curve;
 		var rectx2 = x_org + sprite_width/2*curve;
 		var recty2 = y_org + sprite_height/2*curve;
+		
+		draw_set_alpha(0.6);
 		draw_rectangle(rectx1, recty1, rectx2, recty2, true);
+		draw_set_alpha(1);
 	}
 }

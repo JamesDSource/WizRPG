@@ -70,8 +70,8 @@ function storage_encode(storage, list) {
 			
 				ds_map_add(item_map, "name", current_item.name);
 				ds_map_add(item_map, "type", current_item.type);
-				ds_map_add(item_map, "sprite", current_item.sprite);
-				ds_map_add(item_map, "icon", current_item.icon);
+				ds_map_add(item_map, "sprite", sprite_get_name(current_item.sprite));
+				ds_map_add(item_map, "icon", sprite_get_name(current_item.icon));
 				ds_map_add(item_map, "action", current_item.action);
 			
 				ds_list_add(list, item_map);
