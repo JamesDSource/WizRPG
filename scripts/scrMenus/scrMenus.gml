@@ -4,8 +4,8 @@ enum MENUELEMENT {
 }
 
 function panel (w, h, x_pos, y_pos) constructor {
-	width = w;
-	height = h;
+	width = w + PANELEDGE*2;
+	height = h + PANELEDGE*2;
 	x = x_pos;
 	y = y_pos;
 	surface = -1;
@@ -70,7 +70,7 @@ function panel_add_element(name, element_name, element_type, element, x_pos, y_p
 		}
 		
 		if(is_new) {
-			ds_map_add(elements_map, element_name, [element_type, element, x_pos, y_pos]);
+			ds_map_add(elements_map, element_name, [element_type, element, x_pos + PANELEDGE, y_pos + PANELEDGE]);
 			ds_list_add(elements_list, element_name);
 		}
 	}
@@ -86,3 +86,29 @@ function panel_remove_element(name, element_name) {
 		ds_list_delete(elements_list, ds_list_find_index(elements_list, element_name));
 	}
 }
+
+function panel_get_width(name) {
+	if(instance_exists(oMenus)) {
+		var map = oMenus.panels;
+		return map[? name].width;
+	}
+	else throw "oMenu does not exist";
+}
+
+function panel_get_height(name) {
+	if(instance_exists(oMenus)) {
+		var map = oMenus.panels;
+		return map[? name].height;
+	}
+	else throw "oMenu does not exist";
+}
+
+function panel_set_position(name, x_pos, y_pos) {
+	if(instance_exists(oMenus)) {
+		var map = oMenus.panels;
+		map[? name].x = x_pos;
+		map[? name].y = y_pos;
+	}
+	else throw "oMenu does not exist";
+}
+
