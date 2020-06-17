@@ -36,13 +36,6 @@ function open_inventory() {
 	target_speed = 0;
 }
 
-// the panel
-inventory_surface_w = VIEWWIDTH/1.5;
-inventory_surface_h = VIEWHEIGHT/1.5;
-inventory_surface_draw_x = 10;
-inventory_surface_draw_y = VIEWHEIGHT/2 - inventory_surface_h/2;
-
-panel_add("inventory", inventory_surface_w, inventory_surface_h, inventory_surface_draw_x, inventory_surface_draw_y);
 
 // main inventory storage
 main = new storage(11, 4, "All");
@@ -57,6 +50,17 @@ toolbar_alpha = 0;
 update_toolbar = false;
 // charms
 charms = new storage(3, 1, [ITEMTYPE.CHARM]);
+
+// the panel
+inventory_surface_w = storage_get_width(main);
+inventory_surface_h = VIEWHEIGHT/1.5;
+
+panel_add("inventory", inventory_surface_w, inventory_surface_h, 0, 0);
+
+inventory_surface_draw_x = 10;
+inventory_surface_draw_y = VIEWHEIGHT/2 - panel_get_height("inventory")/2;
+
+panel_set_position("inventory", inventory_surface_draw_x, inventory_surface_draw_y);
 
 panel_add_element("inventory", "main", MENUELEMENT.STORAGE, main, 0, 0);
 var spells_draw_y = inventory_surface_h - storage_get_height(spells);

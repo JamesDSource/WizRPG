@@ -1,9 +1,11 @@
 // loop through all panels and check for storage
 // spaces and see if the mouse is hovering over them
 global.square_selected = [-1, -1, -1];
+var panels_active = false;
 for(var i = 0; i < ds_list_size(panels_names); i++) {
 	var current_panel = panels[? panels_names[| i]];
 	if(current_panel.active) {
+		panels_active = true;
 		for(var j = 0; j < ds_list_size(current_panel.elements_names); j++) {
 			var current_element = current_panel.elements[? current_panel.elements_names[| j]];
 			var element_x = current_element[2] + current_panel.x;
@@ -38,3 +40,10 @@ if(mouse_check_button_pressed(mb_left) && !array_equals(global.square_selected, 
 		global.square_selected[0], global.square_selected[1], global.square_selected[2])) global.square_moving = [-1, -1, -1];	
 	}
 }
+
+// mouse cursor
+if(panels_active) {
+	if(array_equals(global.square_selected, [-1, -1, -1])) cursor_sprite = sMenu_cursor_deactivated;
+	else cursor_sprite = sMenu_cursor_activated;
+}
+else cursor_sprite = sMenu_cursor_target;
