@@ -10,7 +10,20 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 			draw_rectangle_color(0, 0, current_panel.width, current_panel.height, c_black, c_black, c_black, c_black, false);
 			
 			for(var j = 0; j < ds_list_size(current_panel.elements_names); j++) {
-					
+					var current_element = current_panel.elements[? current_panel.elements_names[| j]];
+					switch(current_element[0]) {
+						case MENUELEMENT.STORAGE:
+							draw_storage(current_element[1], current_element[2], current_element[3]);
+							break;
+						case MENUELEMENT.TEXT:
+							var txt = current_element[1];
+							draw_set_color(txt.color);
+							draw_set_font(txt.font);
+							draw_set_halign(txt.halign);
+							draw_set_valign(txt.valign);
+							draw_text(current_element[2], current_element[3], txt.str);
+							break;
+					}
 			}
 			surface_reset_target();
 			

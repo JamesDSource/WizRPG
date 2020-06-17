@@ -8,7 +8,7 @@
     {"id":{"name":"scrPlayer_state_machine","path":"scripts/scrPlayer_state_machine/scrPlayer_state_machine.yy",},"order":2,},
     {"id":{"name":"sLightning_staff_icon","path":"sprites/sLightning_staff_icon/sLightning_staff_icon.yy",},"order":1,},
     {"id":{"name":"sMushroom_wand_icon","path":"sprites/sMushroom_wand_icon/sMushroom_wand_icon.yy",},"order":0,},
-    {"id":{"name":"scrText","path":"scripts/scrText/scrText.yy",},"order":4,},
+    {"id":{"name":"scrText","path":"scripts/scrText/scrText.yy",},"order":6,},
     {"id":{"name":"sMushroom_wand","path":"sprites/sMushroom_wand/sMushroom_wand.yy",},"order":1,},
     {"id":{"name":"scrItems","path":"scripts/scrItems/scrItems.yy",},"order":0,},
     {"id":{"name":"scrConstants","path":"scripts/scrConstants/scrConstants.yy",},"order":1,},
@@ -43,6 +43,7 @@
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
     {"id":{"name":"sItem_container","path":"sprites/sItem_container/sItem_container.yy",},"order":0,},
     {"id":{"name":"scr3D","path":"scripts/scr3D/scr3D.yy",},"order":2,},
+    {"id":{"name":"Script10","path":"scripts/Script10/Script10.yy",},"order":5,},
     {"id":{"name":"rTest","path":"rooms/rTest/rTest.yy",},"order":1,},
   ],
   "Options": [

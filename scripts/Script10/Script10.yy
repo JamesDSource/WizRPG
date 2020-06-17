@@ -6,7 +6,7 @@
     "path": "folders/UI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scrText",
+  "name": "Script10",
   "tags": [],
   "resourceType": "GMScript",
 }
