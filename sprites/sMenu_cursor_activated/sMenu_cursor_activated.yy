@@ -69,8 +69,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4087c811-6d6c-447d-bb1a-cf05bc93d0b7","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "UI",
-    "path": "folders/UI.yy",
+    "name": "Cursors",
+    "path": "folders/UI/Cursors.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMenu_cursor_activated",

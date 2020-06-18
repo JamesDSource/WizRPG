@@ -12,7 +12,7 @@ function storage(w, h, item_types) constructor {
 	}
 }
 
-function draw_storage(storage, draw_x, draw_y) {
+function draw_storage(storage, draw_x, draw_y, highlighted) {
 	var storage_grid = storage.grid;
 	draw_x += STORAGESQUAREMARGIN;
 	draw_y += STORAGESQUAREMARGIN;
@@ -21,7 +21,7 @@ function draw_storage(storage, draw_x, draw_y) {
 	for(var c = 0; c < ds_grid_height(storage_grid); c++) {
 		for(var r = 0; r < ds_grid_width(storage_grid); r++) {
 			var container_image_index = 0;
-			if(array_equals(global.square_selected, [storage, r, c])) container_image_index = 1;
+			if(array_equals(highlighted, [storage, r, c])) container_image_index = 1;
 			
 			draw_sprite(sItem_container, container_image_index, draw_x, draw_y);
 			

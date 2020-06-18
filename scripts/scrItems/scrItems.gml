@@ -36,7 +36,7 @@ function item_copy(item) {
 	global.items = {
 		// staffs
 		stick_wand: new item(
-			"Forest Staff",
+			"Stick Wand",
 			ITEMTYPE.STAFF,
 			sStick_wand,
 			sStick_wand_icon,

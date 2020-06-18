@@ -23,22 +23,28 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 	}
 }
 
-// dragging items
-if(mouse_check_button_pressed(mb_left) && !array_equals(global.square_selected, [-1, -1, -1])) {
+mouse_text = "";
+if(!array_equals(global.square_selected, [-1, -1, -1])) {
 	var selected_grid = global.square_selected[0].grid;
 	var r = global.square_selected[1];
 	var c = global.square_selected[2];
 	var selected_item = selected_grid[# r, c];
 	
-	// if we're not moving any items yet
-	if(array_equals(global.square_moving, [-1, -1, -1])) {
-		// if your hovering over an item, set square moving to the square your hovering over
-		if(is_struct(selected_item)) global.square_moving = global.square_selected;
+	// dragging items
+	if(mouse_check_button_pressed(mb_left)) {
+		// if we're not moving any items yet
+		if(array_equals(global.square_moving, [-1, -1, -1])) {
+			// if your hovering over an item, set square moving to the square your hovering over
+			if(is_struct(selected_item)) global.square_moving = global.square_selected;
+		}
+		else { // if we are moving an item
+			if(move_and_swap_items(global.square_moving[0], global.square_moving[1], global.square_moving[2], 
+			global.square_selected[0], global.square_selected[1], global.square_selected[2])) global.square_moving = [-1, -1, -1];	
+		}
 	}
-	else { // if we are moving an item
-		if(move_and_swap_items(global.square_moving[0], global.square_moving[1], global.square_moving[2], 
-		global.square_selected[0], global.square_selected[1], global.square_selected[2])) global.square_moving = [-1, -1, -1];	
-	}
+
+	// item name on mouse
+	if(is_struct(selected_item)) mouse_text = selected_item.name;
 }
 
 // mouse cursor
@@ -46,4 +52,6 @@ if(panels_active) {
 	if(array_equals(global.square_selected, [-1, -1, -1])) cursor_sprite = sMenu_cursor_deactivated;
 	else cursor_sprite = sMenu_cursor_activated;
 }
-else cursor_sprite = sMenu_cursor_target;
+else {
+	cursor_sprite = sMenu_cursor_target_purple;	
+}

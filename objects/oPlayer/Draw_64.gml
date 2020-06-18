@@ -9,7 +9,7 @@ if(surface_exists(global.gui_surface)) {
 				var channel = animcurve_get_channel(acUI, "fade");
 				var curve = animcurve_channel_evaluate(channel, toolbar_alpha);
 				draw_set_alpha(curve);
-				draw_storage(toolbar, toolbar_draw_x, toolbar_draw_y);
+				draw_storage(toolbar, toolbar_draw_x, toolbar_draw_y, toolbar_equipt);
 				draw_set_alpha(1);
 			}
 			else if(spells_alpha > 0) {
@@ -19,24 +19,11 @@ if(surface_exists(global.gui_surface)) {
 				var channel = animcurve_get_channel(acUI, "fade");
 				var curve = animcurve_channel_evaluate(channel, spells_alpha);
 				draw_set_alpha(curve);
-				draw_storage(spells, spells_draw_x, spells_draw_y);
+				draw_storage(spells, spells_draw_x, spells_draw_y, spells_equipt);
 				draw_set_alpha(1);
 			}
 			
 			surface_reset_target();
-			break;
-	
-		case states.inventory:
-			// drawing a dragged icon on the mouse
-			if(!array_equals(global.square_moving, [-1, -1, -1])) {
-				var moving_grid = global.square_moving[0].grid;
-				var moving_item = moving_grid[# global.square_moving[1], global.square_moving[2]];
-	
-				var icon = moving_item.icon;
-				var dragged_icon_x = device_mouse_x_to_gui(0) - sprite_get_width(icon)/2;
-				var dragged_icon_y = device_mouse_y_to_gui(0) - sprite_get_height(icon)/2;
-				draw_sprite(icon, 0, dragged_icon_x, dragged_icon_y);
-			}
 			break;
 	}
 }
