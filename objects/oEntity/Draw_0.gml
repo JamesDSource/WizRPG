@@ -1,4 +1,4 @@
-if(sprite_index != noone) {
+if(sprite_exists(sprite_index)) {
 	// shadow
 	draw_set_color(c_black);
 	draw_set_alpha(0.2);

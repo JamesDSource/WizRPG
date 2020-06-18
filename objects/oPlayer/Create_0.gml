@@ -91,8 +91,3 @@ equipt_item = {
 	alpha: 1
 };
 item_height_base = 14;
-
-storage_add_item(main, global.items.forest_staff);
-storage_add_item(main, global.items.stick_wand);
-storage_add_item(main, global.items.lightning_staff);
-storage_add_item(main, global.items.mushroom_wand);

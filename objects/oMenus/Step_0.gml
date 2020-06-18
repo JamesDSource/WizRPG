@@ -53,5 +53,5 @@ if(panels_active) {
 	else cursor_sprite = sMenu_cursor_activated;
 }
 else {
-	cursor_sprite = sMenu_cursor_target_purple;	
+	cursor_sprite = sMenu_cursor_target;	
 }

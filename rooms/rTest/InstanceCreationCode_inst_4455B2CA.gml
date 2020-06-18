@@ -1,0 +1,1 @@
+item_is = global.items.forest_staff;
