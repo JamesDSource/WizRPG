@@ -22,8 +22,9 @@
   "physicsShapePoints": [],
   "eventList": [],
   "properties": [
-    {"varType":6,"value":"what","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[
-        "what",
+    {"varType":6,"value":"SPELLBASE.PROJECTILE","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[
+        "SPELLBASE.PROJECTILE",
+        "SPELLBASE.BEAM",
       ],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"spell_type","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [
