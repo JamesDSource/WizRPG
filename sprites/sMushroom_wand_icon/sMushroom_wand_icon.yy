@@ -70,7 +70,7 @@
   ],
   "parent": {
     "name": "Mushroom Wand",
-    "path": "folders/Items/Mushroom Wand.yy",
+    "path": "folders/Items/Staffs and Wands/Mushroom Wand.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMushroom_wand_icon",

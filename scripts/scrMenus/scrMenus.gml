@@ -27,7 +27,7 @@ function panel_add(name, width, height, x_pos, y_pos) {
 		
 		if(is_new) {
 			var new_panel = new panel(width, height, x_pos, y_pos);
-			ds_map_add(map, name, new_panel);
+			map[? name] = new_panel;
 			ds_list_add(list, name);
 		}
 	}
@@ -70,7 +70,7 @@ function panel_add_element(name, element_name, element_type, element, x_pos, y_p
 		}
 		
 		if(is_new) {
-			ds_map_add(elements_map, element_name, [element_type, element, x_pos + PANELEDGE, y_pos + PANELEDGE]);
+			elements_map[? element_name] = [element_type, element, x_pos + PANELEDGE, y_pos + PANELEDGE];
 			ds_list_add(elements_list, element_name);
 		}
 	}

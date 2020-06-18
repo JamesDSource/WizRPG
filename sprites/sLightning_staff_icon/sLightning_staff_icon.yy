@@ -70,7 +70,7 @@
   ],
   "parent": {
     "name": "Lightning Staff",
-    "path": "folders/Items/Lightning Staff.yy",
+    "path": "folders/Items/Staffs and Wands/Lightning Staff.yy",
   },
   "resourceVersion": "1.0",
   "name": "sLightning_staff_icon",

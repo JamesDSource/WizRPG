@@ -70,7 +70,7 @@
   ],
   "parent": {
     "name": "Forest Staff",
-    "path": "folders/Items/Forest Staff.yy",
+    "path": "folders/Items/Staffs and Wands/Forest Staff.yy",
   },
   "resourceVersion": "1.0",
   "name": "sForest_staff",

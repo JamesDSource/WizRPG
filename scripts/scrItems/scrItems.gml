@@ -5,12 +5,24 @@ enum ITEMTYPE {
 	MISC
 }
 
-function item(i_name, i_type, i_sprite, i_icon, i_action) constructor {
+enum SPELLBASE {
+	PROJECTILE,
+	BEAM
+	
+}
+
+function spell_components(template, element) constructor {
+	base = template;
+	element_type = element;
+}
+
+function item(i_name, i_type, i_sprite, i_icon, i_action, i_spell_components) constructor {
 	name = i_name;		// string of item name
 	type = i_type;		// item type
 	sprite = i_sprite;	// sprite that's shown when held
 	icon = i_icon;		// sprite that's shown in inventory
 	action = i_action;	// function that plays when item is held (or when in a charm slot)
+	components = i_spell_components;
 }
 
 global.item_memory = array_create(0);
@@ -21,7 +33,8 @@ function item_copy(item) {
 		type: item.type,	
 		sprite: item.sprite,	
 		icon: item.icon,	
-		action: item.action	
+		action: item.action,
+		components: item.components 
 	};
 	
 	global.item_memory[array_length(global.item_memory)] = copy;
@@ -42,7 +55,8 @@ function item_copy(item) {
 			sStick_wand_icon,
 			function act_stick_wand(data) {
 				staff_wand_default_behavior(data);
-			}
+			},
+			-1
 		),
 		
 		forest_staff: new item(
@@ -52,7 +66,8 @@ function item_copy(item) {
 			sForest_staff_icon,
 			function act_forest_staff(data) {
 				staff_wand_default_behavior(data);
-			}
+			},
+			-1
 		),
 		
 		mushroom_wand: new item(
@@ -62,7 +77,8 @@ function item_copy(item) {
 			sMushroom_wand_icon,
 			function act_mushroom_wand(data) {
 				staff_wand_default_behavior(data);	
-			}
+			},
+			-1
 		), 
 		
 		lightning_staff: new item(
@@ -72,7 +88,8 @@ function item_copy(item) {
 			sLightning_staff_icon,
 			function act_lightning_staff(data) {
 				staff_wand_default_behavior(data);	
-			}
+			},
+			-1
 		)
 		
 		

@@ -36,8 +36,8 @@ function init_save_file(numb) {
 		// storage
 		var player_storage = ds_map_create();
 		//		inventory
-		var player_storage_inventory = ds_list_create();
-		ds_map_add_list(player_storage, "inventory", player_storage_inventory);
+		var player_storage_main = ds_list_create();
+		ds_map_add_list(player_storage, "main", player_storage_main);
 		//		toolbar
 		var player_storage_toolbar = ds_list_create();
 		ds_map_add_list(player_storage, "toolbar", player_storage_toolbar);
@@ -68,11 +68,21 @@ function storage_encode(storage, list) {
 			if(is_struct(current_item)) {
 				var item_map = ds_map_create();
 			
-				ds_map_add(item_map, "name", current_item.name);
-				ds_map_add(item_map, "type", current_item.type);
-				ds_map_add(item_map, "sprite", sprite_get_name(current_item.sprite));
-				ds_map_add(item_map, "icon", sprite_get_name(current_item.icon));
-				ds_map_add(item_map, "action", current_item.action);
+				item_map[? "name"] = current_item.name;
+				item_map[? "type"] = current_item.type;
+				item_map[? "sprite"] = sprite_get_name(current_item.sprite);
+				item_map[? "icon"] = sprite_get_name(current_item.icon);
+				item_map[? "action"] = current_item.action;
+				
+				// adds spell components if the item is a spell
+				if(current_item.type == ITEMTYPE.SPELL) {
+					var spell_components_map = ds_map_create();
+					spell_components_map[? "base"] = current_item.components.base;
+					spell_components_map[? "element_type"] = current_item.components.element_type;
+					
+					ds_map_add_map(item_map, "components", spell_components_map);
+				}
+				else item_map[? "components"] = -1;
 			
 				ds_list_add(list, item_map);
 				ds_list_mark_as_map(list, ds_list_find_index(list, item_map));
@@ -102,10 +112,10 @@ function save(numb) {
 			with(oEntity) {
 				if(save_me) { 
 					var entity_save_data = ds_map_create();	
-					ds_map_add(entity_save_data, "object name", object_get_name(object_index));				
-					ds_map_add(entity_save_data, "x", x);				
-					ds_map_add(entity_save_data, "y", y);				
-					ds_map_add(entity_save_data, "z", z);				
+					entity_save_data[? "object name"] = object_get_name(object_index);				
+					entity_save_data[? "x"] = x;				
+					entity_save_data[? "y"] = y;				
+					entity_save_data[? "z"] = z;											
 				
 					ds_list_add(room_data, entity_save_data);
 					ds_list_mark_as_map(room_data, ds_list_find_index(room_data, entity_save_data));
@@ -117,14 +127,14 @@ function save(numb) {
 			if(instance_exists(oPlayer)) {
 				var player_data = save_data[? "player"];
 				with(oPlayer) {
-					var storage_inventory = inventory;
+					var storage_main = main;
 					var storage_toolbar = toolbar;
 					var storage_spells = spells;
 					var storage_charms = charms;
 				}
 			
 				// storage
-				storage_encode(storage_inventory, player_data[? "storage"][? "inventory"]);
+				storage_encode(storage_main, player_data[? "storage"][? "main"]);
 				storage_encode(storage_toolbar, player_data[? "storage"][? "toolbar"]);
 				storage_encode(storage_spells, player_data[? "storage"][? "spells"]);
 				storage_encode(storage_charms, player_data[? "storage"][? "charms"]);

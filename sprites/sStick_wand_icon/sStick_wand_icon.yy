@@ -70,7 +70,7 @@
   ],
   "parent": {
     "name": "Stick Wand",
-    "path": "folders/Items/Stick Wand.yy",
+    "path": "folders/Items/Staffs and Wands/Stick Wand.yy",
   },
   "resourceVersion": "1.0",
   "name": "sStick_wand_icon",
