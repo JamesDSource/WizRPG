@@ -5,12 +5,6 @@ enum ITEMTYPE {
 	MISC
 }
 
-enum SPELLBASE {
-	PROJECTILE,
-	BEAM
-	
-}
-
 function item(i_name, i_type, i_sprite, i_icon, i_action, i_spell_components) constructor {
 	name = i_name;		// string of item name
 	type = i_type;		// item type
@@ -39,7 +33,15 @@ function item_copy(item) {
 #region items
 	function staff_wand_default_behavior(data) {
 		data.angle = point_direction(data.x_pos, data.y_pos - data.z_pos, mouse_x, mouse_y);
-		if(instance_exists(oPlayer) && oPlayer.equipt_spell) oPlayer.equipt_spell.action(data);	
+		if(instance_exists(oPlayer) && is_struct(oPlayer.equipt_spell)) {
+			var spell = oPlayer.equipt_spell;
+			switch(spell.components.base.type) {
+				case SPELLBASE.PROJECTILE:
+					spell_projectile_spawm(spell, data.x_pos, data.y_pos, data.z_pos, data.angle);
+					break;
+			}
+			
+		}
 	}
 
 	global.items = {
@@ -86,19 +88,6 @@ function item_copy(item) {
 				staff_wand_default_behavior(data);	
 			},
 			-1
-		),
-		
-		test_fire_spell: new item(
-			"Test Fire Spell",
-			ITEMTYPE.SPELL,
-			-1,
-			sFlame_particle,
-			function act_test_fire_spell(data) {
-				if(mouse_check_button_pressed(mb_left)) {
-					spell_projectile_spawm(oSpell_bolt, data.x_pos + lengthdir_x(10, data.angle), data.y_pos + lengthdir_y(10, data.angle), data.z_pos, data.angle, ELEMENTTYPE.FIRE);	
-				}
-			},
-			new spell_components(oSpell_bolt, ELEMENTTYPE.FIRE)
 		)
 	};
 #endregion

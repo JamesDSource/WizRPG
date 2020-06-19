@@ -69,8 +69,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c1044371-1862-4eb6-b5ed-f4c6f4098bfd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Bolt",
-    "path": "folders/Items/Spells/Projectile Spells/Bolt.yy",
+    "name": "Projectile Spells",
+    "path": "folders/Items/Spells/Projectile Spells.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSpell_bolt",

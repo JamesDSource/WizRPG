@@ -1,15 +1,50 @@
+#region spell base types
+	enum SPELLBASE {
+		PROJECTILE,
+		BEAM
+	}
+	
+	function spell_base_projectile(spell_name, spell_shape, projectile_speed, projectile_life) constructor {
+		name = spell_name;
+		shape = spell_shape;
+		spd = projectile_speed;
+		life = projectile_life * room_speed;
+		
+		type = SPELLBASE.PROJECTILE;
+	}
+#endregion
+
+#region spell bases
+	global.spell_base = {
+		bolt: new spell_base_projectile(
+			"Bolt",
+			sSpell_bolt,
+			6,
+			0.5
+		)	
+		
+	};
+#endregion
+
 function spell_components(template, element) constructor {
 	base = template;
 	element_type = element;
 }
 
-function spell_projectile_spawm(spell, x_pos, y_pos, z_pos, angle, element_type) {
-	with(instance_create_layer(x_pos, y_pos, "Instances", spell)) {
-		z = z_pos;
-		dir = angle;
-		element_using = element_type;
+function spell_projectile_spawm(spell, x_pos, y_pos, z_pos, angle) {
+	if(mouse_check_button_pressed(mb_left)) {
+		with(instance_create_layer(x_pos, y_pos, "Instances", oSpell_projectile)) {
+			var spell_props = spell.components;
 		
-		hsp = lengthdir_x(spd, dir);
-		vsp = lengthdir_y(spd, dir);
+			name = spell.name;
+			z = z_pos;
+			element_using = spell_props.element_type;
+			hsp = lengthdir_x(spell_props.base.spd, angle);
+			vsp = lengthdir_y(spell_props.base.spd, angle);
+			projectile_life = spell_props.base.life;
+			pixels = oSprite_reader.read_sprite(spell_props.base.shape);
+			sprite_index = spell_props.base.shape;
+		}
 	}
 }
+
