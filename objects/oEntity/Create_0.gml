@@ -1,3 +1,5 @@
+#macro GRAVITY 0.2
+
 visible = false;
 draw_function = function drawing_self() {
 	draw_sprite_ext(sprite_index, image_index, round(x), round(y - z), image_xscale, image_yscale, image_angle, image_blend, image_alpha);		

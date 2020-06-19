@@ -1,3 +1,6 @@
+#macro VIEWWIDTH 1920/4
+#macro VIEWHEIGHT 1080/4
+
 camera = view_camera[0];
 
 view_enabled = true;
