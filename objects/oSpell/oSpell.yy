@@ -26,6 +26,9 @@
         "SPELLBASE.PROJECTILE",
         "SPELLBASE.BEAM",
       ],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"spell_type","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":1,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[
+        "ELEMENTTYPE.FIRE",
+      ],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"element_using","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [
     {"propertyId":{"name":"h","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},

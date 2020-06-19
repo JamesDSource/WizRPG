@@ -90,4 +90,7 @@ equipt_item = {
 	angle: 0,
 	alpha: 1
 };
+
+equipt_spell = -1;
+
 item_height_base = 14;

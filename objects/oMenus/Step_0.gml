@@ -1,6 +1,7 @@
 // loop through all panels and check for storage
 // spaces and see if the mouse is hovering over them
 global.square_selected = [-1, -1, -1];
+var square_moving_is_shown = false;
 var panels_active = false;
 for(var i = 0; i < ds_list_size(panels_names); i++) {
 	var current_panel = panels[? panels_names[| i]];
@@ -15,6 +16,9 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 			var mouse_y_gui = device_mouse_y_to_gui(0);
 			switch(current_element[0]) {
 				case MENUELEMENT.STORAGE:
+					// checking if the grid is equal to square moving
+					if(current_element[1] == global.square_moving[0]) square_moving_is_shown = true;
+					
 					var storage_result = storage_find_pos(current_element[1], element_x, element_y, mouse_x_gui, mouse_y_gui);
 					if(storage_result != -1) global.square_selected = [current_element[1], storage_result[0], storage_result[1]];
 					break;
@@ -22,6 +26,8 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 		}
 	}
 }
+
+if(!square_moving_is_shown) global.square_moving = [-1, -1, -1];
 
 mouse_text = "";
 if(!array_equals(global.square_selected, [-1, -1, -1])) {
@@ -53,5 +59,13 @@ if(panels_active) {
 	else cursor_sprite = sMenu_cursor_activated;
 }
 else {
-	cursor_sprite = sMenu_cursor_target;	
+	if(instance_exists(oPlayer) && is_struct(oPlayer.equipt_spell)) {
+		switch(oPlayer.equipt_spell.components.element_type) {
+			case ELEMENTTYPE.FIRE:
+				cursor_sprite = sMenu_cursor_target_fire;
+				break;
+			
+		}
+	}
+	else cursor_sprite = sMenu_cursor_target;
 }

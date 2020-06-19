@@ -5,7 +5,7 @@ function draw_equipt() {
 }
 
 var item_drawn = false;
-if(side == sprite_side_index.back) {
+if(side == sprite_side_index.back || side == sprite_side_index.left) {
 	draw_equipt();
 	item_drawn = true;
 }

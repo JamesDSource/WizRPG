@@ -70,12 +70,16 @@ function player_state_free() {
 		equipt_item.angle = 0;
 		equipt_item.alpha = 1;
 		if(is_struct(new_item)) equipt_item.sprite = new_item.sprite;
+		
+		// setting equipt spell
+		var new_spell = spells_equipt[0].grid[# spells_equipt[1], spells_equipt[2]];
+		equipt_spell = new_spell;
 	}
 	
 	// item functions
 	var ang = point_direction(x, y-equipt_item.z_pos, mouse_x, mouse_y);
-	equipt_item.x_offset = approach(equipt_item.x_offset, lengthdir_x(10, ang), abs(lengthdir_x(0.5, ang)));
-	equipt_item.y_offset = approach(equipt_item.y_offset, lengthdir_y(10, ang), abs(lengthdir_y(0.5, ang)));
+	equipt_item.x_offset = approach(equipt_item.x_offset, lengthdir_x(6, ang), abs(lengthdir_x(0.5, ang)));
+	equipt_item.y_offset = approach(equipt_item.y_offset, lengthdir_y(6, ang), abs(lengthdir_y(0.5, ang)));
 	equipt_item.x_pos = x + equipt_item.x_offset;
 	equipt_item.y_pos = y + equipt_item.y_offset;
 	if(is_struct(equipt_item.index)) {

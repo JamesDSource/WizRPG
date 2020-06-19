@@ -3,11 +3,13 @@ var delta = get_delta();
 #region movement
 	if(!static_object) {
 		// gravity
-		esp -= GRAVITY;
+		if(apply_gravity) esp -= GRAVITY;
 	
 		// movement with acceleration
-		hsp = approach(hsp, lengthdir_x(target_speed, dir) * delta, acceleration * delta);
-		vsp = approach(vsp, lengthdir_y(target_speed, dir) * delta, acceleration * delta);
+		if(target_speed_enable) {
+			hsp = approach(hsp, lengthdir_x(target_speed, dir) * delta, acceleration * delta);
+			vsp = approach(vsp, lengthdir_y(target_speed, dir) * delta, acceleration * delta);
+		}
 		
 		// collision code
 		if(hsp != 0 || vsp != 0 || esp != 0) {
@@ -17,12 +19,16 @@ var delta = get_delta();
 			instance_place_list_3d(x + hsp, y, z, oEntity, collision_list, true);
 			for(var i = 0; i < ds_list_size(collision_list); i++) {
 				var inst = collision_list[| i];
-				if(!inst.pass_through) {
+				if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
 					repeat(floor(hsp)) {
 						if(!place_meeting_3d(x + sign(hsp), y, z, inst)) x += sign(hsp);
 						else break;
 					}
 					hsp = 0;
+					if(stop_on_collide) {
+						vsp = 0;
+						esp = 0;
+					}
 					break;
 				}
 			}
@@ -32,12 +38,16 @@ var delta = get_delta();
 			instance_place_list_3d(x, y + vsp, z, oEntity, collision_list, true);
 			for(var i = 0; i < ds_list_size(collision_list); i++) {
 				var inst = collision_list[| i];
-				if(!inst.pass_through) {
+				if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
 					repeat(floor(vsp)) {
 						if(!place_meeting_3d(x, y + sign(vsp), z, inst)) y += sign(vsp);
 						else break;
 					}
 					vsp = 0;
+					if(stop_on_collide) {
+						hsp = 0;
+						esp = 0;
+					}
 					break;
 				}
 			}
@@ -47,12 +57,16 @@ var delta = get_delta();
 			instance_place_list_3d(x, y, z + esp, oEntity, collision_list, true);
 			for(var i = 0; i < ds_list_size(collision_list); i++) {
 				var inst = collision_list[| i];
-				if(!inst.pass_through) {
+				if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
 					repeat(floor(esp)) {
 						if(!place_meeting_3d(x, y, z + sign(esp), inst)) z += sign(esp);
 						else break;
 					}
 					esp = 0;
+					if(stop_on_collide) {
+						hsp = 0;
+						vsp = 0;
+					}
 					break;
 				}
 			}

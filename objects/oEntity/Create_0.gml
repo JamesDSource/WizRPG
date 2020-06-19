@@ -20,12 +20,6 @@ function interact() {
 	}
 }
 
-// statis effects and damage
-enum ELEMENTTYPE {
-	PHYSICAL,
-	FIRE
-}
-
 // for dealing damage with statis effects
 random_tick_time = room_speed * 2;
 random_tick_timer = random_tick_time;

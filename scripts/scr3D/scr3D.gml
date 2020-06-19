@@ -4,7 +4,7 @@ function instance_place_list_3d(x_pos, y_pos, z_pos, obj, list, ordered) {
 	var keep_list = array_create(0);
 	for(var i = 0; i < ds_list_size(list); i++) {
 		var inst = list[| i];
-		if(rectangle_in_rectangle(0, z_pos, 1, z_pos - h, 0, inst.z, 1, inst.z - inst.h)) {
+		if(rectangle_in_rectangle(0, z_pos, 1, z_pos + h, 0, inst.z, 1, inst.z + inst.h)) {
 			var index = array_length(keep_list);
 			keep_list[index] = inst;
 		}

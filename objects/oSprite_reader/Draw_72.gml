@@ -1,0 +1,1 @@
+if(!surface_exists(surface)) surface = surface_create(32, 32);
