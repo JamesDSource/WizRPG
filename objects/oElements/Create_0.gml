@@ -5,9 +5,10 @@ enum ELEMENTTYPE {
 }
 
 // element object
-function element(e_name, e_particles) constructor {
+function element(e_name, e_particles, e_color) constructor {
 	name = e_name;
 	particles = e_particles;
+	color = e_color;
 }
 
 global.elements = array_create(0);
@@ -20,4 +21,4 @@ part_type_direction(fire_particles, 90, 90, 0.0, 0.0);
 part_type_alpha2(fire_particles, 1, 0.0);
 part_type_life(fire_particles, 10, 60);
 
-global.elements[ELEMENTTYPE.FIRE] = new element("Fire", fire_particles);
+global.elements[ELEMENTTYPE.FIRE] = new element("Fire", fire_particles, merge_color(c_orange, c_red, 0.1));

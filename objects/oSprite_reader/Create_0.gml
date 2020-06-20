@@ -19,14 +19,17 @@ function read_sprite(sprite) {
 			surface_resize(surface, spr_w, spr_h);
 		
 			surface_set_target(surface);
-			draw_clear_alpha(c_black, 1);
+			draw_clear_alpha(c_black, 0);
 			draw_sprite(sprite, 0, spr_xoffset, spr_yoffset);
 			surface_reset_target();
 		
 			for(var r = 0; r < spr_w; r++) {
 				for(var c = 0; c < spr_h; c++) {
-					var col = surface_getpixel(surface, r, c);	
-					if(col == c_white) white_pixels[array_length(white_pixels)] = [r - spr_xoffset, c - spr_yoffset];
+					var col = surface_getpixel_ext(surface, r, c);
+					var alpha = (col >> 24) & 255
+					var angle = point_direction(spr_xoffset, spr_yoffset, r, c);
+					var dist = point_distance(spr_xoffset, spr_yoffset, r, c);
+					if(alpha >= 255) white_pixels[array_length(white_pixels)] = [dist, angle];
 				}
 			}
 		}

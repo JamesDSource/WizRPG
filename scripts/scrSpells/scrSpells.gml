@@ -4,11 +4,12 @@
 		BEAM
 	}
 	
-	function spell_base_projectile(spell_name, spell_shape, projectile_speed, projectile_life) constructor {
+	function spell_base_projectile(spell_name, spell_shape, projectile_speed, projectile_life, spell_cooldown) constructor {
 		name = spell_name;
 		shape = spell_shape;
 		spd = projectile_speed;
 		life = projectile_life * room_speed;
+		cooldown = spell_cooldown * room_speed;
 		
 		type = SPELLBASE.PROJECTILE;
 	}
@@ -20,8 +21,17 @@
 			"Bolt",
 			sSpell_bolt,
 			6,
-			0.5
-		)	
+			2,
+			1
+		),
+		
+		arc: new spell_base_projectile(
+			"Arc",
+			sSpell_arc,
+			4,
+			4,
+			1.5
+		)
 		
 	};
 #endregion
@@ -44,7 +54,10 @@ function spell_projectile_spawm(spell, x_pos, y_pos, z_pos, angle) {
 			projectile_life = spell_props.base.life;
 			pixels = oSprite_reader.read_sprite(spell_props.base.shape);
 			sprite_index = spell_props.base.shape;
+			image_angle = angle;
 		}
+		
+		return spell.components.base.cooldown;
 	}
 }
 

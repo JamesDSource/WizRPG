@@ -36,7 +36,7 @@
   ],
   "parent": {
     "name": "Containers",
-    "path": "folders/Entities/Containers.yy",
+    "path": "folders/Containers.yy",
   },
   "resourceVersion": "1.0",
   "name": "oContainer",

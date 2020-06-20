@@ -25,9 +25,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"52b8ede9-1dcd-4fe0-b239-e4e04ad97714","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"52b8ede9-1dcd-4fe0-b239-e4e04ad97714","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"LayerId":{"name":"c1044371-1862-4eb6-b5ed-f4c6f4098bfd","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sSpell_bolt","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"resourceVersion":"1.0","name":"52b8ede9-1dcd-4fe0-b239-e4e04ad97714","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"eb89dde4-9cad-49d8-bd67-f0e27a71c80e","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"eb89dde4-9cad-49d8-bd67-f0e27a71c80e","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"LayerId":{"name":"eb2c4158-0b39-4f71-9eaa-da729f96e103","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSpell_bolt","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"resourceVersion":"1.0","name":"eb89dde4-9cad-49d8-bd67-f0e27a71c80e","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sSpell_bolt","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},
@@ -42,7 +42,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a3afc326-d493-4187-b01d-5c18726c0d20","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"52b8ede9-1dcd-4fe0-b239-e4e04ad97714","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"09ed60ba-a4a9-4595-8102-8f62793cc2ef","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"eb89dde4-9cad-49d8-bd67-f0e27a71c80e","path":"sprites/sSpell_bolt/sSpell_bolt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -66,7 +66,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c1044371-1862-4eb6-b5ed-f4c6f4098bfd","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"eb2c4158-0b39-4f71-9eaa-da729f96e103","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Projectile Spells",

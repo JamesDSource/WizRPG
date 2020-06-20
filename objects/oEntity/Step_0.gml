@@ -16,12 +16,12 @@ var delta = get_delta();
 			var collision_list = ds_list_create();
 			
 			// horizontal collision checking
-			instance_place_list_3d(x + hsp, y, z, oEntity, collision_list, true);
+			instance_place_list(x + hsp, y, oEntity, collision_list, true);
 			for(var i = 0; i < ds_list_size(collision_list); i++) {
 				var inst = collision_list[| i];
 				if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
 					repeat(floor(hsp)) {
-						if(!place_meeting_3d(x + sign(hsp), y, z, inst)) x += sign(hsp);
+						if(!place_meeting(x + sign(hsp), y, inst)) x += sign(hsp);
 						else break;
 					}
 					hsp = 0;
@@ -35,12 +35,12 @@ var delta = get_delta();
 			ds_list_clear(collision_list);
 			
 			// verticle collision code
-			instance_place_list_3d(x, y + vsp, z, oEntity, collision_list, true);
+			instance_place_list(x, y + vsp, oEntity, collision_list, true);
 			for(var i = 0; i < ds_list_size(collision_list); i++) {
 				var inst = collision_list[| i];
 				if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
 					repeat(floor(vsp)) {
-						if(!place_meeting_3d(x, y + sign(vsp), z, inst)) y += sign(vsp);
+						if(!place_meeting(x, y + sign(vsp), inst)) y += sign(vsp);
 						else break;
 					}
 					vsp = 0;
@@ -53,23 +53,23 @@ var delta = get_delta();
 			}
 			ds_list_clear(collision_list);
 			
-			// elevation collision code
-			instance_place_list_3d(x, y, z + esp, oEntity, collision_list, true);
-			for(var i = 0; i < ds_list_size(collision_list); i++) {
-				var inst = collision_list[| i];
-				if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
-					repeat(floor(esp)) {
-						if(!place_meeting_3d(x, y, z + sign(esp), inst)) z += sign(esp);
-						else break;
-					}
-					esp = 0;
-					if(stop_on_collide) {
-						hsp = 0;
-						vsp = 0;
-					}
-					break;
-				}
-			}
+			//// elevation collision code
+			//instance_place_list_3d(x, y, z + esp, oEntity, collision_list, true);
+			//for(var i = 0; i < ds_list_size(collision_list); i++) {
+			//	var inst = collision_list[| i];
+			//	if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
+			//		repeat(floor(esp)) {
+			//			if(!place_meeting_3d(x, y, z + sign(esp), inst)) z += sign(esp);
+			//			else break;
+			//		}
+			//		esp = 0;
+			//		if(stop_on_collide) {
+			//			hsp = 0;
+			//			vsp = 0;
+			//		}
+			//		break;
+			//	}
+			//}
 			ds_list_destroy(collision_list);
 		
 		x += hsp;

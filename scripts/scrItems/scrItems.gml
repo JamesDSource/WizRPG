@@ -32,16 +32,21 @@ function item_copy(item) {
 
 #region items
 	function staff_wand_default_behavior(data) {
+		static cooldown = 0;
+		
 		data.angle = point_direction(data.x_pos, data.y_pos - data.z_pos, mouse_x, mouse_y);
-		if(instance_exists(oPlayer) && is_struct(oPlayer.equipt_spell)) {
+		
+		if(instance_exists(oPlayer) && is_struct(oPlayer.equipt_spell) && cooldown <= 0) {
 			var spell = oPlayer.equipt_spell;
 			switch(spell.components.base.type) {
 				case SPELLBASE.PROJECTILE:
-					spell_projectile_spawm(spell, data.x_pos, data.y_pos, data.z_pos, data.angle);
+					cooldown = spell_projectile_spawm(spell, data.x_pos, data.y_pos, data.z_pos, data.angle);
 					break;
+					
 			}
 			
 		}
+		else if(cooldown > 0) cooldown -= get_delta();
 	}
 
 	global.items = {
