@@ -11,7 +11,7 @@ interact_method = function container_interacted_with(other_id) {
 }
 
 items = new storage(storage_width, storage_height, "All");
-name_text = new text(name, fRune, c_white, fa_left, fa_top);
+name_text = new text(name, fRune, c_white, fa_left, fa_top, true);
 
 items_w = max(storage_get_width(items), text_get_width(name_text));
 items_h = storage_get_height(items) + text_get_height(name_text);

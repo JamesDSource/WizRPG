@@ -1,9 +1,10 @@
-function text(text_string, text_font, text_color, text_halign, text_valign) constructor {
+function text(text_string, text_font, text_color, text_halign, text_valign, text_shadow) constructor {
 	str	= text_string;
 	font = text_font;
 	color = text_color;
 	halign = text_halign;
 	valign = text_valign;
+	shadow = text_shadow;
 }
 
 function text_get_width(text) {

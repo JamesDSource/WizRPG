@@ -10,6 +10,8 @@ function storage(w, h, item_types) constructor {
 			grid[# r, c] = -1;
 		}
 	}
+	
+	sprite = sItem_container;
 }
 
 function draw_storage(storage, draw_x, draw_y, highlighted) {
@@ -23,7 +25,7 @@ function draw_storage(storage, draw_x, draw_y, highlighted) {
 			var container_image_index = 0;
 			if(array_equals(highlighted, [storage, r, c])) container_image_index = 1;
 			
-			draw_sprite(sItem_container, container_image_index, draw_x, draw_y);
+			draw_sprite(storage.sprite, container_image_index, draw_x, draw_y);
 			
 			// check if an item is filling this space
 			var current_item = storage_grid[# r, c];

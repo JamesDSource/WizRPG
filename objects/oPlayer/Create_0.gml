@@ -70,9 +70,9 @@ panel_add_element("inventory", "toolbar", MENUELEMENT.STORAGE, toolbar, 0, toolb
 var charms_draw_y = toolbar_draw_y - storage_get_height(charms);
 panel_add_element("inventory", "charms", MENUELEMENT.STORAGE, charms, 0, charms_draw_y);
 
-var spells_text = new text("Spells", fRune, c_white, fa_left, fa_middle);
-var toolbar_text = new text("Toolbar", fRune, c_white, fa_left, fa_middle);
-var charms_text = new text("Charms", fRune, c_white, fa_left, fa_middle);
+var spells_text = new text("Spells", fRune, c_white, fa_left, fa_middle, true);
+var toolbar_text = new text("Toolbar", fRune, c_white, fa_left, fa_middle, true);
+var charms_text = new text("Charms", fRune, c_white, fa_left, fa_middle, true);
 
 panel_add_element("inventory", "spells_text", MENUELEMENT.TEXT, spells_text, storage_get_width(spells), spells_draw_y + storage_get_height(spells)/2);
 panel_add_element("inventory", "toolbar_text", MENUELEMENT.TEXT, toolbar_text, storage_get_width(toolbar), toolbar_draw_y + storage_get_height(toolbar)/2);

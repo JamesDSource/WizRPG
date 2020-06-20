@@ -17,4 +17,13 @@ storage_add_item(items, new item(
 	-1,
 	new spell_components(global.spell_base.arc, ELEMENTTYPE.FIRE)
 	)
+); 
+storage_add_item(items, new item(
+	"Test Fire Spell 3",
+	ITEMTYPE.SPELL,
+	-1,
+	sFlame_particle,
+	-1,
+	new spell_components(global.spell_base.dart, ELEMENTTYPE.FIRE)
+	)
 );

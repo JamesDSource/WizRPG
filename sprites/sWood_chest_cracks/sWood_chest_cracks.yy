@@ -82,7 +82,7 @@
   ],
   "parent": {
     "name": "Wood Chest",
-    "path": "folders/Entities/Containers/Wood Chest.yy",
+    "path": "folders/Containers/Wood Chest.yy",
   },
   "resourceVersion": "1.0",
   "name": "sWood_chest_cracks",

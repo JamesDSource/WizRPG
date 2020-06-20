@@ -31,6 +31,14 @@
 			4,
 			4,
 			1.5
+		),
+		
+		dart: new spell_base_projectile(
+			"Dart",
+			sSpell_dart,
+			8,
+			0.35,
+			0.05
 		)
 		
 	};

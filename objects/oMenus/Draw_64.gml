@@ -9,8 +9,8 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 		if(!surface_exists(current_panel.surface)) current_panel.surface = surface_create(current_panel.width, current_panel.height);
 		else {
 			surface_set_target(current_panel.surface);	
-			draw_set_alpha(0.9);
-			nine_slice(sPanel_background, PANELEDGE, PANELEDGE, current_panel.width - PANELEDGE*2, current_panel.height - PANELEDGE*2);
+			if(current_panel.transparent) draw_set_alpha(0.9);
+			nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width - PANELEDGE*2, current_panel.height - PANELEDGE*2);
 			draw_set_alpha(1);
 			
 			for(var j = 0; j < ds_list_size(current_panel.elements_names); j++) {
@@ -25,7 +25,7 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 							draw_set_halign(txt.halign);
 							draw_set_valign(txt.valign);
 							draw_set_color(c_black);
-							draw_text(current_element[2]-1, current_element[3]+1, txt.str);
+							if(txt.shadow) draw_text(current_element[2]-1, current_element[3]+1, txt.str);
 							draw_set_color(txt.color);
 							draw_text(current_element[2], current_element[3], txt.str);
 							break;

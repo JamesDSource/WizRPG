@@ -12,6 +12,18 @@ function panel (w, h, x_pos, y_pos) constructor {
 	active = false;
 	elements = ds_map_create();
 	elements_names = ds_list_create();
+	
+	background = sPanel_background;
+	transparent = true;
+}
+
+function panel_set_background(name, new_background, transparent_middle) {
+	if(instance_exists(oMenus)) {
+		var map = oMenus.panels;
+		map[? name].background = new_background;
+		map[? name].transparent = transparent_middle;
+		
+	}
 }
 
 // adding
