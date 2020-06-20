@@ -16,3 +16,5 @@ if(player_detect != active) {
 	}
 	else sprite_index = sSpell_crafting_closeing;
 }
+
+if(keyboard_check_pressed(vk_tab)) panel_set_activation(panel_id, false);

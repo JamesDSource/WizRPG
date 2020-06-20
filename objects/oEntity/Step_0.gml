@@ -12,7 +12,7 @@ var delta = get_delta();
 		}
 		
 		// collision code
-		if(hsp != 0 || vsp != 0 || esp != 0) {
+		if((hsp != 0 || vsp != 0 || esp != 0) && uses_collisions) {
 			var collision_list = ds_list_create();
 			
 			// horizontal collision checking
@@ -71,12 +71,11 @@ var delta = get_delta();
 			//	}
 			//}
 			ds_list_destroy(collision_list);
-		
+		}
 		x += hsp;
 		y += vsp;
 		z += esp;
 		z = max(z, 0);
-		}
 	}
 #endregion
 #region Interactables

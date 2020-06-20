@@ -1,1 +1,1 @@
-panel_remove(string(id));
+panel_remove(panel_id);

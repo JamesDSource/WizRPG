@@ -7,3 +7,4 @@ global.square_moving = [-1, -1, -1];	// [grid index, x, y]
 #macro PANELEDGE 8
 
 mouse_text = "";
+

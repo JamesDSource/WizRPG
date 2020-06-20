@@ -46,7 +46,7 @@ for(var i = 0; i < array_length(surfaces_draw); i++) {
 
 // mouse text
 if(mouse_text != -1) {	
-	draw_set_align(fa_left, fa_bottom);
+	draw_set_align(fa_center, fa_bottom);
 	draw_set_font(fRune);
 	draw_set_color(c_black);
 	draw_text(mx + 1, my - 1, mouse_text);
