@@ -52,3 +52,93 @@ fire_timer = fire_time;
 particles = part_system_create();
 particle_emitter = part_emitter_create(particles);
 part_system_automatic_draw(particles, false);
+
+// collision exemptions
+dont_collide = ds_list_create();
+
+// push out
+function push_out() {
+	function check_all(list, x_pos, y_pos) {
+		var is_colliding = false;
+		for(var i = 0; i < ds_list_size(list); i++) {
+			var inst = list[| i];
+			if(place_meeting(x_pos, y_pos, inst)) is_colliding = true;
+		}
+		
+		return is_colliding;
+	}
+	
+	var push_list = ds_list_create();
+	instance_place_list(x, y, oEntity, push_list, false);
+	
+	// checking if this object shouldn't be collided with
+	var remove_array = array_create(0);
+	for(var i = 0; i < ds_list_size(push_list); i++) {
+		var inst_id_result = ds_list_find_index(dont_collide, push_list[| i]);
+		var inst_obj_result = ds_list_find_index(dont_collide, push_list[| i].object_index);
+		
+		if(push_list[| i].pass_through || pass_through || inst_id_result != -1 || inst_obj_result != -1) remove_array[array_length(remove_array)] = i;
+		else {
+			// if the first result didn't return true
+			// check to see if the other instance doesn't 
+			// include this instance in it's list
+			inst_id_result = ds_list_find_index(push_list[| i].dont_collide, id);	
+			inst_obj_result = ds_list_find_index(push_list[| i].dont_collide, object_index);
+			if(inst_id_result != -1 || inst_obj_result != -1) remove_array[array_length(remove_array)] = i;
+		}
+	}
+	for(var i = 0; i < array_length(remove_array); i++) {
+		ds_list_delete(push_list, remove_array[i]);
+	}
+	
+	
+	if(ds_list_size(push_list) > 0) {
+		for(var i = 0; i < 100; i++) {
+			// right
+			if(!check_all(push_list, x + i, y)) {
+				x += i;
+				break;
+			}
+			// left
+			if(!check_all(push_list, x - i, y)) {
+				x -= i;
+				break;
+			}
+			// top
+			if(!check_all(push_list, x, y - i)) {
+				y -= i;
+				break;
+			}
+			// down
+			if(!check_all(push_list, x, y + i)) {
+				y += i;
+				break;
+			}
+			// top left
+			if(!check_all(push_list, x - i, y - i)) {
+				x -= i;
+				y -= i;
+				break;
+			}
+				// top right
+			if(!check_all(push_list, x + i, y - i)) {
+				x += i;
+				y -= i;
+				break;
+			}
+			// down left
+			if(!check_all(push_list, x - i, y + i)) {
+				x -= i;
+				y += i;
+				break;
+			}
+			// down right
+			if(!check_all(push_list, x + i, y + i)) {
+				x += i;
+				y += i;
+				break; 
+			}		
+		}
+	}
+	ds_list_destroy(push_list);
+}

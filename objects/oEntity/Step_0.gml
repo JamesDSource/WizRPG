@@ -13,13 +13,14 @@ var delta = get_delta();
 		
 		// collision code
 		if((hsp != 0 || vsp != 0 || esp != 0) && uses_collisions) {
+			push_out();
 			var collision_list = ds_list_create();
 			
 			// horizontal collision checking
 			instance_place_list(x + hsp, y, oEntity, collision_list, true);
 			for(var i = 0; i < ds_list_size(collision_list); i++) {
 				var inst = collision_list[| i];
-				if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
+				if(!inst.pass_through && ds_list_find_index(dont_collide, inst) == -1 && ds_list_find_index(dont_collide, inst.object_index) == -1) {
 					repeat(floor(hsp)) {
 						if(!place_meeting(x + sign(hsp), y, inst)) x += sign(hsp);
 						else break;
@@ -38,7 +39,7 @@ var delta = get_delta();
 			instance_place_list(x, y + vsp, oEntity, collision_list, true);
 			for(var i = 0; i < ds_list_size(collision_list); i++) {
 				var inst = collision_list[| i];
-				if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
+				if(!inst.pass_through && ds_list_find_index(dont_collide, inst) == -1 && ds_list_find_index(dont_collide, inst.object_index) == -1) {
 					repeat(floor(vsp)) {
 						if(!place_meeting(x, y + sign(vsp), inst)) y += sign(vsp);
 						else break;
@@ -51,31 +52,12 @@ var delta = get_delta();
 					break;
 				}
 			}
-			ds_list_clear(collision_list);
-			
-			//// elevation collision code
-			//instance_place_list_3d(x, y, z + esp, oEntity, collision_list, true);
-			//for(var i = 0; i < ds_list_size(collision_list); i++) {
-			//	var inst = collision_list[| i];
-			//	if(!inst.pass_through && !(player_safe && inst.object_index == oPlayer)) {
-			//		repeat(floor(esp)) {
-			//			if(!place_meeting_3d(x, y, z + sign(esp), inst)) z += sign(esp);
-			//			else break;
-			//		}
-			//		esp = 0;
-			//		if(stop_on_collide) {
-			//			hsp = 0;
-			//			vsp = 0;
-			//		}
-			//		break;
-			//	}
-			//}
 			ds_list_destroy(collision_list);
 		}
 		x += hsp;
 		y += vsp;
 		z += esp;
-		z = max(z, 0);
+		z = max(z, 0);	
 	}
 #endregion
 #region Interactables
