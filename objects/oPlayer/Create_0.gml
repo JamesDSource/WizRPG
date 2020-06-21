@@ -15,10 +15,26 @@ sprite_side_index = {
 };
 
 sprite_sides = [
-	[sPlayer_side, 1],
-	[sPlayer_back, 1],
-	[sPlayer_side, -1],
-	[sPlayer_front, 1]
+	{
+		idle: sPlayer_side,
+		running: sPlayer_side_run,
+		xscale: 1
+	},
+	{
+		idle: sPlayer_back,
+		running: sPlayer_back,
+		xscale: 1
+	},
+	{
+		idle: sPlayer_side,
+		running: sPlayer_side_run,
+		xscale: -1
+	},
+	{
+		idle: sPlayer_front,
+		running: sPlayer_front_run,
+		xscale: 1
+	}
 ];
 
 side = sprite_side_index.front;

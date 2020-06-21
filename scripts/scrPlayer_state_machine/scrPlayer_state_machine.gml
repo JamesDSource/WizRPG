@@ -9,7 +9,7 @@ function player_state_free() {
 		dir = point_direction(0, 0, hDir, vDir);
 		
 		// making held items bob up and down
-		equipt_item.z_pos = z + item_height_base + wave(-2, 2, 1, 0);
+		equipt_item.z_pos = z + item_height_base + wave(-2, 2, 0.5, 0);
 	}
 	else {
 		target_speed = 0;
@@ -19,7 +19,33 @@ function player_state_free() {
 	event_inherited();
 	
 	// direction facing and xscale
-	if(hFacing != hDir && vFacing != vDir) {
+	if(is_struct(equipt_item.index)) {
+		side = floor(((equipt_item.angle div 45) + 1) * 0.5);
+		if(side == 4) side = 0;
+		switch(side) {
+			case 0:
+				hFacing = 1;
+				vFacing = 0;
+				break;
+			case 1: 
+				hFacing = 0;
+				vFacing = -1;
+				break;
+			case 2: 
+				hFacing = -1;
+				vFacing = 0;
+				break;
+			case 3: 
+				hFacing = 0;
+				vFacing = 1;
+				break;
+		}
+		
+		if((hFacing != 0 && hFacing != hDir) || (vFacing != 0 && vFacing != vDir)) image_speed = -1;
+		else image_speed = 1;
+	}
+	else if(hFacing != hDir && vFacing != vDir) {
+		image_speed = 1;
 		if(hDir != 0) {
 			hFacing = hDir;
 			vFacing = noone;
@@ -38,8 +64,9 @@ function player_state_free() {
 		}
 	}
 	
-	sprite_index = sprite_sides[floor(side)][0];
-	image_xscale = sprite_sides[floor(side)][1];
+	if(target_speed > 0) sprite_index = sprite_sides[floor(side)].running; 
+	else sprite_index = sprite_sides[floor(side)].idle;
+	image_xscale = sprite_sides[floor(side)].xscale;
 	
 	// interacting
 	if(keyboard_check_pressed(ord("E"))) interact();

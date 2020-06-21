@@ -46,12 +46,20 @@ for(var i = 0; i < array_length(surfaces_draw); i++) {
 
 // mouse text
 if(mouse_text != -1) {	
-	draw_set_align(fa_center, fa_bottom);
+	draw_set_align(fa_left, fa_bottom);
 	draw_set_font(fRune);
 	draw_set_color(c_black);
-	draw_text(mx + 1, my - 1, mouse_text);
+	var draw_mouse_text_x = mx + 2;
+	var draw_mouse_text_y = my + 2;
+	
+	var text_padding = 5;
+	if(draw_mouse_text_x + string_width(mouse_text) + text_padding > VIEWWIDTH) {
+		draw_mouse_text_x -= draw_mouse_text_x + string_width(mouse_text) - VIEWWIDTH + text_padding;
+	}
+	
+	draw_text(draw_mouse_text_x + 1, draw_mouse_text_y + 1, mouse_text);
 	draw_set_color(c_white);
-	draw_text(mx + 2, my - 2, mouse_text);
+	draw_text(draw_mouse_text_x, draw_mouse_text_y, mouse_text);
 }
 
 // drawing a dragged icon on the mouse

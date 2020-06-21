@@ -6,7 +6,7 @@
     "path": "folders/UI/Menu Elements.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scrText",
+  "name": "scrButton",
   "tags": [],
   "resourceType": "GMScript",
 }

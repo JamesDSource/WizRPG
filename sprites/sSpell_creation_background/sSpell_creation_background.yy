@@ -69,8 +69,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ea3c86b1-ae35-4822-b81c-40bdc07fa2e9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "UI",
-    "path": "folders/UI.yy",
+    "name": "Spell Table",
+    "path": "folders/UI/Spell Table.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSpell_creation_background",
