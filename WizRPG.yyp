@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"scrMenus","path":"scripts/scrMenus/scrMenus.yy",},"order":4,},
     {"id":{"name":"sPlayer_back","path":"sprites/sPlayer_back/sPlayer_back.yy",},"order":3,},
+    {"id":{"name":"sSpell_table_circle","path":"sprites/sSpell_table_circle/sSpell_table_circle.yy",},"order":3,},
     {"id":{"name":"sSpell_dart","path":"sprites/sSpell_dart/sSpell_dart.yy",},"order":5,},
     {"id":{"name":"sFlame_particle","path":"sprites/sFlame_particle/sFlame_particle.yy",},"order":1,},
     {"id":{"name":"shProjectile_shape","path":"shaders/shProjectile_shape/shProjectile_shape.yy",},"order":4,},
@@ -48,6 +49,7 @@
     {"id":{"name":"sMenu_cursor_target_fire","path":"sprites/sMenu_cursor_target_fire/sMenu_cursor_target_fire.yy",},"order":4,},
     {"id":{"name":"sWood_chest_rotten","path":"sprites/sWood_chest_rotten/sWood_chest_rotten.yy",},"order":4,},
     {"id":{"name":"sSpell_crafting_active","path":"sprites/sSpell_crafting_active/sSpell_crafting_active.yy",},"order":3,},
+    {"id":{"name":"scrImage","path":"scripts/scrImage/scrImage.yy",},"order":3,},
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"order":1,},
     {"id":{"name":"fRune_mono","path":"fonts/fRune_mono/fRune_mono.yy",},"order":0,},
     {"id":{"name":"sSpell_table_button_left","path":"sprites/sSpell_table_button_left/sSpell_table_button_left.yy",},"order":0,},
@@ -137,6 +139,8 @@
     {"folderPath":"folders/UI/Spell Table.yy","order":15,"resourceVersion":"1.0","name":"Spell Table","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/UI/Spell Table/Spell Table Button.yy","order":2,"resourceVersion":"1.0","name":"Spell Table Button","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/UI/Menu Elements.yy","order":16,"resourceVersion":"1.0","name":"Menu Elements","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [

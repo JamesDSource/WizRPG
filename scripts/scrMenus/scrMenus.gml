@@ -1,6 +1,8 @@
 enum MENUELEMENT {
 	STORAGE,
-	TEXT
+	TEXT,
+	TEXTBUTTON,
+	IMAGE
 }
 
 function panel (w, h, x_pos, y_pos) constructor {
