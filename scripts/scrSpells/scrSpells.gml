@@ -16,32 +16,33 @@
 #endregion
 
 #region spell bases
-	global.spell_base = {
-		bolt: new spell_base_projectile(
-			"Bolt",
-			sSpell_bolt,
-			6,
-			2,
-			1
-		),
+	function init_bases() {
+		global.spell_base = {
+			bolt: new spell_base_projectile(
+				"Bolt",
+				sSpell_bolt,
+				6,
+				2,
+				1
+			),
 		
-		arc: new spell_base_projectile(
-			"Arc",
-			sSpell_arc,
-			4,
-			4,
-			1.5
-		),
+			arc: new spell_base_projectile(
+				"Arc",
+				sSpell_arc,
+				4,
+				4,
+				1.5
+			),
 		
-		dart: new spell_base_projectile(
-			"Dart",
-			sSpell_dart,
-			8,
-			0.35,
-			0.05
-		)
-		
-	};
+			dart: new spell_base_projectile(
+				"Dart",
+				sSpell_dart,
+				8,
+				0.35,
+				0.05
+			)
+		};
+	}
 #endregion
 
 function spell_components(template, element) constructor {

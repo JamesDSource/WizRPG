@@ -9,7 +9,7 @@ image_index = 0;
 panel_id = string(id) + " " + room_get_name(room);
 
 // storage
-spell_base = new storage(1, 1, "All");
+spell_base = new storage(1, 1, [ITEMTYPE.BASE]);
 spell_element = new storage(1, 1, [ITEMTYPE.ELEMENTORB]);
 spell_modifiers = new storage(3, 1, "All");
 result = new storage(1, 1, "All");
@@ -21,15 +21,21 @@ result.sprite = sItem_container_spell_table;
 
 title = new text("Spell Table", fRune, c_black, fa_left, fa_top, false);
 element_text = new text("Element Orb", fRune, c_black, fa_left, fa_bottom, false);
-base_text = new text("Base", fRune, c_black, fa_right, fa_bottom, false);
+base_text = new text("Spell Base", fRune, c_black, fa_right, fa_bottom, false);
 modifiers_text = new text("Modifiers", fRune, c_black, fa_center, fa_top, false);
 
 circle = new image(sSpell_table_circle, 0, 0);
 
 craft = new text_button("Create", global.button_presets.spell_book, 
 	function button_craft() {
-		spell_base.grid[# 0, 0] = -1;
-		spell_element.grid[# 0, 0] = -1;
+		var new_spell_base = spell_base.grid[# 0, 0].components;
+		var new_spell_element = spell_element.grid[# 0, 0].components;
+		
+		var new_spell = item_make_spell(new_spell_base, new_spell_element, []);
+		if(storage_add_item(result, new_spell) != -1) {
+			spell_base.grid[# 0, 0] = -1;
+			spell_element.grid[# 0, 0] = -1;
+		}
 	}
 );
 

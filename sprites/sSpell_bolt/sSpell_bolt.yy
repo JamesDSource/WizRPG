@@ -69,8 +69,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"eb2c4158-0b39-4f71-9eaa-da729f96e103","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Projectile Spells",
-    "path": "folders/Items/Spells/Projectile Spells.yy",
+    "name": "Projectile Shape",
+    "path": "folders/Items/Spells/Projectile Spells/Projectile Shape.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSpell_bolt",

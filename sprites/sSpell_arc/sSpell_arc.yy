@@ -69,8 +69,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"df22ec8b-e1d5-4435-af57-9ffb0275d360","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Projectile Spells",
-    "path": "folders/Items/Spells/Projectile Spells.yy",
+    "name": "Projectile Shape",
+    "path": "folders/Items/Spells/Projectile Spells/Projectile Shape.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSpell_arc",

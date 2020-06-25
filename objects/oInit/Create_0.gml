@@ -11,5 +11,8 @@ instance_create_layer(0, 0, "Instances", oMenus);
 instance_create_layer(0, 0, "Instances", oSprite_reader);
 if(DEVMODE) instance_create_layer(0, 0, "Instances", oDev_tools);
 
+init_bases();
+init_items();
+
 init_save_file(0);
 alarm[0] = 2;

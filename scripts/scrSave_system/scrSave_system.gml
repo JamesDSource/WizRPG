@@ -82,7 +82,7 @@ function storage_encode(storage, list) {
 					
 					ds_map_add_map(item_map, "components", spell_components_map);
 				}
-				else item_map[? "components"] = -1;
+				else item_map[? "components"] = current_item.components;
 			
 				ds_list_add(list, item_map);
 				ds_list_mark_as_map(list, ds_list_find_index(list, item_map));
