@@ -22,7 +22,7 @@ sprite_sides = [
 	},
 	{
 		idle: sPlayer_back,
-		running: sPlayer_back,
+		running: sPlayer_back_run,
 		xscale: 1
 	},
 	{

@@ -22,6 +22,10 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 					var storage_result = storage_find_pos(current_element[1], element_x, element_y, mouse_x_gui, mouse_y_gui);
 					if(storage_result != -1) global.square_selected = [current_element[1], storage_result[0], storage_result[1]];
 					break;
+				
+				case MENUELEMENT.TEXTBUTTON:
+					text_button_check(current_element[1], element_x, element_y);
+					break;
 			}
 		}
 	}
@@ -63,6 +67,9 @@ else {
 		switch(oPlayer.equipt_spell.components.element_type) {
 			case ELEMENTTYPE.FIRE:
 				cursor_sprite = sMenu_cursor_target_fire;
+				break;
+			case ELEMENTTYPE.LIGHTNING:
+				cursor_sprite = sMenu_cursor_target_lightning;
 				break;
 			
 		}

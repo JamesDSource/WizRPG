@@ -29,6 +29,9 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 							draw_set_color(txt.color);
 							draw_text(current_element[2], current_element[3], txt.str);
 							break;
+						case MENUELEMENT.TEXTBUTTON:
+							draw_text_button(current_element[1], current_element[2], current_element[3]);
+							break;
 						case MENUELEMENT.IMAGE:
 							draw_image(current_element[1], current_element[2], current_element[3]);
 							break;

@@ -11,7 +11,7 @@ void main() {
 		alpha = 0.0;
 	}
 	else {
-		alpha = smoothstep(0.1, 1.0, v_vCorner.x)/2.0;	
+		alpha = smoothstep(0.1, 1.0, v_vCorner.x)/8.0;	
 	}
 	
 	gl_FragColor = vec4(spell_color, alpha);

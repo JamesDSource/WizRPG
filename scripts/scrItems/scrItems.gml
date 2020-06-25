@@ -1,17 +1,19 @@
 enum ITEMTYPE {
 	STAFF,
 	SPELL,
+	ELEMENTORB,
+	BASE,
 	CHARM,
 	MISC
 }
 
-function item(i_name, i_type, i_sprite, i_icon, i_action, i_spell_components) constructor {
+function item(i_name, i_type, i_sprite, i_icon, i_action, i_components) constructor {
 	name = i_name;		// string of item name
 	type = i_type;		// item type
 	sprite = i_sprite;	// sprite that's shown when held
 	icon = i_icon;		// sprite that's shown in inventory
 	action = i_action;	// function that plays when item is held (or when in a charm slot)
-	components = i_spell_components;
+	components = i_components;
 }
 
 global.item_memory = array_create(0);
@@ -50,49 +52,60 @@ function item_copy(item) {
 	}
 
 	global.items = {
-		// staffs
-		stick_wand: new item(
-			"Stick Wand",
-			ITEMTYPE.STAFF,
-			sStick_wand,
-			sStick_wand_icon,
-			function act_stick_wand(data) {
-				staff_wand_default_behavior(data);
-			},
-			-1
-		),
+		#region staffs and wands
+			stick_wand: new item(
+				"Stick Wand",
+				ITEMTYPE.STAFF,
+				sStick_wand,
+				sStick_wand_icon,
+				function act_stick_wand(data) {
+					staff_wand_default_behavior(data);
+				},
+				-1
+			),
 		
-		forest_staff: new item(
-			"Forest Staff",
-			ITEMTYPE.STAFF,
-			sForest_staff,
-			sForest_staff_icon,
-			function act_forest_staff(data) {
-				staff_wand_default_behavior(data);
-			},
-			-1
-		),
+			forest_staff: new item(
+				"Forest Staff",
+				ITEMTYPE.STAFF,
+				sForest_staff,
+				sForest_staff_icon,
+				function act_forest_staff(data) {
+					staff_wand_default_behavior(data);
+				},
+				-1
+			),
 		
-		mushroom_wand: new item(
-			"Mushroom Wand",
-			ITEMTYPE.STAFF,
-			sMushroom_wand,
-			sMushroom_wand_icon,
-			function act_mushroom_wand(data) {
-				staff_wand_default_behavior(data);	
-			},
-			-1
-		), 
+			mushroom_wand: new item(
+				"Mushroom Wand",
+				ITEMTYPE.STAFF,
+				sMushroom_wand,
+				sMushroom_wand_icon,
+				function act_mushroom_wand(data) {
+					staff_wand_default_behavior(data);	
+				},
+				-1
+			), 
 		
-		lightning_staff: new item(
-			"Lightning Staff",
-			ITEMTYPE.STAFF,
-			sLightning_staff,
-			sLightning_staff_icon,
-			function act_lightning_staff(data) {
-				staff_wand_default_behavior(data);	
-			},
-			-1
-		)
+			lightning_staff: new item(
+				"Lightning Staff",
+				ITEMTYPE.STAFF,
+				sLightning_staff,
+				sLightning_staff_icon,
+				function act_lightning_staff(data) {
+					staff_wand_default_behavior(data);	
+				},
+				-1
+			),
+		#endregion
+		#region elements
+			fire_element: new item(
+				"Fire Orb",
+				ITEMTYPE.ELEMENTORB,
+				noone,
+				sFire_orb,
+				noone,
+				ELEMENTTYPE.FIRE
+			),
+		#endregion
 	};
 #endregion

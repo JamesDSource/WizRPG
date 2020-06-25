@@ -18,3 +18,15 @@ if(player_detect != active) {
 }
 
 if(keyboard_check_pressed(vk_tab)) panel_set_activation(panel_id, false);
+
+#region item crafting
+	var valid_components = true;
+
+	// check element and base
+	if(!is_struct(spell_element.grid[# 0, 0]) || !is_struct(spell_base.grid[# 0, 0])) valid_components = false;
+	
+	if(valid_components) {
+		craft.active = true;
+	}
+	else craft.active = false;
+#endregion

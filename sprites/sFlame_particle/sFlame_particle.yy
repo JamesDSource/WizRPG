@@ -89,8 +89,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"fc381f31-2c13-4a40-82e1-0ea1df8185f8","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Elements",
-    "path": "folders/Elements.yy",
+    "name": "Particles",
+    "path": "folders/Elements/Particles.yy",
   },
   "resourceVersion": "1.0",
   "name": "sFlame_particle",

@@ -1,7 +1,8 @@
 // statis effects and damage
 enum ELEMENTTYPE {
 	PHYSICAL,
-	FIRE
+	FIRE,
+	LIGHTNING
 }
 
 // element object
@@ -13,6 +14,7 @@ function element(e_name, e_particles, e_color) constructor {
 
 global.elements = array_create(0);
 
+// fire
 fire_particles = part_type_create();
 part_type_sprite(fire_particles, sFlame_particle, true, true, false);
 part_type_size(fire_particles, 0.2, 1, 0.0, 0.0);
@@ -22,3 +24,12 @@ part_type_alpha2(fire_particles, 1, 0.0);
 part_type_life(fire_particles, 10, 60);
 
 global.elements[ELEMENTTYPE.FIRE] = new element("Fire", fire_particles, merge_color(c_orange, c_red, 0.1));
+
+// lightning
+lightning_particles = part_type_create();
+part_type_sprite(lightning_particles, sLightning_particle, true, true, false);
+part_type_size(lightning_particles, 0.1, 1, 0.0, 0.0);
+part_type_orientation(lightning_particles,0, 360, 0.0, 0.0, 0.0);
+part_type_life(lightning_particles, 10, 20);
+
+global.elements[ELEMENTTYPE.LIGHTNING] = new element("Lightning", lightning_particles, c_yellow);

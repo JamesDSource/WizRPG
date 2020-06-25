@@ -5,7 +5,7 @@ stopped = false;
 draw_function = function draw_self_projectile_spell() {
 	if(!stopped) {
 		
-var spell_color = global.elements[ELEMENTTYPE.FIRE].color;
+		var spell_color = global.elements[element_using].color;
 		spell_color = [color_get_red(spell_color)/255, color_get_green(spell_color)/255, color_get_blue(spell_color)/255];
 		
 		shader_set(shProjectile_shape);

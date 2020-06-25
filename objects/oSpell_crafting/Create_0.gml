@@ -10,7 +10,7 @@ panel_id = string(id) + " " + room_get_name(room);
 
 // storage
 spell_base = new storage(1, 1, "All");
-spell_element = new storage(1, 1, "All");
+spell_element = new storage(1, 1, [ITEMTYPE.ELEMENTORB]);
 spell_modifiers = new storage(3, 1, "All");
 result = new storage(1, 1, "All");
 
@@ -19,12 +19,19 @@ spell_element.sprite = sItem_container_spell_table;
 spell_modifiers.sprite = sItem_container_spell_table;
 result.sprite = sItem_container_spell_table;
 
-title = new text("Spell Crafting", fRune, c_black, fa_left, fa_top, false);
-element_text = new text("Element", fRune, c_black, fa_left, fa_bottom, false);
+title = new text("Spell Table", fRune, c_black, fa_left, fa_top, false);
+element_text = new text("Element Orb", fRune, c_black, fa_left, fa_bottom, false);
 base_text = new text("Base", fRune, c_black, fa_right, fa_bottom, false);
 modifiers_text = new text("Modifiers", fRune, c_black, fa_center, fa_top, false);
 
 circle = new image(sSpell_table_circle, 0, 0);
+
+craft = new text_button("Create", global.button_presets.spell_book, 
+	function button_craft() {
+		spell_base.grid[# 0, 0] = -1;
+		spell_element.grid[# 0, 0] = -1;
+	}
+);
 
 var width = 120;
 var height = 160;
@@ -50,6 +57,8 @@ panel_add_element(panel_id, "base_text", MENUELEMENT.TEXT, base_text, width, hei
 
 panel_add_element(panel_id, "modifiers", MENUELEMENT.STORAGE, spell_modifiers, width/2 - storage_get_width(spell_modifiers)/2, storage_padding + push_down);
 panel_add_element(panel_id, "modifiers_text", MENUELEMENT.TEXT, modifiers_text, width/2, text_padding + push_down);
+
+panel_add_element(panel_id, "craft", MENUELEMENT.TEXTBUTTON, craft, width/2 - text_button_get_width(craft)/2, height - text_button_get_height(craft) - storage_padding + push_down);
 
 interact_method = function open_spell_crafting(other_id) {
 	if(other_id.object_index == oPlayer) {
