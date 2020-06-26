@@ -44,7 +44,7 @@ function draw_text_button(button, x_pos, y_pos) {
 	if(!button.active) shader_set(shGray);
 	
 	draw_sprite(button.preset.spr_left, subimage, x_pos, y_pos);
-	draw_sprite_ext(button.preset.spr_middle, subimage, x_pos + sprite_get_width(button.preset.spr_left), y_pos, w, 1, 0, c_white, 1);
+	draw_sprite_ext(button.preset.spr_middle, subimage, x_pos + sprite_get_width(button.preset.spr_left), y_pos, w, 1, 0, c_white, draw_get_alpha());
 	draw_sprite(button.preset.spr_right, subimage, x_pos + w + sprite_get_width(button.preset.spr_left), y_pos);
 	draw_set_color(button.preset.color);
 	draw_text(x_pos + sprite_get_width(button.preset.spr_right), y_pos + sprite_get_height(button.preset.spr_middle)/2 + offset_y_text, button.str);

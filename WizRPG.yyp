@@ -13,6 +13,7 @@
     {"id":{"name":"sLightning_staff_icon","path":"sprites/sLightning_staff_icon/sLightning_staff_icon.yy",},"order":1,},
     {"id":{"name":"sMenu_cursor_target_purple","path":"sprites/sMenu_cursor_target_purple/sMenu_cursor_target_purple.yy",},"order":2,},
     {"id":{"name":"sWood_chest_vines","path":"sprites/sWood_chest_vines/sWood_chest_vines.yy",},"order":3,},
+    {"id":{"name":"sBase_arc","path":"sprites/sBase_arc/sBase_arc.yy",},"order":1,},
     {"id":{"name":"sMushroom_wand_icon","path":"sprites/sMushroom_wand_icon/sMushroom_wand_icon.yy",},"order":0,},
     {"id":{"name":"sBase_bolt","path":"sprites/sBase_bolt/sBase_bolt.yy",},"order":0,},
     {"id":{"name":"oSpell_projectile","path":"objects/oSpell_projectile/oSpell_projectile.yy",},"order":2,},
@@ -152,6 +153,8 @@
     {"folderPath":"folders/Shader Effects.yy","order":12,"resourceVersion":"1.0","name":"Shader Effects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Spells/Projectile Spells/Projectile Shape.yy","order":6,"resourceVersion":"1.0","name":"Projectile Shape","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Spells/Base Icons.yy","order":4,"resourceVersion":"1.0","name":"Base Icons","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

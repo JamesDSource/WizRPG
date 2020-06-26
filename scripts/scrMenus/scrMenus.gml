@@ -17,6 +17,8 @@ function panel (w, h, x_pos, y_pos) constructor {
 	
 	background = sPanel_background;
 	transparent = true;
+	scale = 0.01;
+	elements_opacity = 0.0;
 }
 
 function panel_set_background(name, new_background, transparent_middle) {

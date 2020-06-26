@@ -142,6 +142,15 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					noone,
 					global.spell_base.bolt
 				),
+				
+				base_arc: new item(
+					"Arc Spell Base",
+					ITEMTYPE.BASE,
+					noone,
+					sBase_arc,
+					noone,
+					global.spell_base.arc
+				),
 			#endregion
 		}
 	};

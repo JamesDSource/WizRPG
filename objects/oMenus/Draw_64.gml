@@ -5,42 +5,54 @@ var my = device_mouse_y_to_gui(0);
 for(var i = 0; i < ds_list_size(panels_names); i++) {
 	var panel_name = panels_names[| i];
 	var current_panel = panels[? panel_name];
+	
+	var panel_spd = 0.075;
 	if(current_panel.active) {
-		if(!surface_exists(current_panel.surface)) current_panel.surface = surface_create(current_panel.width, current_panel.height);
-		else {
-			surface_set_target(current_panel.surface);	
-			if(current_panel.transparent) draw_set_alpha(0.9);
-			nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width - PANELEDGE*2, current_panel.height - PANELEDGE*2);
-			draw_set_alpha(1);
-			
-			for(var j = 0; j < ds_list_size(current_panel.elements_names); j++) {
-					var current_element = current_panel.elements[? current_panel.elements_names[| j]];
-					switch(current_element[0]) {
-						case MENUELEMENT.STORAGE:
-							draw_storage(current_element[1], current_element[2], current_element[3], global.square_selected);
-							break;
-						case MENUELEMENT.TEXT:
-							var txt = current_element[1];
-							draw_set_font(txt.font);
-							draw_set_halign(txt.halign);
-							draw_set_valign(txt.valign);
-							draw_set_color(c_black);
-							if(txt.shadow) draw_text(current_element[2]-1, current_element[3]+1, txt.str);
-							draw_set_color(txt.color);
-							draw_text(current_element[2], current_element[3], txt.str);
-							break;
-						case MENUELEMENT.TEXTBUTTON:
-							draw_text_button(current_element[1], current_element[2], current_element[3]);
-							break;
-						case MENUELEMENT.IMAGE:
-							draw_image(current_element[1], current_element[2], current_element[3]);
-							break;
-					}
-			}
-			surface_reset_target();
-			
-			surfaces_draw[array_length(surfaces_draw)] = [current_panel.surface, current_panel.x, current_panel.y];
+		if(current_panel.scale < 1.0) current_panel.scale = approach(current_panel.scale, 1.0, panel_spd);
+		else current_panel.elements_opacity = approach(current_panel.elements_opacity, 1.0, panel_spd);
+	}
+	else {
+		if(current_panel.elements_opacity > 0.0) current_panel.elements_opacity = approach(current_panel.elements_opacity, 0.0, panel_spd);	
+		else current_panel.scale = approach(current_panel.scale, 0.0, panel_spd);
+	}
+	
+	if(!surface_exists(current_panel.surface)) current_panel.surface = surface_create(current_panel.width, current_panel.height);
+	else if(current_panel.scale > 0.01) {
+		surface_resize(current_panel.surface, current_panel.width * current_panel.scale, current_panel.height * current_panel.scale)
+		surface_set_target(current_panel.surface);	
+		nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width * current_panel.scale - PANELEDGE*2, current_panel.height * current_panel.scale - PANELEDGE*2);
+		
+		draw_set_alpha(current_panel.elements_opacity);
+		gpu_set_colorwriteenable(true, true, true, false);
+		for(var j = 0; j < ds_list_size(current_panel.elements_names); j++) {
+				var current_element = current_panel.elements[? current_panel.elements_names[| j]];
+				switch(current_element[0]) {
+					case MENUELEMENT.STORAGE:
+						draw_storage(current_element[1], current_element[2], current_element[3], global.square_selected);
+						break;
+					case MENUELEMENT.TEXT:
+						var txt = current_element[1];
+						draw_set_font(txt.font);
+						draw_set_halign(txt.halign);
+						draw_set_valign(txt.valign);
+						draw_set_color(c_black);
+						if(txt.shadow) draw_text(current_element[2]-1, current_element[3]+1, txt.str);
+						draw_set_color(txt.color);
+						draw_text(current_element[2], current_element[3], txt.str);
+						break;
+					case MENUELEMENT.TEXTBUTTON:
+						draw_text_button(current_element[1], current_element[2], current_element[3]);
+						break;
+					case MENUELEMENT.IMAGE:
+						draw_image(current_element[1], current_element[2], current_element[3]);
+						break;
+				}
 		}
+		gpu_set_colorwriteenable(true, true, true, true);
+		draw_set_alpha(1);
+		surface_reset_target();
+		
+		surfaces_draw[array_length(surfaces_draw)] = [current_panel.surface, current_panel.x + (current_panel.width*(1 - current_panel.scale))/2, current_panel.y + (current_panel.height*(1 - current_panel.scale))/2];
 	}
 }
 
