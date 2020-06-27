@@ -131,6 +131,15 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					noone,
 					ELEMENTTYPE.FIRE
 				),
+				
+				element_lightning: new item(
+					"Lightning Orb",
+					ITEMTYPE.ELEMENTORB,
+					noone,
+					sLightning_orb,
+					noone,
+					ELEMENTTYPE.LIGHTNING
+				),
 			#endregion
 		
 			#region spell bases
@@ -150,6 +159,15 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					sBase_arc,
 					noone,
 					global.spell_base.arc
+				),
+				
+				base_dart: new item(
+					"Dart Spell Base",
+					ITEMTYPE.BASE,
+					noone,
+					sBase_dart,
+					noone,
+					global.spell_base.dart
 				),
 			#endregion
 		}
