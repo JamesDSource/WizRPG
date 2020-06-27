@@ -30,6 +30,8 @@ var delta = get_delta();
 						vsp = 0;
 						esp = 0;
 					}
+					
+					if(is_method(collided_with)) collided_with(inst);
 					break;
 				}
 			}
@@ -49,6 +51,8 @@ var delta = get_delta();
 						hsp = 0;
 						esp = 0;
 					}
+					
+					if(is_method(collided_with)) collided_with(inst);
 					break;
 				}
 			}

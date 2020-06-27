@@ -8,12 +8,12 @@ enum ITEMTYPE {
 }
 
 function item(i_name, i_type, i_sprite, i_icon, i_action, i_components) constructor {
-	name = i_name;		// string of item name
-	type = i_type;		// item type
-	sprite = i_sprite;	// sprite that's shown when held
-	icon = i_icon;		// sprite that's shown in inventory
-	action = i_action;	// function that plays when item is held (or when in a charm slot)
-	components = i_components;
+	name = i_name;				// string of item name
+	type = i_type;				// item type
+	sprite = i_sprite;			// sprite that's shown when held or on the ground
+	icon = i_icon;				// sprite that's shown in inventory
+	action = i_action;			// function that plays when item is held (or when in a charm slot)
+	components = i_components;	// components depend on the type of item that this is
 }
 
 global.item_memory = array_create(0);
@@ -126,7 +126,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 				element_fire: new item(
 					"Fire Orb",
 					ITEMTYPE.ELEMENTORB,
-					noone,
+					sFire_orb,
 					sFire_orb,
 					noone,
 					ELEMENTTYPE.FIRE
@@ -135,7 +135,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 				element_lightning: new item(
 					"Lightning Orb",
 					ITEMTYPE.ELEMENTORB,
-					noone,
+					sLightning_orb,
 					sLightning_orb,
 					noone,
 					ELEMENTTYPE.LIGHTNING
@@ -146,7 +146,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 				base_bolt: new item(
 					"Bolt Spell Base",
 					ITEMTYPE.BASE,
-					noone,
+					sBase_bolt,
 					sBase_bolt,
 					noone,
 					global.spell_base.bolt
@@ -155,7 +155,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 				base_arc: new item(
 					"Arc Spell Base",
 					ITEMTYPE.BASE,
-					noone,
+					sBase_arc,
 					sBase_arc,
 					noone,
 					global.spell_base.arc
@@ -164,7 +164,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 				base_dart: new item(
 					"Dart Spell Base",
 					ITEMTYPE.BASE,
-					noone,
+					sBase_dart,
 					sBase_dart,
 					noone,
 					global.spell_base.dart

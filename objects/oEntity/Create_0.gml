@@ -40,6 +40,11 @@ function inflict(element) {
 	}
 }
 
+function elemental_damage(damage, element) {
+	offset_hp(-damage);
+	inflict(element);
+}
+
 statis = {
 	fire: 0
 }
@@ -53,8 +58,9 @@ particles = part_system_create();
 particle_emitter = part_emitter_create(particles);
 part_system_automatic_draw(particles, false);
 
-// collision exemptions
+// collisions
 dont_collide = ds_list_create();
+collided_with = noone;
 
 // push out
 function push_out() {
@@ -142,3 +148,4 @@ function push_out() {
 	}
 	ds_list_destroy(push_list);
 }
+

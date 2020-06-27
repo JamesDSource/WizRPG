@@ -28,4 +28,10 @@ draw_function = function draw_self_projectile_spell() {
 	}
 }
 
+collided_with = function collided_with_spell_projectile(other_collider) {
+	other_collider.elemental_damage(damage, element_using);
+	stopped = true;
+}
+
 destroy_counter = room_speed;
+ds_list_add(dont_collide, oPlayer);
