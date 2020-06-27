@@ -55,8 +55,9 @@ panel_add_element(panel_id, "result", MENUELEMENT.STORAGE, result, width/2 - sto
 var storage_padding = 25;
 var text_padding = 10;
 
-panel_add_element(panel_id, "element", MENUELEMENT.STORAGE, spell_element, 0, height - storage_get_height(spell_element) - storage_padding + push_down);
-panel_add_element(panel_id, "base", MENUELEMENT.STORAGE, spell_base, width - storage_get_width(spell_base), height - storage_get_height(spell_base) - storage_padding + push_down);
+var element_base_storage_y = height - max(storage_get_height(spell_element), storage_get_height(spell_base)) - storage_padding + push_down;
+panel_add_element(panel_id, "element", MENUELEMENT.STORAGE, spell_element, 0, element_base_storage_y);
+panel_add_element(panel_id, "base", MENUELEMENT.STORAGE, spell_base, width - storage_get_width(spell_base), element_base_storage_y);
 
 panel_add_element(panel_id, "element_text", MENUELEMENT.TEXT, element_text, 0, height - text_padding + push_down);
 panel_add_element(panel_id, "base_text", MENUELEMENT.TEXT, base_text, width, height - text_padding + push_down);
@@ -64,7 +65,7 @@ panel_add_element(panel_id, "base_text", MENUELEMENT.TEXT, base_text, width, hei
 panel_add_element(panel_id, "modifiers", MENUELEMENT.STORAGE, spell_modifiers, width/2 - storage_get_width(spell_modifiers)/2, storage_padding + push_down);
 panel_add_element(panel_id, "modifiers_text", MENUELEMENT.TEXT, modifiers_text, width/2, text_padding + push_down);
 
-panel_add_element(panel_id, "craft", MENUELEMENT.TEXTBUTTON, craft, width/2 - text_button_get_width(craft)/2, height - text_button_get_height(craft) - storage_padding + push_down);
+panel_add_element(panel_id, "craft", MENUELEMENT.TEXTBUTTON, craft, width/2 - text_button_get_width(craft)/2, element_base_storage_y + storage_get_height(spell_element)/2 - text_button_get_height(craft)/2);
 
 interact_method = function open_spell_crafting(other_id) {
 	if(other_id.object_index == oPlayer) {

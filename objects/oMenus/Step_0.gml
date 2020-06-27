@@ -49,7 +49,11 @@ if(!array_equals(global.square_selected, [-1, -1, -1])) {
 		}
 		else { // if we are moving an item
 			if(move_and_swap_items(global.square_moving[0], global.square_moving[1], global.square_moving[2], 
-			global.square_selected[0], global.square_selected[1], global.square_selected[2])) global.square_moving = [-1, -1, -1];	
+			global.square_selected[0], global.square_selected[1], global.square_selected[2])) {
+				// check to see if the square moving space is still an item
+				// if not, set square moving to [-1, -1, -1]
+				if(!is_struct(global.square_moving[0].grid[# global.square_moving[1], global.square_moving[2]]))global.square_moving = [-1, -1, -1];	
+			}
 		}
 	}
 

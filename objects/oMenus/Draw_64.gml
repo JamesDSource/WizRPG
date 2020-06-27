@@ -6,7 +6,7 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 	var panel_name = panels_names[| i];
 	var current_panel = panels[? panel_name];
 	
-	var panel_spd = 0.075;
+	var panel_spd = 0.05;
 	if(current_panel.active) {
 		if(current_panel.scale < 1.0) current_panel.scale = approach(current_panel.scale, 1.0, panel_spd);
 		else current_panel.elements_opacity = approach(current_panel.elements_opacity, 1.0, panel_spd);
@@ -18,12 +18,18 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 	
 	if(!surface_exists(current_panel.surface)) current_panel.surface = surface_create(current_panel.width, current_panel.height);
 	else if(current_panel.scale > 0.01) {
-		surface_resize(current_panel.surface, current_panel.width * current_panel.scale, current_panel.height * current_panel.scale)
-		surface_set_target(current_panel.surface);	
-		nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width * current_panel.scale - PANELEDGE*2, current_panel.height * current_panel.scale - PANELEDGE*2);
+		var channel = animcurve_get_channel(acUI, "overshoot");
+		var curve_scale = animcurve_channel_evaluate(channel, current_panel.scale);
+		surface_resize(current_panel.surface, current_panel.width * curve_scale, current_panel.height * curve_scale);
 		
-		draw_set_alpha(current_panel.elements_opacity);
+		surface_set_target(current_panel.surface);	
+		nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width * curve_scale - PANELEDGE*2, current_panel.height * curve_scale - PANELEDGE*2);
+		
+		channel = animcurve_get_channel(acUI, "fade");
+		var curve_alpha = animcurve_channel_evaluate(channel, current_panel.elements_opacity);
+		draw_set_alpha(curve_alpha);
 		gpu_set_colorwriteenable(true, true, true, false);
+		
 		for(var j = 0; j < ds_list_size(current_panel.elements_names); j++) {
 				var current_element = current_panel.elements[? current_panel.elements_names[| j]];
 				switch(current_element[0]) {
@@ -52,7 +58,7 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 		draw_set_alpha(1);
 		surface_reset_target();
 		
-		surfaces_draw[array_length(surfaces_draw)] = [current_panel.surface, current_panel.x + (current_panel.width*(1 - current_panel.scale))/2, current_panel.y + (current_panel.height*(1 - current_panel.scale))/2];
+		surfaces_draw[array_length(surfaces_draw)] = [current_panel.surface, current_panel.x + (current_panel.width*(1 - curve_scale))/2, current_panel.y + (current_panel.height*(1 - curve_scale))/2];
 	}
 }
 

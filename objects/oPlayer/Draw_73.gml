@@ -1,6 +1,6 @@
 if(instance_exists(interact_entity) && interact_entity.sprite_index != noone && is_method(interact_entity.interact_method)) {
 	if(box_progress < 1) box_progress = approach(box_progress, 1, 0.05);
-	var channel = animcurve_get_channel(acOvershoot, "overshoot");
+	var channel = animcurve_get_channel(acUI, "overshoot");
 	var curve = animcurve_channel_evaluate(channel, box_progress);
 	
 	with(interact_entity) {	
