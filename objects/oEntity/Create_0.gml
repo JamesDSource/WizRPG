@@ -36,7 +36,9 @@ function inflict(element) {
 		case ELEMENTTYPE.FIRE:
 			if(statis.fire <= 0) statis.fire = material_flammability;
 			break;
-		
+		case ELEMENTTYPE.LIGHTNING:
+			if(superconductive) statis.electric_charged = true;
+			break;
 	}
 }
 
@@ -46,7 +48,8 @@ function elemental_damage(damage, element) {
 }
 
 statis = {
-	fire: 0
+	fire: 0,
+	electric_charged: false
 }
 
 spread_rad = 15;
