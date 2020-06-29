@@ -32,4 +32,6 @@ part_type_size(lightning_particles, 0.1, 1, 0.0, 0.0);
 part_type_orientation(lightning_particles,0, 360, 0.0, 0.0, 0.0);
 part_type_life(lightning_particles, 10, 20);
 
+global.bolted = ds_list_create();
+
 global.elements[ELEMENTTYPE.LIGHTNING] = new element("Lightning", lightning_particles, c_yellow);

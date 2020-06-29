@@ -13,7 +13,7 @@ var delta = get_delta();
 		
 		// collision code
 		if((hsp != 0 || vsp != 0 || esp != 0) && uses_collisions) {
-			push_out();
+			if(!pass_through) push_out();
 			var collision_list = ds_list_create();
 			
 			// horizontal collision checking

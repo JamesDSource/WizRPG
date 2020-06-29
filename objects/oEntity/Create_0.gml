@@ -45,6 +45,23 @@ function inflict(element) {
 function elemental_damage(damage, element) {
 	offset_hp(-damage);
 	inflict(element);
+	
+	// look for different elements for effects
+	// when taking damage with them
+	switch(element) {
+		case ELEMENTTYPE.LIGHTNING:
+			// if there is still damage remaining
+			// create a bolt that chains to other entities
+			ds_list_add(global.bolted, id);
+			if(floor(damage) > 0) {
+				with(instance_create_layer(x, y, "Instances", oLightning_bolt)) {
+					lightning_damage = damage;
+					creator = id;
+				}
+			}
+			break;
+		
+	}
 }
 
 statis = {
@@ -86,7 +103,7 @@ function push_out() {
 		var inst_id_result = ds_list_find_index(dont_collide, push_list[| i]);
 		var inst_obj_result = ds_list_find_index(dont_collide, push_list[| i].object_index);
 		
-		if(push_list[| i].pass_through || pass_through || inst_id_result != -1 || inst_obj_result != -1) remove_array[array_length(remove_array)] = i;
+		if(push_list[| i].pass_through || inst_id_result != -1 || inst_obj_result != -1) remove_array[array_length(remove_array)] = i;
 		else {
 			// if the first result didn't return true
 			// check to see if the other instance doesn't 
@@ -96,8 +113,10 @@ function push_out() {
 			if(inst_id_result != -1 || inst_obj_result != -1) remove_array[array_length(remove_array)] = i;
 		}
 	}
-	for(var i = 0; i < array_length(remove_array); i++) {
-		ds_list_delete(push_list, remove_array[i]);
+	
+	for(var i = array_length(remove_array)-1; i >= 0; i--) {
+		var index = remove_array[i];
+		ds_list_delete(push_list, index);
 	}
 	
 	
