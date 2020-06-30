@@ -3,6 +3,7 @@ enum ITEMTYPE {
 	SPELL,
 	ELEMENTORB,
 	BASE,
+	SPELLMOD,
 	CHARM,
 	MISC
 }
@@ -168,6 +169,17 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					sBase_dart,
 					noone,
 					global.spell_base.dart
+				),
+			#endregion
+			
+			#region spell modifiers
+				modifier_triple_shot: new item(
+					"Projectile Triple Shot",
+					ITEMTYPE.SPELLMOD,
+					sTriple_shot,
+					sTriple_shot,
+					noone,
+					SPELLBASE.PROJECTILE // change to a think like how bases work
 				),
 			#endregion
 		}
