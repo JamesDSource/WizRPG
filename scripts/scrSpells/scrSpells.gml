@@ -31,10 +31,10 @@
 			arc: new spell_base_projectile(
 				"Arc",
 				sSpell_arc,
-				8,
+				10,
+				3,
 				4,
-				4,
-				1.5
+				2.2
 			),
 		
 			dart: new spell_base_projectile(

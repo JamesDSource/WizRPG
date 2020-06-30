@@ -1,22 +1,22 @@
 {
-  "bboxMode": 2,
+  "bboxMode": 0,
   "collisionKind": 1,
   "separateMasks": false,
   "type": 0,
-  "origin": 9,
+  "origin": 3,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 3,
-  "bbox_right": 22,
+  "bbox_left": 0,
+  "bbox_right": 23,
   "bbox_top": 0,
-  "bbox_bottom": 43,
+  "bbox_bottom": 89,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 23,
-  "height": 44,
+  "width": 24,
+  "height": 90,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -25,9 +25,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"8944875a-675b-4c32-8a54-0a57eaed47dc","path":"sprites/sSpell_arc/sSpell_arc.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8944875a-675b-4c32-8a54-0a57eaed47dc","path":"sprites/sSpell_arc/sSpell_arc.yy",},"LayerId":{"name":"df22ec8b-e1d5-4435-af57-9ffb0275d360","path":"sprites/sSpell_arc/sSpell_arc.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sSpell_arc","path":"sprites/sSpell_arc/sSpell_arc.yy",},"resourceVersion":"1.0","name":"8944875a-675b-4c32-8a54-0a57eaed47dc","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"5397a5d1-8a39-4d2a-b5aa-d6926a59966c","path":"sprites/sSpell_arc/sSpell_arc.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"5397a5d1-8a39-4d2a-b5aa-d6926a59966c","path":"sprites/sSpell_arc/sSpell_arc.yy",},"LayerId":{"name":"eef526d3-da44-482f-b6e5-995d60d9d257","path":"sprites/sSpell_arc/sSpell_arc.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSpell_arc","path":"sprites/sSpell_arc/sSpell_arc.yy",},"resourceVersion":"1.0","name":"5397a5d1-8a39-4d2a-b5aa-d6926a59966c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sSpell_arc","path":"sprites/sSpell_arc/sSpell_arc.yy",},
@@ -42,11 +42,11 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"99005563-0f3f-4f65-afb1-8fadb9b3b602","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8944875a-675b-4c32-8a54-0a57eaed47dc","path":"sprites/sSpell_arc/sSpell_arc.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"89a8ea57-6d45-4b17-bac6-26aa5d5d01c0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5397a5d1-8a39-4d2a-b5aa-d6926a59966c","path":"sprites/sSpell_arc/sSpell_arc.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
-    "lockOrigin": false,
+    "lockOrigin": true,
     "showBackdrop": true,
     "showBackdropImage": false,
     "backdropImagePath": "",
@@ -55,8 +55,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": -2,
-    "yorigin": 22,
+    "xorigin": 0,
+    "yorigin": 45,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSpell_arc","path":"sprites/sSpell_arc/sSpell_arc.yy",},
@@ -66,7 +66,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"df22ec8b-e1d5-4435-af57-9ffb0275d360","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"eef526d3-da44-482f-b6e5-995d60d9d257","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Projectile Shape",

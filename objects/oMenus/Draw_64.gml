@@ -20,10 +20,10 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 	else if(current_panel.scale > 0.01) {
 		var channel = animcurve_get_channel(acUI, "overshoot");
 		var curve_scale = animcurve_channel_evaluate(channel, current_panel.scale);
-		surface_resize(current_panel.surface, current_panel.width * curve_scale, current_panel.height * curve_scale);
+		surface_resize(current_panel.surface, current_panel.width, current_panel.height * curve_scale);
 		
 		surface_set_target(current_panel.surface);	
-		nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width * curve_scale - PANELEDGE*2, current_panel.height * curve_scale - PANELEDGE*2);
+		nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width - PANELEDGE*2, current_panel.height * curve_scale - PANELEDGE*2);
 		
 		channel = animcurve_get_channel(acUI, "fade");
 		var curve_alpha = animcurve_channel_evaluate(channel, current_panel.elements_opacity);
@@ -58,7 +58,7 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 		draw_set_alpha(1);
 		surface_reset_target();
 		
-		surfaces_draw[array_length(surfaces_draw)] = [current_panel.surface, current_panel.x + (current_panel.width*(1 - curve_scale))/2, current_panel.y + (current_panel.height*(1 - curve_scale))/2];
+		surfaces_draw[array_length(surfaces_draw)] = [current_panel.surface, current_panel.x, current_panel.y + (current_panel.height*(1 - curve_scale))/2];
 	}
 }
 
