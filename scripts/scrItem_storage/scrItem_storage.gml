@@ -144,3 +144,12 @@ function storage_add_item(storage, item) {
 	
 	return -1;
 }
+
+function storage_clear(storage) {
+	for(var r = 0; r < ds_grid_width(storage.grid); r++) {
+		for(var c = 0; c < ds_grid_height(storage.grid); c++) {
+			if(is_struct(storage.grid[# r, c])) delete storage.grid[# r, c];
+			storage.grid[# r, c] = -1;	
+		}
+	}
+}

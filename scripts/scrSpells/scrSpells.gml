@@ -15,7 +15,6 @@
 		type = SPELLBASE.PROJECTILE;
 	}
 #endregion
-
 #region spell bases
 	function init_bases() {
 		global.spell_base = {
@@ -48,10 +47,29 @@
 		};
 	}
 #endregion
+#region spell modifiers
+	function spell_modifier(base_using, mod_adjective) constructor {
+		base = base_using;
+		adjective = mod_adjective;
+	}
 
-function spell_components(template, element) constructor {
+	function init_modifiers() {
+		global.spell_modifiers = {
+			#region projectile modifiers
+				proj_triple_shot: new spell_modifier(
+					SPELLBASE.PROJECTILE,
+					"Triple"
+				),
+			#endregion
+			
+		};
+	}
+#endregion
+
+function spell_components(template, element, spell_modifiers) constructor {
 	base = template;
 	element_type = element;
+	modifiers = spell_modifiers; 
 }
 
 function spell_projectile_spawm(spell, x_pos, y_pos, z_pos, angle) {

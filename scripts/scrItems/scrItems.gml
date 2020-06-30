@@ -23,7 +23,7 @@ function item_copy(item) {
 	var new_item_components;
 	switch(item.type) {
 		case ITEMTYPE.SPELL:
-			new_item_components = new spell_components(item.components.base, item.components.element_type);
+			new_item_components = new spell_components(item.components.base, item.components.element_type, item.components.modifiers);
 			break;
 		default:
 			new_item_components = item.components
@@ -43,8 +43,15 @@ function item_copy(item) {
 	return copy;
 }
 
+// mostly for the spell table
 function item_make_spell(spell_base, spell_element, modifiers) {
-	var new_spell_name = global.elements[spell_element].name +  " " +spell_base.name;
+	var new_spell_adjectives = "";
+	for(var i = 0; i < array_length(modifiers); i++) {
+		if(is_struct(modifiers[i])) {
+			new_spell_adjectives += modifiers[i].adjective + " ";	
+		}
+	}
+	var new_spell_name = new_spell_adjectives + global.elements[spell_element].name +  " " +spell_base.name;
 	
 	var new_spell = new item(
 		new_spell_name,
@@ -52,7 +59,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 		noone,
 		sBase_bolt,
 		noone,
-		new spell_components(spell_base, spell_element)
+		new spell_components(spell_base, spell_element, modifiers)
 	);
 	
 	return new_spell;
@@ -123,7 +130,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					-1
 				),
 			#endregion
-			#region elements
+			#region element orbs
 				element_fire: new item(
 					"Fire Orb",
 					ITEMTYPE.ELEMENTORB,
@@ -142,7 +149,6 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					ELEMENTTYPE.LIGHTNING
 				),
 			#endregion
-		
 			#region spell bases
 				base_bolt: new item(
 					"Bolt Spell Base",
@@ -170,8 +176,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					noone,
 					global.spell_base.dart
 				),
-			#endregion
-			
+			#endregion			
 			#region spell modifiers
 				modifier_triple_shot: new item(
 					"Projectile Triple Shot",
@@ -179,7 +184,7 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					sTriple_shot,
 					sTriple_shot,
 					noone,
-					SPELLBASE.PROJECTILE // change to a think like how bases work
+					global.spell_modifiers.proj_triple_shot
 				),
 			#endregion
 		}

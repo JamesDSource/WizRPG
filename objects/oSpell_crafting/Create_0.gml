@@ -11,7 +11,7 @@ panel_id = string(id) + " " + room_get_name(room);
 // storage
 spell_base = new storage(1, 1, [ITEMTYPE.BASE]);
 spell_element = new storage(1, 1, [ITEMTYPE.ELEMENTORB]);
-spell_modifiers = new storage(3, 1, "All");
+spell_modifiers = new storage(3, 1, [ITEMTYPE.SPELLMOD]);
 result = new storage(1, 1, "All");
 
 spell_base.sprite = sItem_container_spell_table;
@@ -28,13 +28,20 @@ circle = new image(sSpell_table_circle, 0, 0);
 
 craft = new text_button("Create", global.button_presets.spell_book, 
 	function button_craft() {
+		var new_spell_modifiers = array_create(0);
+		for(var i = 0; i < ds_grid_width(spell_modifiers.grid); i++) {
+			var modifier_item = spell_modifiers.grid[# i, 0];
+			if(is_struct(modifier_item)) new_spell_modifiers[array_length(new_spell_modifiers)] = modifier_item.components;
+		}
+		
 		var new_spell_base = spell_base.grid[# 0, 0].components;
 		var new_spell_element = spell_element.grid[# 0, 0].components;
 		
-		var new_spell = item_make_spell(new_spell_base, new_spell_element, []);
+		var new_spell = item_make_spell(new_spell_base, new_spell_element, new_spell_modifiers);
 		if(storage_add_item(result, new_spell) != -1) {
-			spell_base.grid[# 0, 0] = -1;
-			spell_element.grid[# 0, 0] = -1;
+			storage_clear(spell_base);
+			storage_clear(spell_element);
+			storage_clear(spell_modifiers);
 		}
 	}
 );

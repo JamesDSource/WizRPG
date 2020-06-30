@@ -155,8 +155,8 @@
     {"folderPath":"folders/Shader Effects.yy","order":12,"resourceVersion":"1.0","name":"Shader Effects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Spells/Projectile Spells/Projectile Shape.yy","order":6,"resourceVersion":"1.0","name":"Projectile Shape","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Spells/Base Icons.yy","order":4,"resourceVersion":"1.0","name":"Base Icons","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Spells/Projectile Spells/Projectile Spell Modifiers.yy","order":7,"resourceVersion":"1.0","name":"Projectile Spell Modifiers","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
