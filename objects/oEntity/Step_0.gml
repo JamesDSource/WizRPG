@@ -91,14 +91,14 @@ var delta = get_delta();
 	if(random_tick_timer <= 0) {
 		// fire
 		if(statis.fire > 0) {
-			var fire_damage	= -2;
-			offset_hp(fire_damage);
+			var fire_damage	= 1;
+			elemental_damage(fire_damage, ELEMENTTYPE.FIRE);
 			statis.fire--;
 		}
 		
 		if(statis.electric_charged) {
-			var electric_damage = -3;
-			offset_hp(electric_damage);
+			var electric_damage = 2;
+			elemental_damage(electric_damage, ELEMENTTYPE.LIGHTNING);
 		}
 		
 		random_tick_timer = random_tick_time;
@@ -107,7 +107,7 @@ var delta = get_delta();
 	
 	// spreading
 	var spread_to_list = ds_list_create();
-	collision_rectangle_list(bbox_left - spread_rad, bbox_top - spread_rad, z - spread_rad, bbox_right + spread_rad, bbox_bottom + spread_rad, z + h + spread_rad, oEntity, spread_to_list, false);
+	collision_rectangle_list(bbox_left - spread_rad, bbox_top - spread_rad, bbox_right + spread_rad, bbox_bottom + spread_rad, oEntity, false, true, spread_to_list, false);
 	for(var i = 0; i < ds_list_size(spread_to_list); i++) { 
 		var entity = spread_to_list[| i];
 		// spread fire

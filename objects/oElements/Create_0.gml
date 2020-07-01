@@ -14,6 +14,9 @@ function element(e_name, e_particles, e_color) constructor {
 
 global.elements = array_create(0);
 
+// Physical
+global.elements[ELEMENTTYPE.PHYSICAL] = new element("Physical", -1, c_dkgray);
+
 // fire
 fire_particles = part_type_create();
 part_type_sprite(fire_particles, sFlame_particle, true, true, false);
@@ -35,5 +38,3 @@ part_type_life(lightning_particles, 10, 20);
 global.bolted = ds_list_create();
 
 global.elements[ELEMENTTYPE.LIGHTNING] = new element("Lightning", lightning_particles, c_yellow);
-
-alarm[0] = 5;

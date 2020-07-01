@@ -9,7 +9,11 @@ collision_circle_list(x, y, range, oEntity, false, true, collision_list, true);
 
 for(var i = 0; i < ds_list_size(collision_list); i++) {
 	var inst = collision_list[| i];
-	if(ds_list_find_index(global.bolted, inst) == -1 && !inst.pass_through && ds_list_find_index(inst.dont_collide, id) == -1) {
+	var in_list = false;
+	for(var j = 0; j < ds_list_size(global.bolted); j++) {
+		if(global.bolted[| j][0] == inst) in_list = true;	
+	}
+	if(!in_list && !inst.pass_through && ds_list_find_index(inst.dont_collide, id) == -1) {
 		target = inst;
 		break;
 	}

@@ -12,6 +12,7 @@
     {"id":{"name":"shGray","path":"shaders/shGray/shGray.yy",},"order":0,},
     {"id":{"name":"sLightning_staff_icon","path":"sprites/sLightning_staff_icon/sLightning_staff_icon.yy",},"order":1,},
     {"id":{"name":"sScroll_lightning","path":"sprites/sScroll_lightning/sScroll_lightning.yy",},"order":1,},
+    {"id":{"name":"oEntity_damage_numbers","path":"objects/oEntity_damage_numbers/oEntity_damage_numbers.yy",},"order":10,},
     {"id":{"name":"sMenu_cursor_target_purple","path":"sprites/sMenu_cursor_target_purple/sMenu_cursor_target_purple.yy",},"order":2,},
     {"id":{"name":"oLightning_bolt","path":"objects/oLightning_bolt/oLightning_bolt.yy",},"order":0,},
     {"id":{"name":"sWood_chest_vines","path":"sprites/sWood_chest_vines/sWood_chest_vines.yy",},"order":3,},
@@ -26,6 +27,7 @@
     {"id":{"name":"sHelix_shot","path":"sprites/sHelix_shot/sHelix_shot.yy",},"order":1,},
     {"id":{"name":"sMushroom_wand","path":"sprites/sMushroom_wand/sMushroom_wand.yy",},"order":1,},
     {"id":{"name":"scrItems","path":"scripts/scrItems/scrItems.yy",},"order":0,},
+    {"id":{"name":"fDamage_numbers","path":"fonts/fDamage_numbers/fDamage_numbers.yy",},"order":3,},
     {"id":{"name":"sScroll","path":"sprites/sScroll/sScroll.yy",},"order":2,},
     {"id":{"name":"sMushroom_spider_walk_back","path":"sprites/sMushroom_spider_walk_back/sMushroom_spider_walk_back.yy",},"order":0,},
     {"id":{"name":"oRender","path":"objects/oRender/oRender.yy",},"order":1,},
@@ -164,6 +166,7 @@
     {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Spells/Scrolls.yy","order":5,"resourceVersion":"1.0","name":"Scrolls","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Elements/Chaining Lightning.yy","order":6,"resourceVersion":"1.0","name":"Chaining Lightning","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

@@ -52,7 +52,7 @@ function elemental_damage(damage, element) {
 		case ELEMENTTYPE.LIGHTNING:
 			// if there is still damage remaining
 			// create a bolt that chains to other entities
-			ds_list_add(global.bolted, id);
+			ds_list_add(global.bolted, [id, 5]);
 			if(floor(damage) > 0) {
 				with(instance_create_layer(x, y, "Instances", oLightning_bolt)) {
 					lightning_damage = damage/1.5;
@@ -62,6 +62,12 @@ function elemental_damage(damage, element) {
 			break;
 		
 	}
+	
+	// damage numbers
+	with(instance_create_layer(x, y, "Instances", oEntity_damage_numbers)) {
+		damage_taken = damage;
+		damage_element = element;
+	}
 }
 
 statis = {
@@ -69,7 +75,8 @@ statis = {
 	electric_charged: false
 }
 
-spread_rad = 15;
+// fire
+spread_rad = 20;
 fire_time = room_speed/2;
 fire_timer = fire_time;
 
