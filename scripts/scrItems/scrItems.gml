@@ -186,6 +186,15 @@ function item_make_spell(spell_base, spell_element, modifiers) {
 					noone,
 					global.spell_modifiers.proj_triple_shot
 				),
+				
+				modifier_helix_shot: new item(
+					"Projectile Helix Shot",
+					ITEMTYPE.SPELLMOD,
+					sHelix_shot,
+					sHelix_shot,
+					noone,
+					global.spell_modifiers.proj_helix_shot
+				)
 			#endregion
 		}
 	};

@@ -9,14 +9,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 30,
-  "bbox_top": 7,
-  "bbox_bottom": 41,
+  "bbox_right": 31,
+  "bbox_top": 13,
+  "bbox_bottom": 47,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 31,
-  "height": 42,
+  "width": 32,
+  "height": 48,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -25,21 +25,21 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"62c7f09d-c451-45bf-a6b0-4067ad25042c","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"62c7f09d-c451-45bf-a6b0-4067ad25042c","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"ddf82214-5c43-4448-95b7-42e0a58242c0","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"62c7f09d-c451-45bf-a6b0-4067ad25042c","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"df830f25-1485-4c0d-8032-1bd7978f234a","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"df830f25-1485-4c0d-8032-1bd7978f234a","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"ddf82214-5c43-4448-95b7-42e0a58242c0","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"df830f25-1485-4c0d-8032-1bd7978f234a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"c9cd6241-95d3-4d1c-825b-d3db912d7cf3","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c9cd6241-95d3-4d1c-825b-d3db912d7cf3","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"ddf82214-5c43-4448-95b7-42e0a58242c0","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"c9cd6241-95d3-4d1c-825b-d3db912d7cf3","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"41e13341-e556-44b4-9aea-1c929e038085","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"41e13341-e556-44b4-9aea-1c929e038085","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"ddf82214-5c43-4448-95b7-42e0a58242c0","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"41e13341-e556-44b4-9aea-1c929e038085","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"2b32de95-333c-4ec9-8028-4adab7b92ccc","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2b32de95-333c-4ec9-8028-4adab7b92ccc","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"ddf82214-5c43-4448-95b7-42e0a58242c0","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"2b32de95-333c-4ec9-8028-4adab7b92ccc","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c0b30960-e497-4969-ae1a-bea05e55ce2a","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c0b30960-e497-4969-ae1a-bea05e55ce2a","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"64abaa56-c77c-4a6a-ab65-5a89229b7000","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"c0b30960-e497-4969-ae1a-bea05e55ce2a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8311e2ce-7a32-4fec-92e7-531c61a2ce37","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8311e2ce-7a32-4fec-92e7-531c61a2ce37","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"64abaa56-c77c-4a6a-ab65-5a89229b7000","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"8311e2ce-7a32-4fec-92e7-531c61a2ce37","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"43bc77db-d933-4525-b538-4cf0472c4b22","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"43bc77db-d933-4525-b538-4cf0472c4b22","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"64abaa56-c77c-4a6a-ab65-5a89229b7000","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"43bc77db-d933-4525-b538-4cf0472c4b22","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1df620f6-dbf1-48e7-9dd2-185589a932c3","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1df620f6-dbf1-48e7-9dd2-185589a932c3","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"64abaa56-c77c-4a6a-ab65-5a89229b7000","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"1df620f6-dbf1-48e7-9dd2-185589a932c3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"34685aee-af50-4d2b-9f10-333369f0eca2","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"34685aee-af50-4d2b-9f10-333369f0eca2","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"LayerId":{"name":"64abaa56-c77c-4a6a-ab65-5a89229b7000","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","name":"34685aee-af50-4d2b-9f10-333369f0eca2","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},
@@ -54,11 +54,11 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"0d9477f7-f799-4a46-bd29-c201bc081776","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"62c7f09d-c451-45bf-a6b0-4067ad25042c","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"ec4ac048-3a5b-4f65-9d25-add6975cfee1","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"df830f25-1485-4c0d-8032-1bd7978f234a","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"01f2b550-ba46-4008-a09a-f533b12f5ea0","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c9cd6241-95d3-4d1c-825b-d3db912d7cf3","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"b9ed1090-bc47-4c62-8eae-f93d889b1dbc","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"41e13341-e556-44b4-9aea-1c929e038085","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"4d08c8c7-56a6-40cc-bc09-04963a8a4dbe","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2b32de95-333c-4ec9-8028-4adab7b92ccc","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"7afe9e55-5766-4fed-bceb-f2cd54bde7d4","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c0b30960-e497-4969-ae1a-bea05e55ce2a","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0171817a-47ea-4cba-9e87-a9099fb103ec","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8311e2ce-7a32-4fec-92e7-531c61a2ce37","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"80fec881-d24d-4105-94ef-000559b8eee9","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"43bc77db-d933-4525-b538-4cf0472c4b22","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a0351518-ac7a-4477-ac0f-fe885148d144","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1df620f6-dbf1-48e7-9dd2-185589a932c3","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f410cf53-82d5-45f8-aea3-96307f8d1d09","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"34685aee-af50-4d2b-9f10-333369f0eca2","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -71,8 +71,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 15,
-    "yorigin": 42,
+    "xorigin": 16,
+    "yorigin": 48,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSpell_crafting_closeing","path":"sprites/sSpell_crafting_closeing/sSpell_crafting_closeing.yy",},
@@ -82,7 +82,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ddf82214-5c43-4448-95b7-42e0a58242c0","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"64abaa56-c77c-4a6a-ab65-5a89229b7000","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Crafting",

@@ -25,8 +25,13 @@ if(keyboard_check_pressed(vk_tab)) panel_set_activation(panel_id, false);
 	// check element and base
 	if(!is_struct(spell_element.grid[# 0, 0]) || !is_struct(spell_base.grid[# 0, 0]) || is_struct(result.grid[# 0, 0])) valid_components = false;
 	
-	if(valid_components) {
-		craft.active = true;
+	// check the modifiers to see if they work with the
+	// base
+	for(var i = 0; i < ds_grid_width(spell_modifiers.grid); i++) {
+		var modifier_item = spell_modifiers.grid[# i, 0];
+		if(valid_components && is_struct(modifier_item) && modifier_item.components.base == spell_base.grid[# 0, 0].components) valid_components = false;
 	}
+	
+	if(valid_components) craft.active = true;
 	else craft.active = false;
 #endregion

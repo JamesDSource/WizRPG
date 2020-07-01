@@ -33,7 +33,7 @@
 				10,
 				3,
 				4,
-				2.2
+				1.6
 			),
 		
 			dart: new spell_base_projectile(
@@ -42,7 +42,7 @@
 				2,
 				8,
 				0.35,
-				0.05
+				0.3
 			)
 		};
 	}
@@ -59,6 +59,11 @@
 				proj_triple_shot: new spell_modifier(
 					SPELLBASE.PROJECTILE,
 					"Triple"
+				),
+				
+				proj_helix_shot: new spell_modifier(
+					SPELLBASE.PROJECTILE,
+					"Helix"
 				),
 			#endregion
 			
