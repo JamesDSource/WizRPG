@@ -55,7 +55,7 @@ function elemental_damage(damage, element) {
 			ds_list_add(global.bolted, id);
 			if(floor(damage) > 0) {
 				with(instance_create_layer(x, y, "Instances", oLightning_bolt)) {
-					lightning_damage = damage;
+					lightning_damage = damage/1.5;
 					creator = id;
 				}
 			}

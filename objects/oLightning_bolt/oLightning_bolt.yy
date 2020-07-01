@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sItem_container_spell_table",
-    "path": "sprites/sItem_container_spell_table/sItem_container_spell_table.yy",
+    "name": "sLightning_bolt",
+    "path": "sprites/sLightning_bolt/sLightning_bolt.yy",
   },
   "solid": false,
   "visible": false,
@@ -40,8 +40,8 @@
     {"propertyId":{"name":"uses_collisions","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Elements",
-    "path": "folders/Elements.yy",
+    "name": "Chaining Lightning",
+    "path": "folders/Elements/Chaining Lightning.yy",
   },
   "resourceVersion": "1.0",
   "name": "oLightning_bolt",

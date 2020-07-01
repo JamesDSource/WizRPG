@@ -6,7 +6,12 @@ if(instance_exists(creator)) {
 	z = creator.z;
 }
 
-if(target != noone) {
-	image_angle = point_direction(x, y, target.x, target.y);	
-}
+if(target == noone) instance_destroy();
+
+if(life > 0) life -= get_delta();
 else instance_destroy();
+
+if(!has_damaged && instance_exists(target)) {
+	target.elemental_damage(lightning_damage, ELEMENTTYPE.LIGHTNING);
+	has_damaged = true;
+}

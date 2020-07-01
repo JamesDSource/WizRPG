@@ -35,3 +35,5 @@ part_type_life(lightning_particles, 10, 20);
 global.bolted = ds_list_create();
 
 global.elements[ELEMENTTYPE.LIGHTNING] = new element("Lightning", lightning_particles, c_yellow);
+
+alarm[0] = 5;

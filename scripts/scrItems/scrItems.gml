@@ -43,28 +43,36 @@ function item_copy(item) {
 	return copy;
 }
 
-// mostly for the spell table
-function item_make_spell(spell_base, spell_element, modifiers) {
-	var new_spell_adjectives = "";
-	for(var i = 0; i < array_length(modifiers); i++) {
-		if(is_struct(modifiers[i])) {
-			new_spell_adjectives += modifiers[i].adjective + " ";	
+#region spell items
+	// mostly for the spell table
+	function item_make_spell(spell_base, spell_element, modifiers) {
+		var new_spell_adjectives = "";
+		for(var i = 0; i < array_length(modifiers); i++) {
+			if(is_struct(modifiers[i])) {
+				new_spell_adjectives += modifiers[i].adjective + " ";	
+			}
 		}
+		var new_spell_name = new_spell_adjectives + global.elements[spell_element].name +  " " +spell_base.name;
+	
+		var sprite;
+		switch(spell_element) {
+			case ELEMENTTYPE.FIRE: sprite = sScroll_fire; break;	
+			case ELEMENTTYPE.LIGHTNING: sprite = sScroll_lightning; break;	
+			default: sprite = sScroll; break;	
+		}
+	
+		var new_spell = new item(
+			new_spell_name,
+			ITEMTYPE.SPELL,
+			sprite,
+			sprite,
+			noone,
+			new spell_components(spell_base, spell_element, modifiers)
+		);
+	
+		return new_spell;
 	}
-	var new_spell_name = new_spell_adjectives + global.elements[spell_element].name +  " " +spell_base.name;
-	
-	var new_spell = new item(
-		new_spell_name,
-		ITEMTYPE.SPELL,
-		noone,
-		sBase_bolt,
-		noone,
-		new spell_components(spell_base, spell_element, modifiers)
-	);
-	
-	return new_spell;
-}
-
+#endregion
 #region items
 	function staff_wand_default_behavior(data) {
 		static cooldown = 0;

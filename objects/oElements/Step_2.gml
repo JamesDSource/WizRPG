@@ -1,1 +1,0 @@
-ds_list_clear(global.bolted);
