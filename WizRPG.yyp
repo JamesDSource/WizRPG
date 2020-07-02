@@ -167,6 +167,7 @@
     {"folderPath":"folders/Items/Spells/Scrolls.yy","order":5,"resourceVersion":"1.0","name":"Scrolls","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Elements/Chaining Lightning.yy","order":6,"resourceVersion":"1.0","name":"Chaining Lightning","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Items/Staffs and Wands.yy","order":1,"resourceVersion":"1.0","name":"Staffs and Wands","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

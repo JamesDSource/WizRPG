@@ -15,6 +15,7 @@ var delta = get_delta();
 		if((hsp != 0 || vsp != 0 || esp != 0) && uses_collisions) {
 			if(!pass_through) push_out();
 			var collision_list = ds_list_create();
+			var collided_with_instances = array_create(0);
 			
 			// horizontal collision checking
 			instance_place_list(x + hsp, y, oEntity, collision_list, true);
@@ -31,7 +32,7 @@ var delta = get_delta();
 						esp = 0;
 					}
 					
-					if(is_method(collided_with)) collided_with(inst);
+					if(array_find_index(collided_with_instances, inst) == -1) collided_with_instances[array_length(collided_with_instances)] = inst;
 					break;
 				}
 			}
@@ -52,11 +53,18 @@ var delta = get_delta();
 						esp = 0;
 					}
 					
-					if(is_method(collided_with)) collided_with(inst);
+					if(array_find_index(collided_with_instances, inst) == -1) collided_with_instances[array_length(collided_with_instances)] = inst;
 					break;
 				}
 			}
 			ds_list_destroy(collision_list);
+			
+			// run the collided with method for everything collided with
+			if(is_method(collided_with)) { 
+				for(var i = 0; i < array_length(collided_with_instances); i++) {
+					collided_with(collided_with_instances[i]);
+				}
+			}
 		}
 		x += hsp;
 		y += vsp;

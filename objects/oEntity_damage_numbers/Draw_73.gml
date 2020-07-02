@@ -10,7 +10,7 @@ scale = approach(scale, scale_target, 0.05);
 draw_set_align(fa_center, fa_bottom);
 var color = c_black;
 if(damage_element != -1) color = global.elements[damage_element].color;
-draw_set_font(fDamage_numbers);
+draw_set_font(fRune);
 
 draw_set_color(c_black);
 draw_text_transformed(x-1, y+1, round(damage_taken), scale, scale, 0);
