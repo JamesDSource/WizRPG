@@ -6,10 +6,11 @@ function button_list(button_preset, height, width) constructor {
 	preset = button_preset;
 	
 	buttons = array_create(0);
-	offset = 0;
-	button_height = max(max(button_preset.spr_left, button_preset.spr_right), button_preset.spr_middle);
-	nine_slice_background = sPanel_background;
 	surface = -1;
+	pressed_index = -1;
+	
+	button_height = max(sprite_get_height(preset.spr_left), sprite_get_height(preset.spr_right));
+	button_height = max(button_height, sprite_get_height(preset.spr_middle));
 }
 
 function button_list_add_button(list_index, button_name, button_text, press_method) {
@@ -48,18 +49,37 @@ function draw_button_list(button_list_index, x_pos, y_pos) {
 	if(!surface_exists(button_list_index.surface)) button_list_index.surface = surface_create(button_list_index.h, button_list_index.w);
 	surface_set_target(button_list_index.surface);
 	
+	draw_clear_alpha(c_white, 0);
+	
 	// draw buttons
 	var button_preset = button_list_index.preset;
-	var button_height = max(sprite_get_height(button_preset.spr_left), sprite_get_height(button_preset.spr_right));
-	button_height = max(button_height, sprite_get_height(button_preset.spr_middle));
 	
 	for(var i = 0; i < array_length(button_list_index.buttons); i++) {
-		var draw_y = i * (button_height + BUTTONLISTPADDING);
-		draw_sprite(button_preset.spr_left, 0, 0, draw_y);
-		draw_sprite(button_preset.spr_right, 0, button_list_index.h - sprite_get_width(button_preset.spr_right), draw_y);
+		var draw_y = i * (button_list_index.button_height + BUTTONLISTPADDING);
+		
+		// subimage and push down
+		var subimage = 0;
+		var txt_push = 0;
+		if(i == button_list_index.pressed_index) {
+			subimage = 1;
+			txt_push = button_preset.push;	
+		}
+		
+		draw_sprite(button_preset.spr_left, subimage, 0, draw_y);
+		draw_sprite(button_preset.spr_right, subimage, button_list_index.h - sprite_get_width(button_preset.spr_right), draw_y);
 		
 		var middle_stretch = button_list_index.h - sprite_get_width(button_preset.spr_right) - sprite_get_width(button_preset.spr_left);
-		draw_sprite_ext(button_preset.spr_middle, 0, sprite_get_width(button_preset.spr_right), draw_y, middle_stretch, 1, 0, c_white, draw_get_alpha());
+		draw_sprite_ext(button_preset.spr_middle, subimage, sprite_get_width(button_preset.spr_right), draw_y, middle_stretch, 1, 0, c_white, draw_get_alpha());
+		
+		var prev_font = draw_get_font();
+		
+		draw_set_font(button_preset.font);
+		draw_set_align(fa_center, fa_middle);
+		
+		if(button_preset.color != c_black) draw_text_color(button_list_index.h/2 - 1, draw_y + button_list_index.button_height/2 + txt_push + 1, button_list_index.buttons[i].txt, c_black, c_black, c_black, c_black, draw_get_alpha());
+		draw_text_color(button_list_index.h/2, draw_y + button_list_index.button_height/2 + txt_push, button_list_index.buttons[i].txt, button_preset.color, button_preset.color, button_preset.color, button_preset.color, draw_get_alpha());
+		
+		draw_set_font(prev_font);
 	}
 	
 	gpu_set_colorwriteenable(prev_colorwrite[0], prev_colorwrite[1], prev_colorwrite[2], prev_colorwrite[3]);
@@ -68,4 +88,23 @@ function draw_button_list(button_list_index, x_pos, y_pos) {
 	// drawing the surface
 	if(prev_surface != -1) surface_set_target(prev_surface);
 	draw_surface(button_list_index.surface, x_pos, y_pos);
+}
+
+function button_list_check(button_list_index, x_pos, y_pos) {
+	var mx = device_mouse_x_to_gui(0);
+	var my = device_mouse_y_to_gui(0);
+	
+	var buttons_amount = array_length(button_list_index.buttons);
+	var buttons_length = buttons_amount*(button_list_index.button_height + BUTTONLISTPADDING);
+	if(buttons_amount > 0 && point_in_rectangle(mx, my, x_pos, y_pos, x_pos + button_list_index.w, y_pos + buttons_length)) {
+		var mouse_y_offset = my - y_pos;
+		var selected_index = clamp(mouse_y_offset div (button_list_index.button_height + BUTTONLISTPADDING), 0, buttons_amount-1);
+		
+		if(mouse_check_button(mb_left)) {
+			button_list_index.pressed_index = selected_index;
+			if(mouse_check_button_pressed(mb_left) && is_method(button_list_index.buttons[selected_index].on_click)) button_list_index.buttons[selected_index].on_click();	
+		}
+		else button_list_index.pressed_index = -1;
+	}
+	else button_list_index.pressed_index = -1;
 }

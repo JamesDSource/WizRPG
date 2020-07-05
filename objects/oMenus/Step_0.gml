@@ -26,6 +26,10 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 				case MENUELEMENT.TEXTBUTTON:
 					text_button_check(current_element[1], element_x, element_y);
 					break;
+			
+				case MENUELEMENT.BUTTONLIST:
+					button_list_check(current_element[1], element_x, element_y);
+					break;
 			}
 		}
 	}
