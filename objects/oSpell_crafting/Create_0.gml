@@ -51,7 +51,7 @@ var height = 160;
 
 panel_add(panel_id, width, height, 0, 0);
 panel_set_position(panel_id, VIEWWIDTH - panel_get_width(panel_id) - 10, VIEWHEIGHT/2 - panel_get_height(panel_id)/2);
-panel_set_background(panel_id, sSpell_creation_background, false);
+panel_set_background(panel_id, sSpell_creation_background);
 
 panel_add_element(panel_id, "title", MENUELEMENT.TEXT, title, 0, 0);
 

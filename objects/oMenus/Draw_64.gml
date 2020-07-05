@@ -23,7 +23,7 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 		surface_resize(current_panel.surface, current_panel.width, current_panel.height * curve_scale);
 		
 		surface_set_target(current_panel.surface);	
-		nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width - PANELEDGE*2, current_panel.height * curve_scale - PANELEDGE*2);
+		if(sprite_exists(current_panel.background)) nine_slice(current_panel.background, PANELEDGE, PANELEDGE, current_panel.width - PANELEDGE*2, current_panel.height * curve_scale - PANELEDGE*2);
 		
 		channel = animcurve_get_channel(acUI, "fade");
 		var curve_alpha = animcurve_channel_evaluate(channel, current_panel.elements_opacity);
@@ -51,6 +51,9 @@ for(var i = 0; i < ds_list_size(panels_names); i++) {
 						break;
 					case MENUELEMENT.IMAGE:
 						draw_image(current_element[1], current_element[2], current_element[3]);
+						break;
+					case MENUELEMENT.BUTTONLIST:
+						draw_button_list(current_element[1], current_element[2], current_element[3]);
 						break;
 				}
 		}

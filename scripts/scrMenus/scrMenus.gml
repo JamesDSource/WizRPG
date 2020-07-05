@@ -2,7 +2,8 @@ enum MENUELEMENT {
 	STORAGE,
 	TEXT,
 	TEXTBUTTON,
-	IMAGE
+	IMAGE,
+	BUTTONLIST
 }
 
 function panel (w, h, x_pos, y_pos) constructor {
@@ -16,17 +17,14 @@ function panel (w, h, x_pos, y_pos) constructor {
 	elements_names = ds_list_create();
 	
 	background = sPanel_background;
-	transparent = true;
 	scale = 0.01;
 	elements_opacity = 0.0;
 }
 
-function panel_set_background(name, new_background, transparent_middle) {
+function panel_set_background(name, new_background) {
 	if(instance_exists(oMenus)) {
 		var map = oMenus.panels;
-		map[? name].background = new_background;
-		map[? name].transparent = transparent_middle;
-		
+		map[? name].background = new_background;	
 	}
 }
 

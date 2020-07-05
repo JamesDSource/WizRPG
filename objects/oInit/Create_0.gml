@@ -15,5 +15,4 @@ init_bases();
 init_modifiers();
 init_items();
 
-init_save_file(0);
 alarm[0] = 2;

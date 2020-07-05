@@ -26,6 +26,15 @@ global.button_presets = {
 		2
 	),
 	
+	title_menu: new text_button_preset (
+		sTitle_menu_button_left,
+		sTitle_menu_button_middle,
+		sTitle_menu_button_right,
+		fRune,
+		c_white,
+		2
+	)
+	
 }
 
 function draw_text_button(button, x_pos, y_pos) {
