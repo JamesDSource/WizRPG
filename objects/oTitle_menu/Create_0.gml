@@ -4,7 +4,15 @@ panel_id = "title menu";
 
 #region main
 	main_button_list = new button_list(global.button_presets.title_menu, 100, panel_h);
-	button_list_add_button(main_button_list, "NG", "New Game", -1);
+	button_list_add_button(
+		main_button_list,
+		"NG",
+		"New Game",
+		function new_game_button() {
+			panel_set_activation(panel_id, false);
+			room_goto(rDev_room);	
+		}
+		);
 	button_list_add_button(main_button_list, "LG", "Load Game", -1);
 	button_list_add_button(main_button_list, "Settings", "Settings", -1);
 	button_list_add_button(main_button_list, "Quit", "Quit", -1);

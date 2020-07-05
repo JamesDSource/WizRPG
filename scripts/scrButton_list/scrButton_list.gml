@@ -1,8 +1,8 @@
 #macro BUTTONLISTPADDING 5
 
-function button_list(button_preset, height, width) constructor {
-	h = height;
+function button_list(button_preset, width, height) constructor {
 	w = width;
+	h = height;
 	preset = button_preset;
 	
 	buttons = array_create(0);
@@ -46,7 +46,7 @@ function draw_button_list(button_list_index, x_pos, y_pos) {
 	if(prev_surface != -1) surface_reset_target();
 	gpu_set_colorwriteenable(true, true, true, true);
 	
-	if(!surface_exists(button_list_index.surface)) button_list_index.surface = surface_create(button_list_index.h, button_list_index.w);
+	if(!surface_exists(button_list_index.surface)) button_list_index.surface = surface_create(button_list_index.w, button_list_index.h);
 	surface_set_target(button_list_index.surface);
 	
 	draw_clear_alpha(c_white, 0);
@@ -66,9 +66,9 @@ function draw_button_list(button_list_index, x_pos, y_pos) {
 		}
 		
 		draw_sprite(button_preset.spr_left, subimage, 0, draw_y);
-		draw_sprite(button_preset.spr_right, subimage, button_list_index.h - sprite_get_width(button_preset.spr_right), draw_y);
+		draw_sprite(button_preset.spr_right, subimage, button_list_index.w - sprite_get_width(button_preset.spr_right), draw_y);
 		
-		var middle_stretch = button_list_index.h - sprite_get_width(button_preset.spr_right) - sprite_get_width(button_preset.spr_left);
+		var middle_stretch = button_list_index.w - sprite_get_width(button_preset.spr_right) - sprite_get_width(button_preset.spr_left);
 		draw_sprite_ext(button_preset.spr_middle, subimage, sprite_get_width(button_preset.spr_right), draw_y, middle_stretch, 1, 0, c_white, draw_get_alpha());
 		
 		var prev_font = draw_get_font();
@@ -76,8 +76,8 @@ function draw_button_list(button_list_index, x_pos, y_pos) {
 		draw_set_font(button_preset.font);
 		draw_set_align(fa_center, fa_middle);
 		
-		if(button_preset.color != c_black) draw_text_color(button_list_index.h/2 - 1, draw_y + button_list_index.button_height/2 + txt_push + 1, button_list_index.buttons[i].txt, c_black, c_black, c_black, c_black, draw_get_alpha());
-		draw_text_color(button_list_index.h/2, draw_y + button_list_index.button_height/2 + txt_push, button_list_index.buttons[i].txt, button_preset.color, button_preset.color, button_preset.color, button_preset.color, draw_get_alpha());
+		if(button_preset.color != c_black) draw_text_color(button_list_index.w/2 - 1, draw_y + button_list_index.button_height/2 + txt_push + 1, button_list_index.buttons[i].txt, c_black, c_black, c_black, c_black, draw_get_alpha());
+		draw_text_color(button_list_index.w/2, draw_y + button_list_index.button_height/2 + txt_push, button_list_index.buttons[i].txt, button_preset.color, button_preset.color, button_preset.color, button_preset.color, draw_get_alpha());
 		
 		draw_set_font(prev_font);
 	}
