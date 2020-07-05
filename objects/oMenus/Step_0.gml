@@ -3,8 +3,8 @@
 global.square_selected = [-1, -1, -1];
 var square_moving_is_shown = false;
 var panels_active = false;
-for(var i = 0; i < ds_list_size(panels_names); i++) {
-	var current_panel = panels[? panels_names[| i]];
+for(var i = 0; i < ds_list_size(global.panels_names); i++) {
+	var current_panel = global.panels[? global.panels_names[| i]];
 	if(current_panel.active) {
 		panels_active = true;
 		

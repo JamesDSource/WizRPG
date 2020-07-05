@@ -9,7 +9,6 @@ panel_id = "title menu";
 		"NG",
 		"New Game",
 		function new_game_button() {
-			panel_set_activation(panel_id, false);
 			room_goto(rDev_room);	
 		}
 		);

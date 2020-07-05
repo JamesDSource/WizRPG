@@ -2,9 +2,9 @@ var surfaces_draw = array_create(0);
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
-for(var i = 0; i < ds_list_size(panels_names); i++) {
-	var panel_name = panels_names[| i];
-	var current_panel = panels[? panel_name];
+for(var i = 0; i < ds_list_size(global.panels_names); i++) {
+	var panel_name = global.panels_names[| i];
+	var current_panel = global.panels[? panel_name];
 	
 	var panel_spd = 0.05;
 	if(current_panel.active) {
