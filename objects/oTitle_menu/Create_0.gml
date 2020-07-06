@@ -32,15 +32,6 @@ function main_page() {
 			quit_page();	
 		}
 	);
-	
-	for(var i = 0; i < 5; i++) {
-		button_list_add_button(
-			main_button_list,
-			i,
-			i,
-			-1
-		);
-	}
 }
 
 function quit_page() {

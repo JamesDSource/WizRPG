@@ -104,7 +104,7 @@ function button_list_check(button_list_index, x_pos, y_pos) {
 	
 	var buttons_amount = array_length(button_list_index.buttons);
 	var buttons_length = buttons_amount*(button_list_index.button_height + BUTTONLISTPADDING);
-	if(buttons_amount > 0 && point_in_rectangle(mx, my, x_pos, y_pos, x_pos + button_list_index.w, y_pos + buttons_length)) {
+	if(buttons_amount > 0 && point_in_rectangle(mx, my, x_pos, y_pos, x_pos + button_list_index.w, y_pos + buttons_length) && point_in_rectangle(mx, my, x_pos, y_pos, x_pos + button_list_index.w, y_pos + button_list_index.h)) {
 		var mouse_y_offset = my - y_pos - button_list_index.offset;
 		var selected_index = clamp(mouse_y_offset div (button_list_index.button_height + BUTTONLISTPADDING), 0, buttons_amount-1);
 		
