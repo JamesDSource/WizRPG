@@ -8,6 +8,7 @@ function button_list(button_preset, width, height) constructor {
 	buttons = array_create(0);
 	surface = -1;
 	pressed_index = -1;
+	offset = 0;
 	
 	button_height = max(sprite_get_height(preset.spr_left), sprite_get_height(preset.spr_right));
 	button_height = max(button_height, sprite_get_height(preset.spr_middle));
@@ -40,6 +41,13 @@ function button_list_remove_button(list_index, button_name) {
 	if(move_back) array_resize(list_index.buttons, array_length(list_index.buttons)-1);
 }
 
+function button_list_clear(list_index) {
+	for(var i = 0; i < array_length(list_index.buttons); i++) {
+		delete list_index.buttons[i];	
+	}
+	array_resize(list_index.buttons, 0);	
+}
+
 function draw_button_list(button_list_index, x_pos, y_pos) {
 	var prev_surface = surface_get_target();
 	var prev_colorwrite = gpu_get_colorwriteenable();
@@ -55,7 +63,7 @@ function draw_button_list(button_list_index, x_pos, y_pos) {
 	var button_preset = button_list_index.preset;
 	
 	for(var i = 0; i < array_length(button_list_index.buttons); i++) {
-		var draw_y = i * (button_list_index.button_height + BUTTONLISTPADDING);
+		var draw_y = i*(button_list_index.button_height + BUTTONLISTPADDING) + button_list_index.offset;
 		
 		// subimage and push down
 		var subimage = 0;
@@ -97,14 +105,18 @@ function button_list_check(button_list_index, x_pos, y_pos) {
 	var buttons_amount = array_length(button_list_index.buttons);
 	var buttons_length = buttons_amount*(button_list_index.button_height + BUTTONLISTPADDING);
 	if(buttons_amount > 0 && point_in_rectangle(mx, my, x_pos, y_pos, x_pos + button_list_index.w, y_pos + buttons_length)) {
-		var mouse_y_offset = my - y_pos;
+		var mouse_y_offset = my - y_pos - button_list_index.offset;
 		var selected_index = clamp(mouse_y_offset div (button_list_index.button_height + BUTTONLISTPADDING), 0, buttons_amount-1);
 		
-		if(mouse_check_button(mb_left)) {
-			button_list_index.pressed_index = selected_index;
-			if(mouse_check_button_pressed(mb_left) && is_method(button_list_index.buttons[selected_index].on_click)) button_list_index.buttons[selected_index].on_click();	
+		if(mouse_check_button_pressed(mb_left)) button_list_index.pressed_index = selected_index;
+		else if(mouse_check_button_released(mb_left)) {
+			button_list_index.pressed_index = -1;
+			if(is_method(button_list_index.buttons[selected_index].on_click)) button_list_index.buttons[selected_index].on_click();
 		}
-		else button_list_index.pressed_index = -1;
+		
+		if(mouse_wheel_down()) button_list_index.offset -= 10;
+		else if(mouse_wheel_up()) button_list_index.offset += 10;
+		button_list_index.offset = clamp(button_list_index.offset, -buttons_length + button_list_index.h, 0);
 	}
 	else button_list_index.pressed_index = -1;
 }
