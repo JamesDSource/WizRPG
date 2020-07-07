@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1ecb4aaf-1c82-469b-9b72-e12fddaa0116","path":"sprites/sHospital_wall/sHospital_wall.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1ecb4aaf-1c82-469b-9b72-e12fddaa0116","path":"sprites/sHospital_wall/sHospital_wall.yy",},"LayerId":{"name":"952bdb10-98e9-4f0f-9c29-e77706c56af6","path":"sprites/sHospital_wall/sHospital_wall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sHospital_wall","path":"sprites/sHospital_wall/sHospital_wall.yy",},"resourceVersion":"1.0","name":"1ecb4aaf-1c82-469b-9b72-e12fddaa0116","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"262aff2b-75b9-40ab-a400-e7155f8f7153","path":"sprites/sHospital_wall_edge/sHospital_wall_edge.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"262aff2b-75b9-40ab-a400-e7155f8f7153","path":"sprites/sHospital_wall_edge/sHospital_wall_edge.yy",},"LayerId":{"name":"bd233dea-43ff-4135-86ab-21680a811018","path":"sprites/sHospital_wall_edge/sHospital_wall_edge.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sHospital_wall_edge","path":"sprites/sHospital_wall_edge/sHospital_wall_edge.yy",},"resourceVersion":"1.0","name":"262aff2b-75b9-40ab-a400-e7155f8f7153","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sHospital_wall","path":"sprites/sHospital_wall/sHospital_wall.yy",},
+    "spriteId": {"name":"sHospital_wall_edge","path":"sprites/sHospital_wall_edge/sHospital_wall_edge.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"6f3561d8-315a-4dea-b41c-1afd1acdcc53","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1ecb4aaf-1c82-469b-9b72-e12fddaa0116","path":"sprites/sHospital_wall/sHospital_wall.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"5f02cd8c-b0e0-4e60-bd43-5bbe2e067bc7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"262aff2b-75b9-40ab-a400-e7155f8f7153","path":"sprites/sHospital_wall_edge/sHospital_wall_edge.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sHospital_wall","path":"sprites/sHospital_wall/sHospital_wall.yy",},
+    "parent": {"name":"sHospital_wall_edge","path":"sprites/sHospital_wall_edge/sHospital_wall_edge.yy",},
     "resourceVersion": "1.3",
-    "name": "sHospital_wall",
+    "name": "sHospital_wall_edge",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"952bdb10-98e9-4f0f-9c29-e77706c56af6","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bd233dea-43ff-4135-86ab-21680a811018","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Hospital Walls",
     "path": "folders/Walls/Hospital Walls.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sHospital_wall",
+  "name": "sHospital_wall_edge",
   "tags": [],
   "resourceType": "GMSprite",
 }
