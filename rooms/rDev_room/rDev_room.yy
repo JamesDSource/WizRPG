@@ -15,8 +15,6 @@
   "layers": [
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":704.0,"y":544.0,"resourceVersion":"1.0","name":"inst_64F12936","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"oEntity_sort","path":"objects/oEntity_sort/oEntity_sort.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_50828471","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"oElements","path":"objects/oElements/oElements.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":32.0,"resourceVersion":"1.0","name":"inst_1B04ABF8","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":640.0,"y":352.0,"resourceVersion":"1.0","name":"inst_BA81CB","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"superconductive","path":"objects/oEntity/oEntity.yy",},"objectId":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -46,8 +44,6 @@
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_64F12936","path":"rooms/rDev_room/rDev_room.yy",},
-    {"name":"inst_50828471","path":"rooms/rDev_room/rDev_room.yy",},
-    {"name":"inst_1B04ABF8","path":"rooms/rDev_room/rDev_room.yy",},
     {"name":"inst_BA81CB","path":"rooms/rDev_room/rDev_room.yy",},
     {"name":"inst_D6A581","path":"rooms/rDev_room/rDev_room.yy",},
     {"name":"inst_190B83F3","path":"rooms/rDev_room/rDev_room.yy",},

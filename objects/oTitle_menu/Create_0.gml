@@ -6,7 +6,8 @@ function main_page() {
 		"NG",
 		"New Game",
 		function new_game_button() {
-			room_goto(rDev_room);	
+			if(DEVMODE) room_goto(rDev_room);
+			else room_goto(rInfirmary);
 		}
 	);
 		
@@ -60,7 +61,7 @@ function quit_page() {
 	panel_w = 100;
 	panel_h = VIEWHEIGHT/2;
 	panel_id = "title menu";
-	main_button_list = new button_list(global.button_presets.title_menu, 100, panel_h);
+	main_button_list = new button_list(global.button_presets.title_menu, panel_w, panel_h);
 	main_page();
 	
 	panel_add(panel_id, panel_w, panel_h, 0, 0);

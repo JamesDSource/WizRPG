@@ -9,6 +9,8 @@ shader_enable_corner_id(true);
 instance_create_layer(0, 0, "Instances", oRender);
 instance_create_layer(0, 0, "Instances", oMenus);
 instance_create_layer(0, 0, "Instances", oSprite_reader);
+instance_create_layer(0, 0, "Instances", oElements);
+instance_create_layer(0, 0, "Instances", oEntity_sort);
 if(DEVMODE) instance_create_layer(0, 0, "Instances", oDev_tools);
 
 init_bases();
