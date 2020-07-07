@@ -108,15 +108,23 @@ function button_list_check(button_list_index, x_pos, y_pos) {
 		var mouse_y_offset = my - y_pos - button_list_index.offset;
 		var selected_index = clamp(mouse_y_offset div (button_list_index.button_height + BUTTONLISTPADDING), 0, buttons_amount-1);
 		
-		if(mouse_check_button_pressed(mb_left)) button_list_index.pressed_index = selected_index;
+		// hover sound
+		
+		if(mouse_check_button_pressed(mb_left)) {
+			button_list_index.pressed_index = selected_index;
+			audio_play_sound(sdButton_hover, AUDIOPRIORITY.MENUS, false);
+		}
 		else if(mouse_check_button_released(mb_left)) {
 			button_list_index.pressed_index = -1;
 			if(is_method(button_list_index.buttons[selected_index].on_click)) button_list_index.buttons[selected_index].on_click();
+			audio_play_sound(sdButton_click, AUDIOPRIORITY.MENUS, false);
 		}
 		
 		if(mouse_wheel_down()) button_list_index.offset -= 10;
 		else if(mouse_wheel_up()) button_list_index.offset += 10;
 		button_list_index.offset = clamp(button_list_index.offset, -buttons_length + button_list_index.h, 0);
 	}
-	else button_list_index.pressed_index = -1;
+	else {
+		button_list_index.pressed_index = -1;
+	}
 }

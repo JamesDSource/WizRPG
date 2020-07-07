@@ -1,0 +1,4 @@
+enum AUDIOPRIORITY {
+	MENUS
+	
+}
