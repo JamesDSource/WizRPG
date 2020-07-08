@@ -20,5 +20,8 @@ else{
 	surface_reset_target();
 }
 
+draw_set_alpha(global.transition_percent);
+draw_rectangle_color(0, 0, VIEWWIDTH, VIEWHEIGHT, c_black, c_black, c_black, c_black, false);
+draw_set_alpha(1);
 
 shader_reset();

@@ -6,8 +6,8 @@ function main_page() {
 		"NG",
 		"New Game",
 		function new_game_button() {
-			if(DEVMODE) room_goto(rDev_room);
-			else room_goto(rInfirmary);
+			if(DEVMODE) transition_to(rDev_room);
+			else transition_to(rInfirmary);
 		}
 	);
 		
@@ -43,7 +43,7 @@ function quit_page() {
 		"Quit",
 		"Quit",
 		function end_game_button() {
-			game_end();	
+			transition_quit();
 		}
 	);
 		
