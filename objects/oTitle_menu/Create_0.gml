@@ -1,72 +1,15 @@
-function main_page() {
-	button_list_clear(main_button_list);
-	
-	button_list_add_button(
-		main_button_list,
-		"NG",
-		"New Game",
-		function new_game_button() {
-			if(DEVMODE) transition_to(rDev_room);
-			else transition_to(rInfirmary);
-		}
-	);
-		
-	button_list_add_button(
-		main_button_list, 
-		"LG", 
-		"Load Game", 
-		-1
-	);
-	
-	button_list_add_button(
-		main_button_list,
-		"Settings",
-		"Settings",
-		-1
-	);
-	
-	button_list_add_button(
-		main_button_list,
-		"Quit",
-		"Quit",
-		function quit_button() {
-			quit_page();	
-		}
-	);
-}
-
-function quit_page() {
-	button_list_clear(main_button_list);
-	
-	button_list_add_button(
-		main_button_list,
-		"Quit",
-		"Quit",
-		function end_game_button() {
-			transition_quit();
-		}
-	);
-		
-	button_list_add_button(
-		main_button_list, 
-		"Back", 
-		"Back", 
-		function back_button() {
-			main_page();
-		}
-	);
-}
-
 #region main
+	global.menu_button_list = "main menu"
+
 	panel_w = 100;
 	panel_h = VIEWHEIGHT/2;
-	panel_id = "title menu";
 	main_button_list = new button_list(global.button_presets.title_menu, panel_w, panel_h);
-	main_page();
+	main_page(main_button_list);
 	
-	panel_add(panel_id, panel_w, panel_h, 0, 0);
-	panel_set_position(panel_id, VIEWWIDTH/2 - panel_get_width(panel_id)/2, VIEWHEIGHT/3);
-	panel_set_background(panel_id, sTitle_screen_menu_background)
-	panel_add_element(panel_id, "button list", MENUELEMENT.BUTTONLIST, main_button_list, 0, 0);
-	panel_set_activation(panel_id, true);
+	panel_add(global.menu_button_list, panel_w, panel_h, 0, 0);
+	panel_set_position(global.menu_button_list, VIEWWIDTH/2 - panel_get_width(global.menu_button_list)/2, VIEWHEIGHT/3);
+	panel_set_background(global.menu_button_list, sTitle_screen_menu_background)
+	panel_set_run_on_pause(global.menu_button_list, true);
+	panel_add_element(global.menu_button_list, "button list", MENUELEMENT.BUTTONLIST, main_button_list, 0, 0);
+	panel_set_activation(global.menu_button_list, true);
 #endregion

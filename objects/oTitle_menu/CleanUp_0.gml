@@ -1,1 +1,1 @@
-panel_remove(panel_id);
+panel_set_activation(global.menu_button_list, false);

@@ -116,7 +116,7 @@ function button_list_check(button_list_index, x_pos, y_pos) {
 		}
 		else if(mouse_check_button_released(mb_left)) {
 			button_list_index.pressed_index = -1;
-			if(is_method(button_list_index.buttons[selected_index].on_click)) button_list_index.buttons[selected_index].on_click();
+			if(is_method(button_list_index.buttons[selected_index].on_click)) button_list_index.buttons[selected_index].on_click(button_list_index);
 			audio_play_sound(sdButton_click, AUDIOPRIORITY.MENUS, false);
 		}
 		

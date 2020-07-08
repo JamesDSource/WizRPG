@@ -7,10 +7,14 @@ function toggle_pause() {
 		];
 		instance_deactivate_object(oEntity);
 		instance_deactivate_object(oCamera);
+		
+		panel_set_activation(global.menu_button_list, true);
 	}
 	else {
 		for(var i = 0; i < array_length(global.sPause); i++) sprite_delete(global.sPause[i]);
 		global.sPause = noone;
 		instance_activate_all();
+		
+		panel_set_activation(global.menu_button_list, false);
 	}
 }
