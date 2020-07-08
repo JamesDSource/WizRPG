@@ -1,7 +1,6 @@
-paused = false;
 function toggle_pause() {
-	paused = !paused;
-	if(paused) {
+	global.paused = !global.paused;
+	if(global.paused) {
 		global.sPause = [
 			sprite_create_from_surface(application_surface, 0, 0, VIEWWIDTH, VIEWHEIGHT, false, false, 0, 0),	
 			sprite_create_from_surface(global.gui_surface, 0, 0, VIEWWIDTH, VIEWHEIGHT, false, false, 0, 0)	

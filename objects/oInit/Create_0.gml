@@ -13,6 +13,8 @@ instance_create_layer(0, 0, "Instances", oElements);
 instance_create_layer(0, 0, "Instances", oEntity_sort);
 if(DEVMODE) instance_create_layer(0, 0, "Instances", oDev_tools);
 
+global.paused = false;
+
 init_bases();
 init_modifiers();
 init_items();

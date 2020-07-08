@@ -5,7 +5,7 @@ var square_moving_is_shown = false;
 var panels_active = false;
 for(var i = 0; i < ds_list_size(global.panels_names); i++) {
 	var current_panel = global.panels[? global.panels_names[| i]];
-	if(current_panel.active) {
+	if(current_panel.active && (current_panel.run_on_pause || !global.paused)) {
 		panels_active = true;
 		
 		for(var j = 0; j < ds_list_size(current_panel.elements_names); j++) {

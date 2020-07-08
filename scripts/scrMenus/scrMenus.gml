@@ -19,6 +19,7 @@ function panel (w, h, x_pos, y_pos) constructor {
 	background = sPanel_background;
 	scale = 0.01;
 	elements_opacity = 0.0;
+	run_on_pause = false;
 }
 
 function panel_set_background(name, new_background) {
@@ -103,5 +104,10 @@ function panel_set_position(name, x_pos, y_pos) {
 	var map = global.panels;
 	map[? name].x = x_pos;
 	map[? name].y = y_pos;
+}
+
+function panel_set_run_on_pause(name, run_paused) {
+	var map = global.panels;
+	map[? name].run_on_pause = run_paused;
 }
 

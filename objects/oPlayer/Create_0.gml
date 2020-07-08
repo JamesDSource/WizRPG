@@ -94,7 +94,6 @@ panel_add_element("inventory", "spells_text", MENUELEMENT.TEXT, spells_text, sto
 panel_add_element("inventory", "toolbar_text", MENUELEMENT.TEXT, toolbar_text, storage_get_width(toolbar), toolbar_draw_y + storage_get_height(toolbar)/2);
 panel_add_element("inventory", "charms_text", MENUELEMENT.TEXT, charms_text, storage_get_width(charms), charms_draw_y + storage_get_height(charms)/2);
 
-
 equipt_item = {
 	index: -1,
 	sprite: noone,
