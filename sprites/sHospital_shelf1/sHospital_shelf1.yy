@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"fe57c215-e720-48cf-a49a-27c3276b3372","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fe57c215-e720-48cf-a49a-27c3276b3372","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"LayerId":{"name":"b14766bb-16c8-415c-aaeb-e90b201109af","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sHospital_shelf1","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"resourceVersion":"1.0","name":"fe57c215-e720-48cf-a49a-27c3276b3372","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ddf9e314-6400-48aa-b5a6-ee13ffd56407","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ddf9e314-6400-48aa-b5a6-ee13ffd56407","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"LayerId":{"name":"35b09ad5-4014-4b6b-99a2-03f84655f2bd","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sHospital_shelf1","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"resourceVersion":"1.0","name":"ddf9e314-6400-48aa-b5a6-ee13ffd56407","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sHospital_shelf1","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"3a5861bf-19f7-45e3-807e-3482559b9662","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fe57c215-e720-48cf-a49a-27c3276b3372","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c51ffd8f-e58d-4cab-9c61-23c9b0bdd530","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ddf9e314-6400-48aa-b5a6-ee13ffd56407","path":"sprites/sHospital_shelf1/sHospital_shelf1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b14766bb-16c8-415c-aaeb-e90b201109af","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"35b09ad5-4014-4b6b-99a2-03f84655f2bd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Shelves",
