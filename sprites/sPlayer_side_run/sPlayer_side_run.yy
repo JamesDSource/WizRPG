@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 1,
-  "separateMasks": false,
   "type": 0,
   "origin": 7,
   "preMultiplyAlpha": false,
@@ -90,7 +89,7 @@
   ],
   "parent": {
     "name": "Player",
-    "path": "folders/Entities/Player.yy",
+    "path": "folders/Player.yy",
   },
   "resourceVersion": "1.0",
   "name": "sPlayer_side_run",

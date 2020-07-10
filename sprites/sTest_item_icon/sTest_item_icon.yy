@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 1,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -70,7 +69,7 @@
   ],
   "parent": {
     "name": "Debugging",
-    "path": "folders/Entities/Debugging.yy",
+    "path": "folders/Debugging.yy",
   },
   "resourceVersion": "1.0",
   "name": "sTest_item_icon",

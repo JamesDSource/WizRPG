@@ -34,7 +34,7 @@
   ],
   "parent": {
     "name": "Debugging",
-    "path": "folders/Entities/Debugging.yy",
+    "path": "folders/Debugging.yy",
   },
   "resourceVersion": "1.0",
   "name": "oJoe",
